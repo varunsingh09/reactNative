@@ -1,47 +1,63 @@
 import React, { Component } from 'react'
-import { Text, View, TouchableOpacity } from 'react-native'
+import { Text, View, TouchableOpacity, ScrollView } from 'react-native'
+import axios from "axios";
 import styles from '../../styles/index';
+import * as Api from "./../../../../config/config"
 
 class About extends Component {
-  state = {
-    names: [
-      {
-        id: 0,
-        name: 'Ben',
-      },
-      {
-        id: 1,
-        name: 'Susan',
-      },
-      {
-        id: 2,
-        name: 'Robert',
-      },
-      {
-        id: 3,
-        name: 'Mary',
-      }
-    ]
+  constructor(props) {
+    super(props)
+    this.state = {
+      stateArr: []
+    }
   }
-  onAlertItem = (item) => {
-    console.warn(item.name)
+  componentDidMount = () => {
+    //console.log("componentDidMount")
+    this.stateCityList()
+  }
+  stateCityList = async (city) => {
+    console.warn(city)
+    //console.log('come')
+
+    try {
+
+      const stateCityList = await axios.get(
+        Api.STATE_CITY_FETCH_API,
+        {
+          headers: {
+            "Authorization": `${Api.BEARER}`
+          }
+        }).then(res => //console.log("---->>>>>>>>>>>>>",JSON.stringify(res.data.result))
+          this.setState({ stateArr: res.data.result })
+        );
+
+    } catch (err) {
+      //console.warn("success response===", err)
+      this.setState({ "errors": err.response.data.errors })
+    }
+
   }
   render() {
+
+    let cityList = this.state.stateArr.length > 0 && this.state.stateArr[0].cityList.sort()
+
     return (
       <View>
-        {
-          this.state.names.map((item, index) => (
+        <ScrollView vertical={true}>
+          {this.state.stateArr.length > 0 && this.state.stateArr[0].cityList.map((city, index) =>
             <TouchableOpacity
-              key={item.id}
+              key={index}
               style={styles.containerList}
-              onPress={() => this.onAlertItem(item)}>
+              onPress={() => this.stateCityList(city)}
+            >
               <Text style={styles.text}>
-                {item.name}
+                {city}
               </Text>
             </TouchableOpacity>
-          ))
-        }
-      </View>
+          ).sort()
+          }
+        </ScrollView>
+      </View >
     )
   }
 }
