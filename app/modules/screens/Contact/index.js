@@ -8,7 +8,7 @@ import {
   TouchableHighlight,
   Text
 
-} from 'react-native'
+} from 'react-native' 
 
 import { HelperText } from 'react-native-paper';
 

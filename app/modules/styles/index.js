@@ -55,5 +55,14 @@ export default styles = StyleSheet.create({
     helpText: {
         marginLeft: 10,
         margin:0
-    }
+    },
+    containerList: {
+        padding: 10,
+        marginTop: 3,
+        backgroundColor: '#42A5F5',
+        alignItems: 'center',
+      },
+      text: {
+        color: 'white'
+      }
 });

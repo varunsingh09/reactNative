@@ -1,28 +1,48 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
-import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import React, { Component } from 'react'
+import { Text, View, TouchableOpacity } from 'react-native'
 import styles from '../../styles/index';
 
-
-export default class About extends Component{
+class About extends Component {
+  state = {
+    names: [
+      {
+        id: 0,
+        name: 'Ben',
+      },
+      {
+        id: 1,
+        name: 'Susan',
+      },
+      {
+        id: 2,
+        name: 'Robert',
+      },
+      {
+        id: 3,
+        name: 'Mary',
+      }
+    ]
+  }
+  onAlertItem = (item) => {
+    console.warn(item.name)
+  }
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.heading}>
-          About Us
-        </Text>
+      <View>
+        {
+          this.state.names.map((item, index) => (
+            <TouchableOpacity
+              key={item.id}
+              style={styles.containerList}
+              onPress={() => this.onAlertItem(item)}>
+              <Text style={styles.text}>
+                {item.name}
+              </Text>
+            </TouchableOpacity>
+          ))
+        }
       </View>
-    );
+    )
   }
 }
-
+export default About
