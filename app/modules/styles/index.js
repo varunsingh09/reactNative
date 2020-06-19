@@ -1,4 +1,4 @@
-import { StyleSheet, Platform,Dimensions } from 'react-native';
+import { StyleSheet, Platform, Dimensions } from 'react-native';
 
 export default styles = StyleSheet.create({
     container: {
@@ -6,7 +6,7 @@ export default styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'flex-start',
         backgroundColor: '#fff',
-        height:Math.round(Dimensions.get('window').height),
+        height: Math.round(Dimensions.get('window').height),
 
     },
     heading: {
@@ -19,48 +19,41 @@ export default styles = StyleSheet.create({
         borderWidth: 0.5,
         borderColor: '#d6d7da'
     },
-    inputContainer: {
-        borderBottomColor: '#F5FCFF',
-        backgroundColor: '#FFFFFF',
-        borderRadius: 30,
-        borderBottomWidth: 1,
-        width: Math.round(Dimensions.get('window').width),
-        height: 40,
-        marginBottom: 20,
-        flexDirection: 'row',
-        alignItems: 'center'
-    },
-    inputs: {
-        height: 45,
-        marginLeft: 16,
-        borderBottomColor: '#FFFFFF',
-        flex: 1,
-    },
-    inputIcon: {
-        width: 30,
-        height: 30,
-        marginLeft: 15,
-        justifyContent: 'center'
-    },
-    buttonContainer: {
-        height: 45,
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginBottom: 20,
-        marginLeft: 130,
-        width: 100,
-        borderRadius: 30,
-    },
-    signupButton: {
-        backgroundColor: "#59afdc",
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    signUpText: {
+
+    input: {
+        width: Math.round(Dimensions.get('window').width-20),
+        height: 55,
+        backgroundColor: '#42A5F5',
+        marginTop:10,
+        paddingLeft: 8,   
         color: 'white',
+        borderRadius: 14,
+        fontSize: 14,
+        fontWeight: '500',
+        borderWidth:1
+    },
+    containerContact: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    button: {
+        height: 40,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 20,
+        marginLeft: 70,
+        width: 200,
+        borderWidth:1,
+        borderRadius: 30,
+        backgroundColor: '#42A5F5',
+        color: 'white',
+        fontSize: 14,
+        fontWeight: '500',
     },
     helpText: {
-        marginLeft: 52,
+        marginLeft: 10,
+        margin:0
     }
 });
