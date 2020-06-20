@@ -8,16 +8,13 @@ import {
   TouchableHighlight,
   Text
 
-} from 'react-native' 
+} from 'react-native'
 
 import { HelperText } from 'react-native-paper';
-
+import Spinner from 'react-native-loading-spinner-overlay';
 import * as Api from "./../../../../config/config"
-
 import { handleValidation } from "./../../../../config/error"
-
 import styles from '../../styles/index';
-
 class Contact extends React.Component {
 
   constructor(props) {
@@ -35,7 +32,9 @@ class Contact extends React.Component {
         confirm_password: '',
         agreement_policy: true,
       },
-      errors: []
+      errors: [],
+      spinner: false,
+      success: []
     }
   }
 
@@ -52,20 +51,23 @@ class Contact extends React.Component {
     let data = userInfo
     console.log("handleSubmit ", data)
 
+    this.setState({ spinner: true })
     try {
 
       const KitchenSignup = await axios.post(
+
         Api.KITCHEN_REGISTRATION_API,
         data,
         {
           headers: {
             "Authorization": `${Api.BEARER}`
           }
-        }).then(res => console.log("success response===", res));
+        }).then(res => this.setState({ success: res, spinner: false })
+        );
 
     } catch (err) {
       console.warn("success response===", err)
-      this.setState({ "errors": err.response.data.errors })
+      this.setState({ "errors": err.response.data.errors,spinner: false  })
     }
 
   }
@@ -74,6 +76,11 @@ class Contact extends React.Component {
     console.log("render", this.state.errors)
     return (
       <View style={styles.containerContact}>
+        <Spinner
+          visible={this.state.spinner}
+          textContent={'Loading...'}
+          textStyle={styles.spinnerTextStyle}
+        />
         <ScrollView vertical={true}>
           <TextInput
             style={styles.input}

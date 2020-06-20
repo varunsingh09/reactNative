@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import {NavigationActions} from 'react-navigation';
+import React, { Component } from 'react';
+import { NavigationActions } from 'react-navigation';
 import PropTypes from 'prop-types';
-import {ScrollView, Text, View} from 'react-native';
-import { DrawerActions } from 'react-navigation';
+import { ScrollView, Text, View } from 'react-native';
+import { DrawerActions } from 'react-navigation-drawer';
 import styles from '../../styles/index';
 
 class DrawerScreen extends Component {
@@ -14,9 +14,9 @@ class DrawerScreen extends Component {
     this.props.navigation.dispatch(DrawerActions.closeDrawer())
   }
 
-  render () {
+  render() {
     return (
-      <View>
+      <View >
         <ScrollView>
           <View>
             <View style={styles.menuItem}>
@@ -26,12 +26,22 @@ class DrawerScreen extends Component {
             </View>
             <View style={styles.menuItem}>
               <Text onPress={this.navigateToScreen('About')}>
-               About
+                About
               </Text>
             </View>
             <View style={styles.menuItem}>
               <Text onPress={this.navigateToScreen('Contact')}>
-              Contact
+                Contact
+              </Text>
+            </View>
+            <View style={styles.menuItem}>
+              <Text onPress={this.navigateToScreen('Gallery')}>
+                Gallery
+              </Text>
+            </View>
+            <View style={styles.menuItem}>
+              <Text onPress={this.navigateToScreen('Login')}>
+                Login
               </Text>
             </View>
           </View>

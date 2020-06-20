@@ -42,9 +42,9 @@ const DrawerNavigator = createDrawerNavigator({
 
 const MenuImage = ({ navigation }) => {
     if (!navigation.state.isDrawerOpen) {
-        return <Image source={require('../images/menu-button.png')} />
+        return <Image source={require('./../images/menu-button.png')} />
     } else {
-        return <Image source={require('../images/left-arrow.png')} />
+        return <Image source={require('./../images/left-arrow.png')} />
     }
 }
 

@@ -1,6 +1,9 @@
 import { StyleSheet, Platform, Dimensions } from 'react-native';
 
 export default styles = StyleSheet.create({
+    scrollView: {
+        backgroundColor: 'green',
+    },
     container: {
         flex: 1,
         justifyContent: 'center',
@@ -9,6 +12,7 @@ export default styles = StyleSheet.create({
         height: Math.round(Dimensions.get('window').height),
 
     },
+
     heading: {
         fontSize: 20,
         textAlign: 'center',
@@ -21,16 +25,16 @@ export default styles = StyleSheet.create({
     },
 
     input: {
-        width: Math.round(Dimensions.get('window').width-20),
+        width: Math.round(Dimensions.get('window').width - 20),
         height: 55,
         backgroundColor: '#42A5F5',
-        marginTop:10,
-        paddingLeft: 8,   
+        marginTop: 10,
+        paddingLeft: 8,
         color: 'white',
         borderRadius: 14,
         fontSize: 14,
         fontWeight: '500',
-        borderWidth:1
+        borderWidth: 1
     },
     containerContact: {
         flex: 1,
@@ -45,7 +49,7 @@ export default styles = StyleSheet.create({
         marginBottom: 20,
         marginLeft: 70,
         width: 200,
-        borderWidth:1,
+        borderWidth: 1,
         borderRadius: 30,
         backgroundColor: '#42A5F5',
         color: 'white',
@@ -54,15 +58,25 @@ export default styles = StyleSheet.create({
     },
     helpText: {
         marginLeft: 10,
-        margin:0
+        margin: 0
     },
     containerList: {
-        padding: 10,
+        padding: 15,
         marginTop: 3,
         backgroundColor: '#42A5F5',
-        alignItems: 'center',
-      },
-      text: {
+        alignItems: 'flex-start',
+    },
+    text: {
         color: 'white'
-      }
+    },
+    bar: {
+        padding: 15,
+        marginTop: 30,
+        backgroundColor: '#42A5F5',
+        alignItems: 'flex-start',
+    },
+    spinnerTextStyle: {
+        color: 'red',
+        fontSize: 16
+    },
 });

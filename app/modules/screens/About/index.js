@@ -3,20 +3,22 @@ import { Text, View, TouchableOpacity, ScrollView } from 'react-native'
 import axios from "axios";
 import styles from '../../styles/index';
 import * as Api from "./../../../../config/config"
+import Spinner from 'react-native-loading-spinner-overlay';
 
 class About extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      stateArr: []
+      stateArr: [],
+      spinner: false
     }
   }
   componentDidMount = () => {
-    //console.log("componentDidMount")
     this.stateCityList()
   }
   stateCityList = async (city) => {
     console.warn(city)
+    this.setState({ spinner: true })
     //console.log('come')
 
     try {
@@ -28,12 +30,12 @@ class About extends Component {
             "Authorization": `${Api.BEARER}`
           }
         }).then(res => //console.log("---->>>>>>>>>>>>>",JSON.stringify(res.data.result))
-          this.setState({ stateArr: res.data.result })
+          this.setState({ stateArr: res.data.result, spinner: false })
         );
 
     } catch (err) {
       //console.warn("success response===", err)
-      this.setState({ "errors": err.response.data.errors })
+      this.setState({ "errors": err.response.data.errors ,spinner: false })
     }
 
   }
@@ -43,6 +45,11 @@ class About extends Component {
 
     return (
       <View>
+        <Spinner
+          visible={this.state.spinner}
+          textContent={'Loading...'}
+          textStyle={styles.spinnerTextStyle}
+        />
         <ScrollView vertical={true}>
           {this.state.stateArr.length > 0 && this.state.stateArr[0].cityList.map((city, index) =>
             <TouchableOpacity
