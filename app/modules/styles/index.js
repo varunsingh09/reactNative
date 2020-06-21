@@ -58,7 +58,8 @@ export default styles = StyleSheet.create({
     },
     helpText: {
         marginLeft: 10,
-        margin: 0
+        margin: 0,
+        color:'red'
     },
     containerList: {
         padding: 15,

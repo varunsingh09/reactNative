@@ -6,11 +6,12 @@ import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
 
 import { View, Text, StyleSheet, Platform, TouchableOpacity, Image, StatusBar } from 'react-native';
 
-import Home from '../screens/Home/index';
-import About from '../screens/About/index';
-import Contact from '../screens/Contact/index';
-import Gallery from '../screens/Gallery/index';
-import DrawerScreen from '../screens/Common/DrawerScreen';
+import Home from './../screens/Home/index';
+import About from './../screens/About/index';
+import Contact from './../screens/Contact/index';
+import Gallery from './../screens/Gallery/index';
+import DrawerScreen from './../screens/Common/DrawerScreen';
+import Login from "./../screens/User/Login"
 
 const Tabs = createMaterialTopTabNavigator({
     Home: Home,
@@ -33,6 +34,9 @@ const Tabs = createMaterialTopTabNavigator({
 const DrawerNavigator = createDrawerNavigator({
     Home: {
         screen: Tabs
+    },
+    Login: {
+        screen: Login
     }
 }, {
     initialRouteName: 'Home',

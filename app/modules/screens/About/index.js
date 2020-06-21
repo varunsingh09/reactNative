@@ -5,12 +5,14 @@ import styles from '../../styles/index';
 import * as Api from "./../../../../config/config"
 import Spinner from 'react-native-loading-spinner-overlay';
 
+
 class About extends Component {
   constructor(props) {
     super(props)
     this.state = {
       stateArr: [],
-      spinner: false
+      spinner: false,
+      message: null
     }
   }
   componentDidMount = () => {
@@ -30,18 +32,22 @@ class About extends Component {
             "Authorization": `${Api.BEARER}`
           }
         }).then(res => //console.log("---->>>>>>>>>>>>>",JSON.stringify(res.data.result))
-          this.setState({ stateArr: res.data.result, spinner: false })
+          this.setState({ stateArr: res.data.result, spinner: false})
         );
 
     } catch (err) {
-      //console.warn("success response===", err)
-      this.setState({ "errors": err.response.data.errors ,spinner: false })
+      if (err.response === undefined) {
+        this.setState({ "message": 'Remote Server Not Working', spinner: false })
+      }
+      this.setState({ "errors": err.response.data.errors, spinner: false })
     }
 
   }
   render() {
-
+    console.log("-------",this.state.message)
     let cityList = this.state.stateArr.length > 0 && this.state.stateArr[0].cityList.sort()
+
+    //return this.state.message !== null && <Error />
 
     return (
       <View>
@@ -50,6 +56,7 @@ class About extends Component {
           textContent={'Loading...'}
           textStyle={styles.spinnerTextStyle}
         />
+
         <ScrollView vertical={true}>
           {this.state.stateArr.length > 0 && this.state.stateArr[0].cityList.map((city, index) =>
             <TouchableOpacity
