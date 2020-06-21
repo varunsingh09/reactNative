@@ -64,7 +64,7 @@ class About extends Component {
               style={styles.containerList}
               onPress={() => this.stateCityList(city)}
             >
-              <Text style={styles.text}>
+              <Text style={styles.signUpText}>
                 {city}
               </Text>
             </TouchableOpacity>

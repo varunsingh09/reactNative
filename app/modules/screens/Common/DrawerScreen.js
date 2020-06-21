@@ -16,7 +16,7 @@ class DrawerScreen extends Component {
 
   render() {
     return (
-      <View >
+      <View>
         <ScrollView>
           <View>
             <View style={styles.menuItem}>

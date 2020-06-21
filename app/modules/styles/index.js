@@ -27,7 +27,7 @@ export default styles = StyleSheet.create({
     input: {
         width: Math.round(Dimensions.get('window').width - 20),
         height: 55,
-        backgroundColor: '#42A5F5',
+        backgroundColor: '#333',
         marginTop: 10,
         paddingLeft: 8,
         color: 'white',
@@ -41,6 +41,12 @@ export default styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    containerLogin: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop:50
+    },
     button: {
         height: 40,
         flexDirection: 'row',
@@ -51,7 +57,7 @@ export default styles = StyleSheet.create({
         width: 200,
         borderWidth: 1,
         borderRadius: 30,
-        backgroundColor: '#42A5F5',
+        backgroundColor: '#333',
         color: 'white',
         fontSize: 14,
         fontWeight: '500',
@@ -64,16 +70,16 @@ export default styles = StyleSheet.create({
     containerList: {
         padding: 15,
         marginTop: 3,
-        backgroundColor: '#42A5F5',
+        backgroundColor: '#333',
         alignItems: 'flex-start',
     },
-    text: {
+    signUpText: {
         color: 'white'
     },
     bar: {
         padding: 15,
         marginTop: 30,
-        backgroundColor: '#42A5F5',
+        backgroundColor: '#333',
         alignItems: 'flex-start',
     },
     spinnerTextStyle: {

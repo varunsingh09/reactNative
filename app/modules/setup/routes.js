@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import { createDrawerNavigator,DrawerActions } from 'react-navigation-drawer';
+import { createDrawerNavigator, DrawerActions } from 'react-navigation-drawer';
 import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
 
-import { View, Text, StyleSheet, Platform, TouchableOpacity, Image, StatusBar } from 'react-native';
+import { TouchableOpacity, Image } from 'react-native';
 
 import Home from './../screens/Home/index';
 import About from './../screens/About/index';
@@ -41,10 +41,11 @@ const DrawerNavigator = createDrawerNavigator({
 }, {
     initialRouteName: 'Home',
     contentComponent: DrawerScreen,
-    drawerWidth: 300
+    drawerWidth: 200
 });
 
 const MenuImage = ({ navigation }) => {
+
     if (!navigation.state.isDrawerOpen) {
         return <Image source={require('./../images/menu-button.png')} />
     } else {
@@ -60,8 +61,8 @@ const StackNavigators = createStackNavigator({
         screen: DrawerNavigator
     }
 }, {
-    navigationOptions: ({ navigation }) => ({
-        title: 'ReactNavigation',  // Title to appear in status bar
+    defaultNavigationOptions: ({ navigation }) => ({
+        title: 'Sayed Kitchen',  // Title to appear in status bar
         headerLeft:
             <TouchableOpacity onPress={() => { navigation.dispatch(DrawerActions.toggleDrawer()) }}>
                 <MenuImage style="styles.bar" navigation={navigation} />
@@ -72,7 +73,12 @@ const StackNavigators = createStackNavigator({
         headerTintColor: '#fff',
         headerTitleStyle: {
             fontWeight: 'bold',
+            textAlign: 'center',
+            marginRight:50
         },
+        headerLeftContainerStyle:{
+            paddingLeft:10
+        }
 
     })
 });

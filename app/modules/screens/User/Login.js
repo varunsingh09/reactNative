@@ -65,7 +65,7 @@ class Login extends React.Component {
   render() {
     console.log("render", this.state.errors)
     return (
-      <View style={styles.containerContact}>
+      <View style={styles.containerLogin}>
         <Text style={styles.spinnerTextStyle}>
           Login Screen
         </Text>
@@ -99,10 +99,8 @@ class Login extends React.Component {
           </HelperText>
 
           <HelperText type="error" style={styles.helpText} >
-            {this.state.errors.length > 0 && this.state.errors[0].param !=='email' && this.state.errors[0].param !=='password' && this.state.errors[0].msg}
+            {this.state.errors.length > 0 && this.state.errors[0].param !== 'email' && this.state.errors[0].param !== 'password' && this.state.errors[0].msg}
           </HelperText>
-
-
 
           <TouchableHighlight style={[styles.button]} onPress={() => this.handleSubmit('login')}>
             <Text style={styles.signUpText}>Login</Text>
