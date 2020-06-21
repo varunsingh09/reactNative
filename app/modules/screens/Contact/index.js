@@ -15,6 +15,7 @@ import Spinner from 'react-native-loading-spinner-overlay';
 import * as Api from "./../../../../config/config"
 import { handleValidation } from "./../../../../config/error"
 import styles from '../../styles/index';
+
 class Contact extends React.Component {
 
   constructor(props) {
