@@ -22,5 +22,7 @@ export const KITCHEN_LOGOUT_API = `${SERVER_PATH}/kitchen/KitchenSignInLogout`
 
 export const KITCHEN_PRODUCT_LIST_API = `${SERVER_PATH}/products/AllProducts`
 
+export const KITCHEN_AND_ZIPCODE_API = `${SERVER_PATH}/ZipcodesKitchens/ZipcodeKitchensList`
+
 
 

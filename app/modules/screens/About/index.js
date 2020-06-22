@@ -50,7 +50,7 @@ class About extends Component {
             "Authorization": `${Api.BEARER}`
           }
         }).then(res => {
-          console.log("---->>>>>>>>>>>>>", JSON.stringify(res.data.result))
+          //console.log("---->>>>>>>>>>>>>", JSON.stringify(res.data.result))
           this.setState({ stateArr: res.data.results, spinner: false })
         }
         );
@@ -59,12 +59,12 @@ class About extends Component {
       if (err.response === undefined) {
         this.setState({ "message": 'Remote Server Not Working', spinner: false })
       }
-      this.setState({ "errors": err.response.data.errors, spinner: false })
+      //this.setState({ "errors": err.response.data.errors, spinner: false })
     }
 
   }
   render() {
-    console.log("-------", this.state, "====")
+    //console.log("-------", this.state, "====")
 
     //return this.state.message !== null && <Error />
 
