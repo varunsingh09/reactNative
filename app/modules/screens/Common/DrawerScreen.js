@@ -44,6 +44,11 @@ class DrawerScreen extends Component {
                 Login
               </Text>
             </View>
+            <View style={styles.menuItem}>
+              <Text onPress={this.navigateToScreen('Delivery')}>
+                Delivery Zipcode & Kitchen
+              </Text>
+            </View>
           </View>
         </ScrollView>
       </View>

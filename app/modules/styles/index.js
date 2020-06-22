@@ -100,11 +100,22 @@ export default styles = StyleSheet.create({
       HeadStyle: { 
         height: 50,
         alignContent: "center",
-        backgroundColor: 'skyblue',
-        fontSize: 50,
-        fontWeight: '500',
-        color:'red',
+        backgroundColor: '#f5c6cb',
+        paddingLeft:25
       },
-      
+      HeadText: {
+        fontSize: 14,
+        fontWeight: '500',
+        alignContent: "center",
+        color:'black',
+         marginLeft:30,
+      },
+      HeadRow: {
+        fontSize: 14,
+        fontWeight: '500',
+        alignContent: "center",
+        color:'black',
+        paddingLeft:7
+      },
       
 });

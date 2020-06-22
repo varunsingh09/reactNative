@@ -13,6 +13,7 @@ import Contact from './../screens/Contact/index';
 import Gallery from './../screens/Gallery/index';
 import DrawerScreen from './../screens/Common/DrawerScreen';
 import Login from "./../screens/User/Login"
+import DeliveryAndZipcodes from "./../screens/Kitchen/DeliveryAndZipcodes"
 
 const Tabs = createMaterialTopTabNavigator({
     Home: Home,
@@ -38,6 +39,9 @@ const DrawerNavigator = createDrawerNavigator({
     },
     Login: {
         screen: Login
+    },
+    Delivery: {
+        screen: DeliveryAndZipcodes
     }
 }, {
     initialRouteName: 'Home',

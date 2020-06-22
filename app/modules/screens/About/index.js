@@ -25,8 +25,14 @@ class About extends Component {
     this.stateCityList()
   }
 
-  capitalize=(string)=> {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+  capitalize=(str)=> {
+    str = str.split(" ");
+
+    for (var i = 0, x = str.length; i < x; i++) {
+        str[i] = str[i][0].toUpperCase() + str[i].substr(1);
+    }
+
+    return str.join(" ");
   }
 
 
@@ -71,16 +77,16 @@ class About extends Component {
           textStyle={styles.spinnerTextStyle}
         />
         <DataTable>
-          <DataTable.Header style={[styles.HeadStyle]} >
-            <DataTable.Title>Kitchen Name</DataTable.Title>
-            <DataTable.Title>Item Name</DataTable.Title>
-            <DataTable.Title>Item Type</DataTable.Title>
+          <DataTable.Header style={styles.HeadStyle}>
+            <DataTable.Title><Text  style={styles.HeadText}>Kitchen Name</Text></DataTable.Title>
+            <DataTable.Title><Text style={styles.HeadText}>Item Name</Text></DataTable.Title>
+            <DataTable.Title><Text style={styles.HeadText}>Item Type</Text></DataTable.Title>
           </DataTable.Header>
           {this.state.stateArr.length > 0 && this.state.stateArr.map((list, index) =>
-            <DataTable.Row >
-              <DataTable.Cell>{this.capitalize(list.kitchen_name)}</DataTable.Cell>
-              <DataTable.Cell>{this.capitalize(list.item_name)}</DataTable.Cell>
-              <DataTable.Cell>{this.capitalize(list.item_type)}</DataTable.Cell>
+            <DataTable.Row style={{backgroundColor: index % 2 === 0 ? '#b8dafd' : '#D6D8DB' }} key={index}>
+              <DataTable.Cell style={styles.HeadRow}  >{this.capitalize(list.kitchen_name)}</DataTable.Cell>
+              <DataTable.Cell style={styles.HeadRow}  >{this.capitalize(list.item_name)}</DataTable.Cell>
+              <DataTable.Cell style={styles.HeadRow}  >{this.capitalize(list.item_type)}</DataTable.Cell>
             </DataTable.Row>
           )}
           <DataTable.Pagination
