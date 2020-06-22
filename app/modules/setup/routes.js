@@ -62,7 +62,7 @@ const StackNavigators = createStackNavigator({
     }
 }, {
     defaultNavigationOptions: ({ navigation }) => ({
-        title: 'Sayed Kitchen',  // Title to appear in status bar
+        title: 'Family App',  // Title to appear in status bar
         headerLeft:
             <TouchableOpacity onPress={() => { navigation.dispatch(DrawerActions.toggleDrawer()) }}>
                 <MenuImage style="styles.bar" navigation={navigation} />
