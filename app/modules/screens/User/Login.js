@@ -1,5 +1,6 @@
 // Login.js
 import React, { useState } from 'react'
+
 import axios from "axios";
 import {
   View,
@@ -15,7 +16,7 @@ import Spinner from 'react-native-loading-spinner-overlay';
 import * as Api from "./../../../../config/config"
 import { handleValidation } from "./../../../../config/error"
 import styles from '../../styles/index';
-const Login = () => {
+const Login = (props) => {
 
   let [userEmail, setUserEmail] = useState('');
   let [userPassword, setUserPassword] = useState('');
@@ -23,7 +24,8 @@ const Login = () => {
   let [userSpinner, setSpinner] = useState(false);
   let [userSuccess, setSuccess] = useState([]);
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (props) => {
+
 
     let data = { email: userEmail, password: userPassword }
     console.log("handleSubmit ", data)
@@ -31,7 +33,7 @@ const Login = () => {
     setSpinner(true)
     try {
 
-      const KitchenSignup = await axios.post(
+      const kitchenLogin = await axios.post(
 
         Api.KITCHEN_LOGIN_API,
         data,
@@ -42,19 +44,20 @@ const Login = () => {
         }).then(res => {
           setSuccess(res)
           setSpinner(false)
-          console.log("success response", res)
+          console.log("success response", res,)
+
         }
 
         );
 
     } catch (err) {
-      console.warn("error response===", err)
+      console.log("error response===", err.status)
+      //props.navigation.navigate('Home')
       setError(err.response.data.errors);
       setSpinner(false);
     }
 
   }
-
 
   console.log("render", userError)
   return (

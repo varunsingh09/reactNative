@@ -20,5 +20,7 @@ export const KITCHEN_LOGIN_VERIFY_API = `${SERVER_PATH}/kitchen/KitchenSendEmail
 
 export const KITCHEN_LOGOUT_API = `${SERVER_PATH}/kitchen/KitchenSignInLogout`
 
+export const KITCHEN_PRODUCT_LIST_API = `${SERVER_PATH}/products/AllProducts`
+
 
 

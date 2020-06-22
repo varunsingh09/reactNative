@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 import { Text, View, TouchableOpacity, ScrollView } from 'react-native'
 import axios from "axios";
+import Spinner from 'react-native-loading-spinner-overlay';
+import { DataTable } from 'react-native-paper';
 import styles from '../../styles/index';
 import * as Api from "./../../../../config/config"
-import Spinner from 'react-native-loading-spinner-overlay';
 
+
+const itemsPerPage = 2;
+const page = 0
 
 class About extends Component {
   constructor(props) {
@@ -12,12 +16,20 @@ class About extends Component {
     this.state = {
       stateArr: [],
       spinner: false,
-      message: null
+      message: null,
+      from: page * itemsPerPage,
+      to: (page + 1) * itemsPerPage
     }
   }
   componentDidMount = () => {
     this.stateCityList()
   }
+
+  capitalize=(string)=> {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+
   stateCityList = async (city) => {
     console.warn(city)
     this.setState({ spinner: true })
@@ -25,14 +37,16 @@ class About extends Component {
 
     try {
 
-      const stateCityList = await axios.get(
-        Api.STATE_CITY_FETCH_API,
+      const productList = await axios.get(
+        Api.KITCHEN_PRODUCT_LIST_API,
         {
           headers: {
             "Authorization": `${Api.BEARER}`
           }
-        }).then(res => //console.log("---->>>>>>>>>>>>>",JSON.stringify(res.data.result))
-          this.setState({ stateArr: res.data.result, spinner: false})
+        }).then(res => {
+          console.log("---->>>>>>>>>>>>>", JSON.stringify(res.data.result))
+          this.setState({ stateArr: res.data.results, spinner: false })
+        }
         );
 
     } catch (err) {
@@ -44,34 +58,39 @@ class About extends Component {
 
   }
   render() {
-    console.log("-------",this.state.message)
-    let cityList = this.state.stateArr.length > 0 && this.state.stateArr[0].cityList.sort()
+    console.log("-------", this.state, "====")
 
     //return this.state.message !== null && <Error />
 
     return (
-      <View>
+
+      <ScrollView vertical={true} >
         <Spinner
           visible={this.state.spinner}
           textContent={'Loading...'}
           textStyle={styles.spinnerTextStyle}
         />
-
-        <ScrollView vertical={true}>
-          {this.state.stateArr.length > 0 && this.state.stateArr[0].cityList.map((city, index) =>
-            <TouchableOpacity
-              key={index}
-              style={styles.containerList}
-              onPress={() => this.stateCityList(city)}
-            >
-              <Text style={styles.signUpText}>
-                {city}
-              </Text>
-            </TouchableOpacity>
-          ).sort()
-          }
-        </ScrollView>
-      </View >
+        <DataTable>
+          <DataTable.Header style={[styles.HeadStyle]} >
+            <DataTable.Title>Kitchen Name</DataTable.Title>
+            <DataTable.Title>Item Name</DataTable.Title>
+            <DataTable.Title>Item Type</DataTable.Title>
+          </DataTable.Header>
+          {this.state.stateArr.length > 0 && this.state.stateArr.map((list, index) =>
+            <DataTable.Row >
+              <DataTable.Cell>{this.capitalize(list.kitchen_name)}</DataTable.Cell>
+              <DataTable.Cell>{this.capitalize(list.item_name)}</DataTable.Cell>
+              <DataTable.Cell>{this.capitalize(list.item_type)}</DataTable.Cell>
+            </DataTable.Row>
+          )}
+          <DataTable.Pagination
+            page={page}
+            numberOfPages={Math.floor(this.state.stateArr.length > 0 && this.state.stateArr / itemsPerPage)}
+            onPageChange={page => this.setState(page)}
+            label={`${this.state.from + 1}-${this.state.to} of ${this.state.stateArr.length > 0 && this.state.stateArr.length}`}
+          />
+        </DataTable>
+      </ScrollView >
     )
   }
 }

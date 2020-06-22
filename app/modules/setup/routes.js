@@ -4,6 +4,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createDrawerNavigator, DrawerActions } from 'react-navigation-drawer';
 import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
 
+
 import { TouchableOpacity, Image } from 'react-native';
 
 import Home from './../screens/Home/index';
@@ -15,7 +16,7 @@ import Login from "./../screens/User/Login"
 
 const Tabs = createMaterialTopTabNavigator({
     Home: Home,
-    About: About,
+    Product: About,
     Contact: Contact,
     Gallery: Gallery
 }, {
@@ -40,7 +41,7 @@ const DrawerNavigator = createDrawerNavigator({
     }
 }, {
     initialRouteName: 'Home',
-    contentComponent: DrawerScreen,
+    contentComponent: props => <DrawerScreen {...props} />,
     drawerWidth: 200
 });
 

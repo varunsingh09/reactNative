@@ -40,6 +40,7 @@ export default styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        paddingLeft:10
     },
     containerLogin: {
         flex: 1,
@@ -54,6 +55,7 @@ export default styles = StyleSheet.create({
         alignItems: 'center',
         marginBottom: 20,
         marginLeft: 70,
+        marginTop: 10,
         width: 200,
         borderWidth: 1,
         borderRadius: 30,
@@ -84,7 +86,8 @@ export default styles = StyleSheet.create({
     },
     spinnerTextStyle: {
         color: 'red',
-        fontSize: 16
+        fontSize: 16,
+        margin:0
     },
     buttonCircle: {
         width: 40,
@@ -93,5 +96,15 @@ export default styles = StyleSheet.create({
         borderRadius: 20,
         justifyContent: 'center',
         alignItems: 'center',
-      }
+      },
+      HeadStyle: { 
+        height: 50,
+        alignContent: "center",
+        backgroundColor: 'skyblue',
+        fontSize: 50,
+        fontWeight: '500',
+        color:'red',
+      },
+      
+      
 });
