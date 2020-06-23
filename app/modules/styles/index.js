@@ -124,7 +124,7 @@ export default styles = StyleSheet.create({
         alignContent: "center",
         color:'black',
         paddingLeft:7,
-        height:50
+        height:50,
       },
       HeadRowAction: {
         fontSize: 14,
@@ -134,4 +134,32 @@ export default styles = StyleSheet.create({
         paddingLeft:30,
         height:50
       },
+      containerSearch: {
+        padding: 15,
+        marginTop: 3,
+        backgroundColor: '#F8F9FA',
+        alignItems: 'flex-start',
+    },
+    textColor:{
+        color:'#ffa300',
+        fontWeight: '500',
+        fontSize: 14,
+    },
+    searchTextInput:{
+        borderWidth:0,
+        borderWidth: 1,
+        borderTopWidth: 0,
+        borderLeftWidth: 0,
+        borderRightWidth: 0,
+        borderColor: '#797578',
+        alignItems: 'flex-start'
+    },
+    defaultButton:{
+        backgroundColor:"#261f50",
+        fontWeight: '500',
+        color:'white',
+        width:150
+    }
+    
+    
 });
