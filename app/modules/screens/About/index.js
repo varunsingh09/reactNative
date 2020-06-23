@@ -73,7 +73,7 @@ class About extends Component {
             <DataTable.Title><Text style={styles.HeadText}>Item Type</Text></DataTable.Title>
           </DataTable.Header>
           {this.state.stateArr.length > 0 && this.state.stateArr.map((list, index) =>
-            <DataTable.Row style={{ backgroundColor: index % 2 === 0 ? '#b8dafd' : '#D6D8DB' }} key={index}>
+            <DataTable.Row key={index}>
               <DataTable.Cell style={styles.HeadRow}  >{capitalize(list.kitchen_name)}</DataTable.Cell>
               <DataTable.Cell style={styles.HeadRow}  >{capitalize(list.item_name)}</DataTable.Cell>
               <DataTable.Cell style={styles.HeadRow}  >{capitalize(list.item_type)}</DataTable.Cell>

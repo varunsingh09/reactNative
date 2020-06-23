@@ -1,27 +1,20 @@
 import React, { useState, useEffect, Fragment } from 'react'
-import { Text, ScrollView, View, TextInput } from 'react-native'
+import { Text, ScrollView } from 'react-native'
 import axios from "axios";
 import Spinner from 'react-native-loading-spinner-overlay';
-import { DataTable, HelperText, Button } from 'react-native-paper';
-//import { Dropdown } from 'react-native-material-dropdown';
+import { DataTable } from 'react-native-paper';
 import styles from '../../styles/index';
 import * as Api from "./../../../../config/config"
 import { capitalize } from "./../Common/Utils"
+import ZipcodeSearchbar from "./ZipcodeSearchbar"
 
 const DeliveryAndZipcodes = () => {
 
-    let [zipcodeError, setError] = useState([]);
+    //let [zipcodeError, setError] = useState([]);
     let [zipcodeSpinner, setSpinner] = useState(false);
-    let [menuVisible, setVisible] = useState(false);
     let [zipcodeSuccess, setSuccess] = useState([]);
-    let [searchText, setSearchText] = useState('');
-    let data = [{
-        value: 'Banana',
-    }, {
-        value: 'Mango',
-    }, {
-        value: 'Pear',
-    }];
+
+
 
     useEffect(async () => {
 
@@ -65,7 +58,6 @@ const DeliveryAndZipcodes = () => {
         console.warn("handleEdit", props)
     }
 
-
     return (
         <Fragment>
             <ScrollView vertical={true} >
@@ -74,29 +66,7 @@ const DeliveryAndZipcodes = () => {
                     textContent={'Loading...'}
                     textStyle={styles.spinnerTextStyle}
                 />
-                <View style={styles.containerSearch}>
-                    <Text style={styles.textColor}>Delivery Zip Code & Kitchens</Text>
-                    {/* <Dropdown
-                        label='Favorite Fruit'
-                        data={data}
-                    /> */}
-                    <View>
-                        <TextInput
-                            style={styles.searchTextInput}
-                            placeholder='Search by Zip code👻'
-                            autoCapitalize="none"
-                            secureTextEntry={true}
-                            onChangeText={val => setSearchText(val)}
-                        />
-                        <HelperText type="error" style={styles.helpText} >
-                        </HelperText>
-                        <Button style={styles.defaultButton} onPress={() => console.log('Pressed')}>
-                            + ZipCode
-                        </Button>
-                    </View>
-
-                </View>
-
+                <ZipcodeSearchbar />
 
                 <DataTable>
                     <DataTable.Header style={styles.HeadStyle}>
@@ -110,7 +80,9 @@ const DeliveryAndZipcodes = () => {
                         return result.zipcode_data.map((list, index) => {
                             //console.log("row result", list.kitchen_name)
                             let kitchen_name = list.kitchen_names.join(",")
-                            return (<DataTable.Row style={{ backgroundColor: index % 2 === 0 ? '#b8dafd' : '#D6D8DB' }} key={index}>
+                            return (<DataTable.Row 
+                                    // style={{ backgroundColor: index % 2 === 0 ? '#b8dafd' : '#D6D8DB' }} 
+                                    key={index}>
                                 <DataTable.Cell style={styles.HeadRow}>{capitalize(list.state)}</DataTable.Cell>
                                 <DataTable.Cell style={styles.HeadRow}>{list.zipcodes.join(",")}</DataTable.Cell>
                                 <DataTable.Cell style={styles.HeadRow}>{list.kitchen_names.join(",")}</DataTable.Cell>
@@ -130,7 +102,7 @@ const DeliveryAndZipcodes = () => {
                 /> */}
                 </DataTable>
             </ScrollView >
-        </Fragment>
+        </Fragment >
     )
 
 }

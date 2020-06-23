@@ -67,13 +67,13 @@ const StackNavigators = createStackNavigator({
     }
 }, {
     defaultNavigationOptions: ({ navigation }) => ({
-        title: 'Family App',  // Title to appear in status bar
+        title: 'Food App',  // Title to appear in status bar
         headerLeft:
             <TouchableOpacity onPress={() => { navigation.dispatch(DrawerActions.toggleDrawer()) }}>
                 <MenuImage style="styles.bar" navigation={navigation} />
             </TouchableOpacity>,
         headerStyle: {
-            backgroundColor: '#333',
+            backgroundColor: '#252051',
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
