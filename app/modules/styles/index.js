@@ -108,14 +108,30 @@ export default styles = StyleSheet.create({
         fontWeight: '500',
         alignContent: "center",
         color:'black',
-         marginLeft:30,
+        marginLeft:30,
+      },
+      HeadTextAction: {
+        fontSize: 14,
+        fontWeight: '500',
+        alignContent: "center",
+        color:'black',
+        marginLeft:100,
+
       },
       HeadRow: {
         fontSize: 14,
         fontWeight: '500',
         alignContent: "center",
         color:'black',
-        paddingLeft:7
+        paddingLeft:7,
+        height:50
       },
-      
+      HeadRowAction: {
+        fontSize: 14,
+        fontWeight: '500',
+        alignContent: "center",
+        color:'black',
+        paddingLeft:30,
+        height:50
+      },
 });

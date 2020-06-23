@@ -1,10 +1,11 @@
-import React, { Component, useState, useEffect } from 'react'
-import { Text, View, TouchableOpacity, ScrollView } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { Text, ScrollView, TouchableHighlight } from 'react-native'
 import axios from "axios";
 import Spinner from 'react-native-loading-spinner-overlay';
 import { DataTable } from 'react-native-paper';
 import styles from '../../styles/index';
 import * as Api from "./../../../../config/config"
+import { capitalize } from "./../Common/Utils"
 
 const DeliveryAndZipcodes = () => {
 
@@ -50,23 +51,17 @@ const DeliveryAndZipcodes = () => {
     }, []);
 
 
-    const capitalize = (str) => {
-        str = str.split(" ");
-
-        for (var i = 0, x = str.length; i < x; i++) {
-            str[i] = str[i][0].toUpperCase() + str[i].substr(1);
-        }
-
-        return str.join(" ");
+    const handleEdit = (props) => {
+        console.warn("handleEdit",props)
     }
 
-    console.log("----------", zipcodeSuccess)
-    zipcodeSuccess.map((result, index) => {
-        result.zipcode_data.map((row) => {
+    // zipcodeSuccess.map((result, index) => {
+    //     result.zipcode_data.map((row) => {
+    //         let r = row.kitchen_names.join(",")
+    //         console.log("-----------<<<<", row.kitchen_names.join(",").split(",").join("\n"))
 
-            console.log("-----------", row.kitchen_names)
-        })
-    })
+    //     })
+    // })
     return (
 
         <ScrollView vertical={true} >
@@ -77,19 +72,24 @@ const DeliveryAndZipcodes = () => {
             />
             <DataTable>
                 <DataTable.Header style={styles.HeadStyle}>
-                    <DataTable.Title><Text style={styles.HeadText}>Kitchen Name</Text></DataTable.Title>
                     <DataTable.Title><Text style={styles.HeadText}>State</Text></DataTable.Title>
                     <DataTable.Title><Text style={styles.HeadText}>Zipcode</Text></DataTable.Title>
+                    <DataTable.Title><Text style={styles.HeadText}>Kitchen Name</Text></DataTable.Title>
+                    <DataTable.Title><Text style={styles.HeadTextAction}>Action</Text></DataTable.Title>
                 </DataTable.Header>
 
                 {zipcodeSuccess.map((result, indexR) => {
-                    return result.zipcode_data.map((list,index) => {
+                    return result.zipcode_data.map((list, index) => {
                         //console.log("row result", list.kitchen_name)
-                        return <DataTable.Row style={{ backgroundColor: index % 2 === 0 ? '#b8dafd' : '#D6D8DB' }} key={index}>
-                            <DataTable.Cell style={styles.HeadRow}  >{list.kitchen_names}</DataTable.Cell>
-                            <DataTable.Cell style={styles.HeadRow}  >{list.state}</DataTable.Cell>
-                            <DataTable.Cell style={styles.HeadRow}  >{list.zipcodes}</DataTable.Cell>
-                        </DataTable.Row>
+                        let kitchen_name = list.kitchen_names.join(",")
+                        return (<DataTable.Row style={{ backgroundColor: index % 2 === 0 ? '#b8dafd' : '#D6D8DB' }} key={index}>
+                            <DataTable.Cell style={styles.HeadRow}>{capitalize(list.state)}</DataTable.Cell>
+                            <DataTable.Cell style={styles.HeadRow}>{list.zipcodes.join(",")}</DataTable.Cell>
+                            <DataTable.Cell style={styles.HeadRow}>{list.kitchen_names.join(",")}</DataTable.Cell>
+                            <DataTable.Cell style={[styles.HeadRowAction]} onPress={(e) => handleEdit('Edit')}>
+                                <Text style={styles.helpText}>Edit</Text>
+                            </DataTable.Cell>
+                        </DataTable.Row>)
                     })
 
                 })}

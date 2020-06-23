@@ -5,6 +5,7 @@ import Spinner from 'react-native-loading-spinner-overlay';
 import { DataTable } from 'react-native-paper';
 import styles from '../../styles/index';
 import * as Api from "./../../../../config/config"
+import { capitalize } from "./../Common/Utils"
 
 
 const itemsPerPage = 2;
@@ -24,17 +25,6 @@ class About extends Component {
   componentDidMount = () => {
     this.stateCityList()
   }
-
-  capitalize=(str)=> {
-    str = str.split(" ");
-
-    for (var i = 0, x = str.length; i < x; i++) {
-        str[i] = str[i][0].toUpperCase() + str[i].substr(1);
-    }
-
-    return str.join(" ");
-  }
-
 
   stateCityList = async (city) => {
     console.warn(city)
@@ -78,12 +68,12 @@ class About extends Component {
         />
         <DataTable>
           <DataTable.Header style={styles.HeadStyle}>
-            <DataTable.Title><Text  style={styles.HeadText}>Kitchen Name</Text></DataTable.Title>
+            <DataTable.Title><Text style={styles.HeadText}>Kitchen Name</Text></DataTable.Title>
             <DataTable.Title><Text style={styles.HeadText}>Item Name</Text></DataTable.Title>
             <DataTable.Title><Text style={styles.HeadText}>Item Type</Text></DataTable.Title>
           </DataTable.Header>
           {this.state.stateArr.length > 0 && this.state.stateArr.map((list, index) =>
-            <DataTable.Row style={{backgroundColor: index % 2 === 0 ? '#b8dafd' : '#D6D8DB' }} key={index}>
+            <DataTable.Row style={{ backgroundColor: index % 2 === 0 ? '#b8dafd' : '#D6D8DB' }} key={index}>
               <DataTable.Cell style={styles.HeadRow}  >{this.capitalize(list.kitchen_name)}</DataTable.Cell>
               <DataTable.Cell style={styles.HeadRow}  >{this.capitalize(list.item_name)}</DataTable.Cell>
               <DataTable.Cell style={styles.HeadRow}  >{this.capitalize(list.item_type)}</DataTable.Cell>
