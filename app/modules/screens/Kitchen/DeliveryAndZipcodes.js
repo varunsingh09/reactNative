@@ -1,7 +1,9 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import { Text, ScrollView } from 'react-native'
+
 import axios from "axios";
 import Spinner from 'react-native-loading-spinner-overlay';
+
 import { DataTable } from 'react-native-paper';
 import styles from '../../styles/index';
 import * as Api from "./../../../../config/config"
@@ -13,8 +15,6 @@ const DeliveryAndZipcodes = (props) => {
     let [zipcodeError, setError] = useState([]);
     let [zipcodeSpinner, setSpinner] = useState(false);
     let [zipcodeSuccess, setSuccess] = useState([]);
-
-    console.log("come========")
 
     // For Search bar
     let [defaultZipcode, setZipCode] = useState(60045);
@@ -32,11 +32,13 @@ const DeliveryAndZipcodes = (props) => {
 
     }
 
+
+
     const handleSearch = (props) => {
         //let data = { kitchen_names: 'syed Kitchen', zipcode: defaultZipcode, state: defaultState }
         let data = { kitchen_names: 'syed Kitchen', zipcode: defaultZipcode, state: 'chicago' }
 
-        console.warn("handleSearch filter data", "====", data)
+        //console.warn("handleSearch filter data", "====", data)
         getZipcodeAndKitchenList(data)
 
     }
@@ -49,10 +51,20 @@ const DeliveryAndZipcodes = (props) => {
 
     useEffect(() => {
 
+        let { navigation } = props
         let data = { kitchen_names: 'syed Kitchen' }
-        console.log("serving days ", data)
+        //console.log("useEffect ", navigation)
+
+        const unsubscribe = props.navigation.addListener('didFocus', () => {
+            console.log("navigation detect")
+            getZipcodeAndKitchenList(data);
+        });
 
         getZipcodeAndKitchenList(data);
+
+        // componentWillUnmount method
+        return unsubscribe
+        // componentWillUnmount end here
 
     }, []);
 

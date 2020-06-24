@@ -44,14 +44,14 @@ const Login = (props) => {
         }).then(res => {
           setSuccess(res)
           setSpinner(false)
-          console.log("success response", res,)
+          //console.log("success response", res,)
 
         }
 
         );
 
     } catch (err) {
-      console.log("error response===", err.status)
+      //console.log("error response===", err.status)
       //props.navigation.navigate('Home')
       setError(err.response.data.errors);
       setSpinner(false);
