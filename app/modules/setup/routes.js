@@ -8,7 +8,7 @@ import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
 import { TouchableOpacity, Image } from 'react-native';
 
 import Home from './../screens/Home/index';
-import About from './../screens/About/index';
+import Product from './../screens/About/Product';
 import Contact from './../screens/Contact/index';
 import Gallery from './../screens/Gallery/index';
 import DrawerScreen from './../screens/Common/DrawerScreen';
@@ -17,7 +17,7 @@ import DeliveryAndZipcodes from "./../screens/Kitchen/DeliveryAndZipcodes"
 
 const Tabs = createMaterialTopTabNavigator({
     Home: Home,
-    Product: About,
+    Product: Product,
     Contact: Contact,
     Gallery: Gallery
 }, {

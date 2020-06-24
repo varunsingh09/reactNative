@@ -42,7 +42,7 @@ const ZipcodeSearchbar = (props) => {
                     </View>
                     <View>
 
-                        <Button style={styles.defaultButton} onPress={(val) => props.handleSearch(val)}>+ ZipCode</Button>
+                        <Button style={[styles.defaultButton]}  onPress={(val) => props.handleSearch(val)}>+ ZipCode</Button>
 
                     </View>
                 </View>

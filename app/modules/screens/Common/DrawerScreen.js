@@ -25,7 +25,7 @@ class DrawerScreen extends Component {
               </Text>
             </View>
             <View style={styles.menuItem}>
-              <Text onPress={this.navigateToScreen('About')}>
+              <Text onPress={this.navigateToScreen('Product')}>
                 Product
               </Text>
             </View>

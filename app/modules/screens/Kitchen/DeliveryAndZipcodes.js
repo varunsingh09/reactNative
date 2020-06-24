@@ -14,6 +14,7 @@ const DeliveryAndZipcodes = (props) => {
     let [zipcodeSpinner, setSpinner] = useState(false);
     let [zipcodeSuccess, setSuccess] = useState([]);
 
+    console.log("come========")
 
     // For Search bar
     let [defaultZipcode, setZipCode] = useState(60045);
@@ -32,7 +33,6 @@ const DeliveryAndZipcodes = (props) => {
     }
 
     const handleSearch = (props) => {
-        console.log('come')
         //let data = { kitchen_names: 'syed Kitchen', zipcode: defaultZipcode, state: defaultState }
         let data = { kitchen_names: 'syed Kitchen', zipcode: defaultZipcode, state: 'chicago' }
 
