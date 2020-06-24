@@ -48,6 +48,12 @@ export default styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 50
     },
+    containerSearch: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingTop: 5
+    },
     button: {
         height: 40,
         flexDirection: 'row',
@@ -73,7 +79,6 @@ export default styles = StyleSheet.create({
         padding: 15,
         marginTop: 3,
         backgroundColor: '#252051',
-        alignItems: 'flex-start',
     },
     signUpText: {
         color: 'white'
@@ -138,6 +143,7 @@ export default styles = StyleSheet.create({
         color: '#ffa300',
         fontWeight: 'bold',
         fontSize: 14,
+        textAlign: "left"   
     },
     searchTextInput: {
         borderWidth: 0,
@@ -147,7 +153,7 @@ export default styles = StyleSheet.create({
         borderRightWidth: 0,
         borderColor: '#797578',
         width: 130,
-        marginLeft:2
+        marginLeft:2,
     },
     defaultButton: {
         backgroundColor: "#252052",
@@ -156,7 +162,7 @@ export default styles = StyleSheet.create({
         width: 110,
         textAlign: 'left',
         marginTop:13,
-        marginLeft:5
+        marginLeft:3
     },
 
 
