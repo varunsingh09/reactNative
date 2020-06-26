@@ -9,7 +9,7 @@ import { TouchableOpacity, Image } from 'react-native';
 
 import Home from './../screens/Home/index';
 import Product from './../screens/About/Product';
-import Contact from './../screens/Contact/index';
+import Contact from './../screens/User/Contact';
 import Gallery from './../screens/Gallery/index';
 import DrawerScreen from './../screens/Common/DrawerScreen';
 import Login from "./../screens/User/Login"

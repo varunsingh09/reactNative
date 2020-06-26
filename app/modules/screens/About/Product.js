@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
-import { Text, View, TouchableOpacity, ScrollView } from 'react-native'
+import {
+  Text, FlatList,
+  ActivityIndicator, ScrollView
+} from 'react-native'
 import axios from "axios";
 import Spinner from 'react-native-loading-spinner-overlay';
 import { DataTable } from 'react-native-paper';
