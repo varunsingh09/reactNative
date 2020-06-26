@@ -1,94 +1,58 @@
 import React from 'react';
-import { createAppContainer } from 'react-navigation';
+
+//Import Navigators from React Navigation
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import { createDrawerNavigator, DrawerActions } from 'react-navigation-drawer';
-import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
 
+//Import all the screens needed
+import SplashScreen from './../screens/Common/SplashScreen';
+import LoginScreen from './../screens/User/LoginScreen';
+import RegisterScreen from './../screens/User/RegisterScreen';
+import DrawerNavigationRoutes from './DrawerNavigatorRoutes';
 
-import { TouchableOpacity, Image } from 'react-native';
-
-import Home from './../screens/Home/index';
-import Product from './../screens/About/Product';
-import Contact from './../screens/User/Contact';
-import Gallery from './../screens/Gallery/index';
-import DrawerScreen from './../screens/Common/DrawerScreen';
-import Login from "./../screens/User/Login"
-import DeliveryAndZipcodes from "./../screens/Kitchen/DeliveryAndZipcodes"
-import AuthNavigation from './AuthNavigation' 
-
-const Tabs = createMaterialTopTabNavigator({
-    Home: Home,
-    Product: Product,
-    Contact: Contact,
-    Gallery: Gallery
-}, {
-    tabBarOptions: {
-        activeTintColor: '#000',
-        inactiveTintColor: 'gray',
-        style: {
-            backgroundColor: '#fff',
+const Auth = createStackNavigator({
+    //Stack Navigator for Login and Sign up Screen
+    LoginScreen: {
+        screen: LoginScreen,
+        navigationOptions: {
+            headerShown: false,
         },
-        indicatorStyle: {
-            backgroundColor: '#000',
-        },
-    }
-});
-
-const DrawerNavigator = createDrawerNavigator({
-    Home: {
-        screen: Tabs
     },
-    Login: {
-        screen: Login
+    RegisterScreen: {
+        screen: RegisterScreen,
+        navigationOptions: {
+            title: 'Register',
+            headerStyle: {
+                backgroundColor: '#307ecc',
+            },
+            headerTintColor: '#fff',
+        },
     },
-    Delivery: {
-        screen: DeliveryAndZipcodes
-    }
-}, {
-    initialRouteName: 'Home',
-    contentComponent: props => <DrawerScreen {...props} />,
-    drawerWidth: 200
 });
 
-const MenuImage = ({ navigation }) => {
-
-    if (!navigation.state.isDrawerOpen) {
-        return <Image source={require('./../images/menu-button.png')} />
-    } else {
-        return <Image source={require('./../images/left-arrow.png')} />
-    }
-}
-
-const StackNavigators = createStackNavigator({
-
-    //important: key and screen name (i.e. DrawerNavigator) should be same while using the drawer navigator inside stack navigator.
-
-    DrawerNavigator: {
-        screen: DrawerNavigator
-    }
-}, {
-    defaultNavigationOptions: ({ navigation }) => ({
-        title: 'Food App',  // Title to appear in status bar
-        headerLeft:
-            <TouchableOpacity onPress={() => { navigation.dispatch(DrawerActions.toggleDrawer()) }}>
-                <MenuImage style="styles.bar" navigation={navigation} />
-            </TouchableOpacity>,
-        headerStyle: {
-            backgroundColor: '#252051',
+/* Switch Navigator for those screens which needs to be switched only once
+  and we don't want to switch back once we switch from them to the next one */
+const App = createSwitchNavigator({
+    SplashScreen: {
+        /* SplashScreen which will come once for 5 Seconds */
+        screen: SplashScreen,
+        navigationOptions: {
+            /* Hiding header for Splash Screen */
+            headerShown: false,
         },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-            fontWeight: 'bold',
-            textAlign: 'center',
-            marginRight:50
+    },
+    Auth: {
+        /* Auth Navigator which include Login Signup will come once */
+        screen: Auth,
+    },
+    DrawerNavigationRoutes: {
+        /* Navigation Drawer as a landing page */
+        screen: DrawerNavigationRoutes,
+        navigationOptions: {
+            /* Hiding header for Navigation Drawer as we will use our custom header */
+            headerShown: false,
         },
-        headerLeftContainerStyle:{
-            paddingLeft:10
-        }
-
-    })
+    },
 });
 
-const StackNavigator = createAppContainer(StackNavigators);
-
-export default StackNavigator;
+export default createAppContainer(App);
