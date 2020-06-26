@@ -15,6 +15,14 @@ const CustomSidebarMenu = props => {
             screenToNavigate: 'SettingsScreen',
         },
         {
+            navOptionName: 'Product Screen',
+            screenToNavigate: 'ProductScreen',
+        },
+        {
+            navOptionName: 'Delivery And Zipcode Screen',
+            screenToNavigate: 'DeliveryAndZipcodes',
+        },
+        {
             navOptionName: 'Logout',
             screenToNavigate: 'logout',
         },
@@ -71,8 +79,8 @@ const CustomSidebarMenu = props => {
                             color: 'white',
                             backgroundColor:
                                 global.currentScreenIndex === item.screenToNavigate
-                                    ? '#4b9ff2'
-                                    : '#307ecc',
+                                    ? '#483ea1'
+                                    : '#252051',
                         }}
                         key={key}
                         onStartShouldSetResponder={() =>
@@ -92,13 +100,13 @@ const stylesSidebar = StyleSheet.create({
     sideMenuContainer: {
         width: '100%',
         height: '100%',
-        backgroundColor: '#307ecc',
+        backgroundColor: '#252051',
         paddingTop: 40,
         color: 'white',
     },
     profileHeader: {
         flexDirection: 'row',
-        backgroundColor: '#307ecc',
+        backgroundColor: '#252051',
         padding: 15,
         textAlign: 'center',
     },

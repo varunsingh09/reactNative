@@ -8,6 +8,8 @@ import { createDrawerNavigator } from 'react-navigation-drawer';
 //Import External Screens
 import HomeScreen from './../screens/Common/HomeScreen';
 import SettingsScreen from './../screens/Common/SettingsScreen';
+import ProductScreen from './../screens/Product/';
+import DeliveryAndZipcodes from './../screens/Product/DeliveryAndZipcodes';
 import CustomSidebarMenu from './CustomSidebarMenu';
 import NavigationDrawerHeader from './NavigationDrawerHeader';
 
@@ -15,30 +17,58 @@ const FirstActivity_StackNavigator = createStackNavigator({
     First: {
         screen: HomeScreen,
         navigationOptions: ({ navigation }) => ({
-            title: 'Home Screen',
+            title: 'Home',
             headerLeft: () => <NavigationDrawerHeader navigationProps={navigation} />,
             headerStyle: {
-                backgroundColor: '#307ecc',
+                backgroundColor: '#252051',
             },
             headerTintColor: '#fff',
         }),
     },
+    
 });
 
 const SecondActivity_StackNavigator = createStackNavigator({
     First: {
         screen: SettingsScreen,
         navigationOptions: ({ navigation }) => ({
-            title: 'Setting Screen',
+            title: 'Setting',
             headerLeft: () => <NavigationDrawerHeader navigationProps={navigation} />,
             headerStyle: {
-                backgroundColor: '#307ecc',
+                backgroundColor: '#252051',
             },
             headerTintColor: '#fff',
         }),
     },
 });
 
+
+const ThirdActivity_StackNavigator = createStackNavigator({
+    First: {
+        screen: ProductScreen,
+        navigationOptions: ({ navigation }) => ({
+            title: 'Product',
+            headerLeft: () => <NavigationDrawerHeader navigationProps={navigation} />,
+            headerStyle: {
+                backgroundColor: '#252051',
+            },
+            headerTintColor: '#fff',
+        }),
+    },
+});
+const ForthActivity_StackNavigator = createStackNavigator({
+    First: {
+        screen: DeliveryAndZipcodes,
+        navigationOptions: ({ navigation }) => ({
+            title: 'Deliver And Zipcode',
+            headerLeft: () => <NavigationDrawerHeader navigationProps={navigation} />,
+            headerStyle: {
+                backgroundColor: '#252051',
+            },
+            headerTintColor: '#fff',
+        }),
+    },
+});
 const DrawerNavigatorRoutes = createDrawerNavigator(
     {
         HomeScreen: {
@@ -51,6 +81,18 @@ const DrawerNavigatorRoutes = createDrawerNavigator(
             screen: SecondActivity_StackNavigator,
             navigationOptions: {
                 drawerLabel: 'Setting Screen',
+            },
+        },
+        ProductScreen: {
+            screen: ThirdActivity_StackNavigator,
+            navigationOptions: {
+                drawerLabel: 'Product Screen',
+            },
+        },
+        DeliveryAndZipcodes: {
+            screen: ForthActivity_StackNavigator,
+            navigationOptions: {
+                drawerLabel: 'Delivery AND Zipcode',
             },
         },
     },

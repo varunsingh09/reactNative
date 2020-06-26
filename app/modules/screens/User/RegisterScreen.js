@@ -107,7 +107,7 @@ const RegisterScreen = props => {
         );
     }
     return (
-        <View style={{ flex: 1, backgroundColor: '#307ecc' }}>
+        <View style={{ flex: 1, backgroundColor: '#252051' }}>
             <Loader loading={loading} />
             <ScrollView keyboardShouldPersistTaps="handled">
                 <View style={{ alignItems: 'center' }}>
@@ -126,7 +126,7 @@ const RegisterScreen = props => {
                         <TextInput
                             style={styles.inputStyle}
                             onChangeText={UserName => setUserName(UserName)}
-                            underlineColorAndroid="#FFFFFF"
+                            //underlineColorAndroid="#FFFFFF"
                             placeholder="Enter Name"
                             placeholderTextColor="#F6F6F7"
                             autoCapitalize="sentences"
@@ -141,7 +141,7 @@ const RegisterScreen = props => {
                         <TextInput
                             style={styles.inputStyle}
                             onChangeText={UserEmail => setUserEmail(UserEmail)}
-                            underlineColorAndroid="#F6F6F7"
+                            //underlineColorAndroid="#F6F6F7"
                             placeholder="Enter Email"
                             placeholderTextColor="#F6F6F7"
                             keyboardType="email-address"
@@ -157,7 +157,7 @@ const RegisterScreen = props => {
                         <TextInput
                             style={styles.inputStyle}
                             onChangeText={UserAge => setUserAge(UserAge)}
-                            underlineColorAndroid="#F6F6F7"
+                            //underlineColorAndroid="#F6F6F7"
                             placeholder="Enter Age"
                             placeholderTextColor="#F6F6F7"
                             keyboardType="numeric"
@@ -174,7 +174,7 @@ const RegisterScreen = props => {
                         <TextInput
                             style={styles.inputStyle}
                             onChangeText={UserAddress => setUserAddress(UserAddress)}
-                            underlineColorAndroid="#FFFFFF"
+                            //underlineColorAndroid="#FFFFFF"
                             placeholder="Enter Address"
                             placeholderTextColor="#F6F6F7"
                             autoCapitalize="sentences"
@@ -212,10 +212,10 @@ const styles = StyleSheet.create({
         margin: 10,
     },
     buttonStyle: {
-        backgroundColor: '#7DE24E',
+        backgroundColor: '#307ecc',
         borderWidth: 0,
         color: '#FFFFFF',
-        borderColor: '#7DE24E',
+        borderColor: '#307ecc',
         height: 40,
         alignItems: 'center',
         borderRadius: 30,

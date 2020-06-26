@@ -13,6 +13,8 @@ import {
   KeyboardAvoidingView,
 } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
+import axios from "axios";
+import * as Api from "./../../../../config/config"
 import Loader from './../Common/Loader';
 
 const LoginScreen = props => {
@@ -91,7 +93,7 @@ const LoginScreen = props => {
               <TextInput
                 style={styles.inputStyle}
                 onChangeText={UserEmail => setUserEmail(UserEmail)}
-                underlineColorAndroid="#FFFFFF"
+                //underlineColorAndroid="#FFFFFF"
                 placeholder="Enter Email" //dummy@abc.com
                 placeholderTextColor="#F6F6F7"
                 autoCapitalize="none"
@@ -110,7 +112,7 @@ const LoginScreen = props => {
               <TextInput
                 style={styles.inputStyle}
                 onChangeText={UserPassword => setUserPassword(UserPassword)}
-                underlineColorAndroid="#FFFFFF"
+                //underlineColorAndroid="#FFFFFF"
                 placeholder="Enter Password" //12345
                 placeholderTextColor="#F6F6F7"
                 keyboardType="default"
@@ -148,7 +150,7 @@ const styles = StyleSheet.create({
   mainBody: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#307ecc',
+    backgroundColor: '#252051',
   },
   SectionStyle: {
     flexDirection: 'row',
@@ -159,10 +161,10 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   buttonStyle: {
-    backgroundColor: '#7DE24E',
+    backgroundColor: '#307ecc',
     borderWidth: 0,
     color: '#FFFFFF',
-    borderColor: '#7DE24E',
+    borderColor: '#307ecc',
     height: 40,
     alignItems: 'center',
     borderRadius: 30,
