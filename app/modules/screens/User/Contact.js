@@ -62,8 +62,8 @@ class Contact extends React.Component {
 
     }
 
-
     handleSubmit = async () => {
+
 
         let { userInfo } = this.state
         let data = userInfo
@@ -151,23 +151,24 @@ class Contact extends React.Component {
                         onChangeText={val => this.onChangeText('state', val)}
                         label='Select State'
                         data={this.state.states}
-                        textColor="#000000"
+
                         itemColor="#574d6b"
                         baseColor="#574d6b"
-                        dropdownOffset={{ top: 5 }}
                         selectedItemColor="#574d6b"
+                        dropdownOffset={{ top: 5 }}
+                        containerStyle={styles.input}
 
                     />
                     <Dropdown
                         //  value={this.defaultState}
                         label='Select City'
                         data={this.state.cities}
-                        textColor="#000000"
                         itemColor="#574d6b"
                         baseColor="#574d6b"
-                        dropdownOffset={{ top: 7 }}
                         selectedItemColor="#574d6b"
+                        dropdownOffset={{ top: 7 }}
                         onChangeText={val => this.onChangeText('city', val)}
+                        containerStyle={styles.input}
 
                     />
                     <TextInput
