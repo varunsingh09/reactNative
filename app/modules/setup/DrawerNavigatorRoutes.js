@@ -9,9 +9,9 @@ import { createDrawerNavigator } from 'react-navigation-drawer';
 import HomeScreen from './../screens/Common/HomeScreen';
 import SettingsScreen from './../screens/Common/SettingsScreen';
 import ProductScreen from './../screens/Product/';
-import DeliveryAndZipcodes from './../screens/Product/DeliveryAndZipcodes';
 import CustomSidebarMenu from './CustomSidebarMenu';
 import NavigationDrawerHeader from './NavigationDrawerHeader';
+
 
 const FirstActivity_StackNavigator = createStackNavigator({
     First: {
@@ -25,8 +25,10 @@ const FirstActivity_StackNavigator = createStackNavigator({
             headerTintColor: '#fff',
         }),
     },
-    
+
+
 });
+
 
 const SecondActivity_StackNavigator = createStackNavigator({
     First: {
@@ -56,21 +58,11 @@ const ThirdActivity_StackNavigator = createStackNavigator({
         }),
     },
 });
-const ForthActivity_StackNavigator = createStackNavigator({
-    First: {
-        screen: DeliveryAndZipcodes,
-        navigationOptions: ({ navigation }) => ({
-            title: 'Deliver And Zipcode',
-            headerLeft: () => <NavigationDrawerHeader navigationProps={navigation} />,
-            headerStyle: {
-                backgroundColor: '#252051',
-            },
-            headerTintColor: '#fff',
-        }),
-    },
-});
+
+
 const DrawerNavigatorRoutes = createDrawerNavigator(
     {
+
         HomeScreen: {
             screen: FirstActivity_StackNavigator,
             navigationOptions: {
@@ -95,12 +87,19 @@ const DrawerNavigatorRoutes = createDrawerNavigator(
                 drawerLabel: 'Delivery AND Zipcode',
             },
         },
+
+
     },
     {
         contentComponent: CustomSidebarMenu,
         drawerOpenRoute: 'DrawerOpen',
         drawerCloseRoute: 'DrawerClose',
         drawerToggleRoute: 'DrawerToggle',
-    }
+    },
 );
+
+
+
+
+
 export default DrawerNavigatorRoutes;

@@ -1,14 +1,15 @@
 import React from 'react';
-
 //Import Navigators from React Navigation
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
+
 
 //Import all the screens needed
 import SplashScreen from './../screens/Common/SplashScreen';
 import LoginScreen from './../screens/User/LoginScreen';
 import RegisterScreen from './../screens/User/RegisterScreen';
 import DrawerNavigationRoutes from './DrawerNavigatorRoutes';
+
 
 const Auth = createStackNavigator({
     //Stack Navigator for Login and Sign up Screen
@@ -33,12 +34,13 @@ const Auth = createStackNavigator({
 /* Switch Navigator for those screens which needs to be switched only once
   and we don't want to switch back once we switch from them to the next one */
 const App = createSwitchNavigator({
+
     SplashScreen: {
         /* SplashScreen which will come once for 5 Seconds */
         screen: SplashScreen,
         navigationOptions: {
             /* Hiding header for Splash Screen */
-            headerShown: false,
+            headerShown: true,
         },
     },
     Auth: {
@@ -53,6 +55,7 @@ const App = createSwitchNavigator({
             headerShown: false,
         },
     },
+
 });
 
 export default createAppContainer(App);

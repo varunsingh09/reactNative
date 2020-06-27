@@ -14,4 +14,5 @@ const SettingsScreen = () => {
     </View>
   );
 };
-export default SettingsScreen;
+
+export default SettingsScreen

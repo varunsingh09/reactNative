@@ -1,15 +1,19 @@
 import React, { Component } from 'react'
 import { Text, ScrollView, ActivityIndicator } from 'react-native'
 import axios from "axios";
-import Spinner from 'react-native-loading-spinner-overlay';
+
 import { DataTable } from 'react-native-paper';
 import styles from '../../styles/index';
 import * as Api from "./../../../../config/config"
 import { capitalize } from "./../Common/Utils"
 
+import { createAppContainer } from 'react-navigation';
+import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
+import DeliveryAndZipcodes from './DeliveryAndZipcodes';
 
 const itemsPerPage = 2;
 const page = 0
+
 
 class Product extends Component {
     constructor(props) {
@@ -20,7 +24,7 @@ class Product extends Component {
             message: null,
             from: page * itemsPerPage,
             to: (page + 1) * itemsPerPage,
-            animating:true
+            animating: true
         }
     }
     componentDidMount = () => {
@@ -96,4 +100,30 @@ class Product extends Component {
         )
     }
 }
-export default Product
+
+
+const TabNavigator = createMaterialTopTabNavigator({
+    Product: Product,
+    DeliveryAndZipcodes: {
+        screen: DeliveryAndZipcodes,
+        navigationOptions: {
+            tabBarLabel: 'Delivery And Zipcodes',
+        },
+    },
+},
+    {
+        tabBarOptions: {
+            activeTintColor: '#000',
+            inactiveTintColor: 'gray',
+            style: {
+                backgroundColor: '#fff',
+            },
+            indicatorStyle: {
+                backgroundColor: '#000',
+            },
+        }
+    }
+);
+
+
+export default createAppContainer(TabNavigator);
