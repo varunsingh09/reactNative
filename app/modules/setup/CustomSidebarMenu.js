@@ -2,6 +2,7 @@ import React from 'react';
 
 //Import all required component
 import { View, StyleSheet, Text, Alert } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import AsyncStorage from '@react-native-community/async-storage';
 
 const CustomSidebarMenu = props => {
@@ -9,19 +10,24 @@ const CustomSidebarMenu = props => {
         {
             navOptionName: 'Home Screen',
             screenToNavigate: 'HomeScreen',
+            icon: <Icon name="home" size={18} />
         },
         {
             navOptionName: 'Setting Screen',
             screenToNavigate: 'SettingsScreen',
+            icon: <Icon name="home" size={18} />
         },
         {
             navOptionName: 'Product Screen',
             screenToNavigate: 'ProductScreen',
+            icon: <Icon name="home" size={18} />
         },
         {
             navOptionName: 'Logout',
             screenToNavigate: 'logout',
+            icon: <Icon name="home" size={18} />
         },
+
     ];
 
     const handleClick = (index, screenToNavigate) => {
@@ -83,7 +89,7 @@ const CustomSidebarMenu = props => {
                             handleClick(key, item.screenToNavigate)
                         }>
                         <Text style={{ fontSize: 15, color: 'white' }}>
-                            {item.navOptionName}
+                            {item.icon} {item.navOptionName}
                         </Text>
                     </View>
                 ))}

@@ -4,6 +4,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 const Search = () => {
@@ -31,10 +32,21 @@ const TabNavigator = createBottomTabNavigator({
         screen: HomeScreen,
         navigationOptions: {
             tabBarLabel: 'Home',
+            tabBarIcon: ({ tintColor }) => (
+                <Icon name="home" color={tintColor} size={20} />
+            )
         },
     },
 
-    Search: Search,
+    Search: {
+        screen: Search,
+        navigationOptions: {
+            tabBarLabel: 'Search',
+            tabBarIcon: ({ tintColor }) => (
+                <Icon name="search" color={tintColor} size={20} />
+            )
+        },
+    },
 },
     {
         tabBarOptions: {
@@ -49,7 +61,7 @@ const TabNavigator = createBottomTabNavigator({
             labelStyle: {
                 fontSize: 15,
                 margin: 0,
-                paddingBottom: 15,
+                paddingBottom: 7,
                 backgroundColor: '#252051',
             },
         }
