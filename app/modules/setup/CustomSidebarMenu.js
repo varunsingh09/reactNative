@@ -19,10 +19,6 @@ const CustomSidebarMenu = props => {
             screenToNavigate: 'ProductScreen',
         },
         {
-            navOptionName: 'Delivery And Zipcode Screen',
-            screenToNavigate: 'DeliveryAndZipcodes',
-        },
-        {
             navOptionName: 'Logout',
             screenToNavigate: 'logout',
         },

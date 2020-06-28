@@ -46,7 +46,7 @@ class Product extends Component {
                     }
                 }).then(res => {
                     //console.log("---->>>>>>>>>>>>>", JSON.stringify(res.data.result))
-                    this.setState({ stateArr: res.data.results, spinner: false })
+                    this.setState({ stateArr: res.data.results !== undefined && res.data.results, spinner: false })
                 }
                 );
 
@@ -59,7 +59,7 @@ class Product extends Component {
 
     }
     render() {
-        //console.log("-------", this.state, "====")
+        //console.log("-------", this.state.stateArr, "====")
 
         //return this.state.message !== null && <Error />
 

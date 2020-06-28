@@ -81,14 +81,6 @@ const DrawerNavigatorRoutes = createDrawerNavigator(
                 drawerLabel: 'Product Screen',
             },
         },
-        DeliveryAndZipcodes: {
-            screen: ForthActivity_StackNavigator,
-            navigationOptions: {
-                drawerLabel: 'Delivery AND Zipcode',
-            },
-        },
-
-
     },
     {
         contentComponent: CustomSidebarMenu,

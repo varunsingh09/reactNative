@@ -3,7 +3,7 @@ import React from 'react';
 //Import all required component
 import { View, Text } from 'react-native';
 import { createAppContainer } from 'react-navigation';
-import { createMaterialTopTabNavigator, createBottomTabNavigator } from 'react-navigation-tabs';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
 
 
 const Search = () => {
