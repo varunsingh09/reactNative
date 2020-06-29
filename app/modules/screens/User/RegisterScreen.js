@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import axios from "axios";
 
 //Import all required component
 import {
@@ -13,32 +14,104 @@ import {
     ScrollView,
 } from 'react-native';
 import Loader from './../Common/Loader';
+import { Dropdown } from 'react-native-material-dropdown';
+import * as Api from "./../../../../config/config"
 
 const RegisterScreen = props => {
-    let [userName, setUserName] = useState('');
-    let [userEmail, setUserEmail] = useState('');
-    let [userAge, setUserAge] = useState('');
-    let [userAddress, setUserAddress] = useState('');
+
+    let [states, setStates] = useState([]);
+    let [stateCityList, setStateCityList] = useState([]);
+    let [cities, setCities] = useState([]);
+    let [city, setCity] = useState([]);
+    let [address, setAddress] = useState('');
+    let [kitchen_name, setKitchenName] = useState('');
+    let [zipcode, setZipcode] = useState('');
+    let [email, setEmail] = useState('');
+    let [contact_no, setContactNumber] = useState('');
+    let [password, setPassword] = useState('');
+    let [confirm_password, setConfirmPassword] = useState('');
+    let [agreement_policy, setAgreementPolicy] = useState(true);
     let [loading, setLoading] = useState(false);
     let [errortext, setErrortext] = useState('');
     let [isRegistraionSuccess, setIsRegistraionSuccess] = useState(false);
 
+    const nameRef = useRef([])
+    const stateRef = useRef([])
+    const cityRef = useRef([])
+    const addressRef = useRef([])
+
+    useEffect(async () => {
+
+        try {
+
+            const KitchenStateCity = await axios(
+                {
+                    method: 'get',
+                    url: `${Api.STATE_CITY_FETCH_API}`,
+                    headers: { Authorization: `${Api.BEARER}` }
+                }
+            ).then(res => {
+
+                let states = res.data.result.length > 0 && res.data.result.map((city, index) => {
+                    let states = { value: city.state }
+                    return states
+                })
+                setStates(states)
+                setStateCityList(res.data.result)
+            }
+
+            );
+
+        } catch (err) {
+            console.log("error coming ", err)
+        }
+
+    }, [])
+
+
+    const setCityList = (value) => {
+
+        let cityListArr = stateCityList.length > 0 && stateCityList.filter(list => list.state === value);
+
+        let city = cityListArr[0].cityList !== undefined && cityListArr[0].cityList.map((city) => {
+            return { value: city }
+        })
+
+        setCities(city)
+    }
+
+
     const handleSubmitButton = () => {
         setErrortext('');
-        if (!userName) {
-            alert('Please fill Name');
+        if (!kitchen_name) {
+            nameRef = kitchen_name.current.value;
+            alert('Please fill Kitchen Name');
             return;
         }
-        if (!userEmail) {
+        if (!address) {
+            nameRef = address.current.value;
+            alert('Please fill address');
+            return;
+        }
+        if (!zipcode) {
+            zipcodeRef = zipcode.current.value;
+            alert('Please fill Zipcode');
+            return;
+        }
+        if (!email) {
             alert('Please fill Email');
             return;
         }
-        if (!userAge) {
-            alert('Please fill Age');
+        if (!contact_no) {
+            alert('Please fill Contact No');
             return;
         }
-        if (!userAddress) {
-            alert('Please fill Address');
+        if (!password) {
+            alert('Please fill Password');
+            return;
+        }
+        if (!confirm_password) {
+            alert('Please fill Confirm Password');
             return;
         }
         //Show Loader
@@ -107,7 +180,7 @@ const RegisterScreen = props => {
         );
     }
     return (
-        <View style={{ flex: 1, backgroundColor: '#252051' }}>
+        <View style={{ flex: 1, backgroundColor: '#252051', marginTop: -70 }}>
             <Loader loading={loading} />
             <ScrollView keyboardShouldPersistTaps="handled">
                 <View style={{ alignItems: 'center' }}>
@@ -125,64 +198,118 @@ const RegisterScreen = props => {
                     <View style={styles.SectionStyle}>
                         <TextInput
                             style={styles.inputStyle}
-                            onChangeText={UserName => setUserName(UserName)}
+                            onChangeText={kitchen_name => setKitchenName(kitchen_name)}
                             //underlineColorAndroid="#FFFFFF"
-                            placeholder="Enter Name"
+                            placeholder="Kitchen Name (OR) Company Name"
                             placeholderTextColor="#F6F6F7"
                             autoCapitalize="sentences"
                             returnKeyType="next"
-                            onSubmitEditing={() =>
-                                this._emailinput && this._emailinput.focus()
-                            }
+                            blurOnSubmit={false}
+                            ref={nameRef}
+                        />
+                    </View>
+                    <View style={styles.SectionStyle}>
+                        <Dropdown
+                            onChangeText={state => setCityList(state)}
+                            returnKeyType="next"
+                            blurOnSubmit={false}
+                            autoCapitalize="sentences"
+                            label='Select State'
+                            data={states}
+                            itemColor="#574d6b"
+                            baseColor="#574d6b"
+                            selectedItemColor="#574d6b"
+                            dropdownOffset={{ top: 5 }}
+                            containerStyle={styles.inputStyle}
+                            ref={stateRef}
+
+                        />
+                    </View>
+                    <View style={styles.SectionStyle}>
+                        <Dropdown
+                            onChangeText={city => setCity(city)}
+                            returnKeyType="next"
+                            blurOnSubmit={false}
+                            autoCapitalize="sentences"
+                            label='Select City'
+                            data={cities}
+                            itemColor="#574d6b"
+                            baseColor="#574d6b"
+                            selectedItemColor="#574d6b"
+                            dropdownOffset={{ top: 5 }}
+                            containerStyle={styles.inputStyle}
+                            ref={cityRef}
+                        />
+                    </View>
+                    <View style={styles.SectionStyle}>
+                        <TextInput
+                            style={styles.inputStyle}
+                            onChangeText={address => setAddress(address)}
+                            //underlineColorAndroid="#FFFFFF"
+                            placeholder="Address"
+                            placeholderTextColor="#F6F6F7"
+                            autoCapitalize="sentences"
+                            returnKeyType="next"
+                            blurOnSubmit={false}
+                            ref={addressRef}
+                        />
+                    </View>
+                    <View style={styles.SectionStyle}>
+                        <TextInput
+                            style={styles.inputStyle}
+                            onChangeText={zipcode => setZipcode(zipcode)}
+                            placeholder="Zipcode"
+                            placeholderTextColor="#F6F6F7"
+                            autoCapitalize="sentences"
+                            returnKeyType="next"
                             blurOnSubmit={false}
                         />
                     </View>
                     <View style={styles.SectionStyle}>
                         <TextInput
                             style={styles.inputStyle}
-                            onChangeText={UserEmail => setUserEmail(UserEmail)}
+                            onChangeText={email => setEmail(email)}
                             //underlineColorAndroid="#F6F6F7"
-                            placeholder="Enter Email"
+                            placeholder="Email"
                             placeholderTextColor="#F6F6F7"
                             keyboardType="email-address"
-                            ref={ref => {
-                                this._emailinput = ref;
-                            }}
                             returnKeyType="next"
-                            onSubmitEditing={() => this._ageinput && this._ageinput.focus()}
                             blurOnSubmit={false}
                         />
                     </View>
                     <View style={styles.SectionStyle}>
                         <TextInput
                             style={styles.inputStyle}
-                            onChangeText={UserAge => setUserAge(UserAge)}
-                            //underlineColorAndroid="#F6F6F7"
-                            placeholder="Enter Age"
-                            placeholderTextColor="#F6F6F7"
-                            keyboardType="numeric"
-                            ref={ref => {
-                                this._ageinput = ref;
-                            }}
-                            onSubmitEditing={() =>
-                                this._addressinput && this._addressinput.focus()
-                            }
-                            blurOnSubmit={false}
-                        />
-                    </View>
-                    <View style={styles.SectionStyle}>
-                        <TextInput
-                            style={styles.inputStyle}
-                            onChangeText={UserAddress => setUserAddress(UserAddress)}
+                            onChangeText={contact_no => setContactNumber(contact_no)}
                             //underlineColorAndroid="#FFFFFF"
-                            placeholder="Enter Address"
+                            placeholder="Contact Number"
                             placeholderTextColor="#F6F6F7"
                             autoCapitalize="sentences"
-                            ref={ref => {
-                                this._addressinput = ref;
-                            }}
                             returnKeyType="next"
-                            onSubmitEditing={Keyboard.dismiss}
+                            blurOnSubmit={false}
+                        />
+                    </View>
+                    <View style={styles.SectionStyle}>
+                        <TextInput
+                            style={styles.inputStyle}
+                            onChangeText={password => setPassword(password)}
+                            placeholder='Password'
+                            secureTextEntry={true}
+                            placeholderTextColor="#F6F6F7"
+                            autoCapitalize="sentences"
+                            returnKeyType="next"
+                            blurOnSubmit={false}
+                        />
+                    </View>
+                    <View style={styles.SectionStyle}>
+                        <TextInput
+                            style={styles.inputStyle}
+                            onChangeText={confirm_password => setConfirmPassword(confirm_password)}
+                            placeholder='Confirm Password'
+                            secureTextEntry={true}
+                            placeholderTextColor="#F6F6F7"
+                            autoCapitalize="sentences"
+                            returnKeyType="next"
                             blurOnSubmit={false}
                         />
                     </View>
@@ -206,7 +333,6 @@ const styles = StyleSheet.create({
     SectionStyle: {
         flexDirection: 'row',
         height: 40,
-        marginTop: 20,
         marginLeft: 35,
         marginRight: 35,
         margin: 10,

@@ -15,17 +15,22 @@ const CustomSidebarMenu = props => {
         {
             navOptionName: 'Setting Screen',
             screenToNavigate: 'SettingsScreen',
-            icon: <Icon name="home" size={18} />
+            icon: <Icon name="cogs" size={18} />
         },
         {
             navOptionName: 'Product Screen',
             screenToNavigate: 'ProductScreen',
-            icon: <Icon name="home" size={18} />
+            icon: <Icon name="product-hunt" size={18} />
         },
         {
             navOptionName: 'Logout',
             screenToNavigate: 'logout',
-            icon: <Icon name="home" size={18} />
+            icon: <Icon name="sign-out" size={18} />
+        },
+        {
+            navOptionName: 'Register',
+            screenToNavigate: 'RegisterScreen',
+            icon: <Icon name="sign-out" size={18} />
         },
 
     ];
