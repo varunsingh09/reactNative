@@ -8,7 +8,9 @@ import AsyncStorage from '@react-native-community/async-storage';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Logout = (props) => {
+    console.warn("====", props.navigation)
     const unsubscribe = props.navigation.addListener('didFocus', () => {
+        //props.navigation.toggleDrawer();
         Alert.alert(
             'Logout',
             'Are you sure? You want to logout?',
