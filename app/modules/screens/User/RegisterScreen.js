@@ -94,7 +94,6 @@ const RegisterScreen = props => {
             nameRef.current.focus();
             return;
         }
-
         if (!address) {
             alert('Please fill address');
             addressRef.current.focus();
@@ -166,7 +165,6 @@ const RegisterScreen = props => {
             });
     }
 
-    console.log("---->>>", errors)
     if (isRegistraionSuccess) {
         return (
             <View

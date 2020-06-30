@@ -12,6 +12,8 @@ import ProductScreen from './../screens/Product/';
 import CustomSidebarMenu from './CustomSidebarMenu';
 import NavigationDrawerHeader from './NavigationDrawerHeader';
 
+import ProfileScreen from "./../screens/User/"
+
 
 const FirstActivity_StackNavigator = createStackNavigator({
     First: {
@@ -59,6 +61,19 @@ const ThirdActivity_StackNavigator = createStackNavigator({
     },
 });
 
+const ForthActivity_StackNavigator = createStackNavigator({
+    First: {
+        screen: ProfileScreen,
+        navigationOptions: ({ navigation }) => ({
+            title: 'My Profile',
+            headerLeft: () => <NavigationDrawerHeader navigationProps={navigation} />,
+            headerStyle: {
+                backgroundColor: '#252051',
+            },
+            headerTintColor: '#fff',
+        }),
+    },
+});
 
 const DrawerNavigatorRoutes = createDrawerNavigator(
     {
@@ -82,6 +97,12 @@ const DrawerNavigatorRoutes = createDrawerNavigator(
             screen: ThirdActivity_StackNavigator,
             navigationOptions: {
                 drawerLabel: 'Product Screen',
+            },
+        },
+        ProfileScreen: {
+            screen: ForthActivity_StackNavigator,
+            navigationOptions: {
+                drawerLabel: 'Profile Screen',
             },
         },
     },
