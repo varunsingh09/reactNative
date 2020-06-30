@@ -20,6 +20,7 @@ import * as Api from "./../../../../config/config"
 const RegisterScreen = props => {
 
     let [states, setStates] = useState([]);
+    let [state, setStateSelected] = useState([]);
     let [stateCityList, setStateCityList] = useState([]);
     let [cities, setCities] = useState([]);
     let [city, setCity] = useState([]);
@@ -34,11 +35,15 @@ const RegisterScreen = props => {
     let [loading, setLoading] = useState(false);
     let [errortext, setErrortext] = useState('');
     let [isRegistraionSuccess, setIsRegistraionSuccess] = useState(false);
+    let [errors, setErrors] = useState([]);
 
-    const nameRef = useRef([])
-    const stateRef = useRef([])
-    const cityRef = useRef([])
-    const addressRef = useRef([])
+    const nameRef = useRef('')
+    const mobileRef = useRef('')
+    const addressRef = useRef('')
+    const emailRef = useRef('')
+    const zipcodeRef = useRef('')
+    const passwordRef = useRef('')
+    const confirmPasswordRef = useRef('')
 
     useEffect(async () => {
 
@@ -78,73 +83,75 @@ const RegisterScreen = props => {
         })
 
         setCities(city)
+        setStateSelected(value)
     }
 
 
-    const handleSubmitButton = () => {
+    const handleSubmitButton = async () => {
         setErrortext('');
         if (!kitchen_name) {
-            nameRef = kitchen_name.current.value;
             alert('Please fill Kitchen Name');
+            nameRef.current.focus();
             return;
         }
+
         if (!address) {
-            nameRef = address.current.value;
             alert('Please fill address');
+            addressRef.current.focus();
             return;
         }
         if (!zipcode) {
-            zipcodeRef = zipcode.current.value;
             alert('Please fill Zipcode');
+            zipcodeRef.current.focus();
             return;
         }
         if (!email) {
             alert('Please fill Email');
+            emailRef.current.focus();
             return;
         }
         if (!contact_no) {
             alert('Please fill Contact No');
+            mobileRef.current.focus();
             return;
         }
         if (!password) {
             alert('Please fill Password');
+            passwordRef.current.focus();
             return;
         }
         if (!confirm_password) {
             alert('Please fill Confirm Password');
+            confirmPasswordRef.current.focus();
             return;
         }
         //Show Loader
         setLoading(true);
-        var dataToSend = {
-            user_name: userName,
-            user_email: userEmail,
-            user_age: userAge,
-            user_address: userAddress,
+        let userInfo = {
+            kitchen_name: kitchen_name,
+            address: address,
+            state: state,
+            city: city,
+            zipcode: zipcode,
+            email: email,
+            contact_no: contact_no,
+            password: password,
+            confirm_password: confirm_password,
+            agreement_policy: agreement_policy
         };
-        var formBody = [];
-        for (var key in dataToSend) {
-            var encodedKey = encodeURIComponent(key);
-            var encodedValue = encodeURIComponent(dataToSend[key]);
-            formBody.push(encodedKey + '=' + encodedValue);
-        }
-        formBody = formBody.join('&');
 
-        fetch('https://aboutreact.herokuapp.com/register.php', {
-            method: 'POST',
-            body: formBody,
-            headers: {
-                //Header Defination
-                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-            },
-        })
-            .then(response => response.json())
-            .then(responseJson => {
-                //Hide Loader
+        let data = userInfo
+
+        axios.post(Api.KITCHEN_REGISTRATION_API, data,
+            {
+                headers: {
+                    "Authorization": `${Api.BEARER}`
+                }
+            }
+        )
+            .then(response => {
                 setLoading(false);
-                console.log(responseJson);
-                // If server response message same as Data Matched
-                if (responseJson.status == 1) {
+                if (response.status == 200) {
                     setIsRegistraionSuccess(true);
                     console.log('Registration Successful. Please Login to proceed');
                 } else {
@@ -152,11 +159,14 @@ const RegisterScreen = props => {
                 }
             })
             .catch(error => {
-                //Hide Loader
+                //console.log("statue", error.response.status)
+                //console.log("error", error.response.data)
                 setLoading(false);
-                console.error(error);
+                setErrors(error.response.data.errors)
             });
-    };
+    }
+
+    console.log("---->>>", errors)
     if (isRegistraionSuccess) {
         return (
             <View
@@ -221,7 +231,6 @@ const RegisterScreen = props => {
                             selectedItemColor="#574d6b"
                             dropdownOffset={{ top: 5 }}
                             containerStyle={styles.inputStyle}
-                            ref={stateRef}
 
                         />
                     </View>
@@ -238,7 +247,7 @@ const RegisterScreen = props => {
                             selectedItemColor="#574d6b"
                             dropdownOffset={{ top: 5 }}
                             containerStyle={styles.inputStyle}
-                            ref={cityRef}
+
                         />
                     </View>
                     <View style={styles.SectionStyle}>
@@ -263,6 +272,7 @@ const RegisterScreen = props => {
                             autoCapitalize="sentences"
                             returnKeyType="next"
                             blurOnSubmit={false}
+                            ref={zipcodeRef}
                         />
                     </View>
                     <View style={styles.SectionStyle}>
@@ -275,6 +285,7 @@ const RegisterScreen = props => {
                             keyboardType="email-address"
                             returnKeyType="next"
                             blurOnSubmit={false}
+                            ref={emailRef}
                         />
                     </View>
                     <View style={styles.SectionStyle}>
@@ -287,6 +298,7 @@ const RegisterScreen = props => {
                             autoCapitalize="sentences"
                             returnKeyType="next"
                             blurOnSubmit={false}
+                            ref={mobileRef}
                         />
                     </View>
                     <View style={styles.SectionStyle}>
@@ -299,6 +311,7 @@ const RegisterScreen = props => {
                             autoCapitalize="sentences"
                             returnKeyType="next"
                             blurOnSubmit={false}
+                            ref={passwordRef}
                         />
                     </View>
                     <View style={styles.SectionStyle}>
@@ -311,6 +324,7 @@ const RegisterScreen = props => {
                             autoCapitalize="sentences"
                             returnKeyType="next"
                             blurOnSubmit={false}
+                            ref={confirmPasswordRef}
                         />
                     </View>
                     {errortext != '' ? (
@@ -327,6 +341,8 @@ const RegisterScreen = props => {
         </View>
     );
 };
+
+
 export default RegisterScreen;
 
 const styles = StyleSheet.create({
