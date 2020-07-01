@@ -77,14 +77,14 @@ const ForthActivity_StackNavigator = createStackNavigator({
 
 const DrawerNavigatorRoutes = createDrawerNavigator(
     {
-
+        
         HomeScreen: {
             screen: FirstActivity_StackNavigator,
             navigationOptions: {
                 drawerLabel: 'Home Screen',
-                tabBarIcon:({tintColor})=>(  
-                    <Icon name="ios-home" color={tintColor} size={25}/>  
-                ) 
+                tabBarIcon: ({ tintColor }) => (
+                    <Icon name="ios-home" color={tintColor} size={25} />
+                )
             },
         },
         SettingsScreen: {
@@ -111,12 +111,9 @@ const DrawerNavigatorRoutes = createDrawerNavigator(
         drawerOpenRoute: 'DrawerOpen',
         drawerCloseRoute: 'DrawerClose',
         drawerToggleRoute: 'DrawerToggle',
-        animationEnabled:true,
+        animationEnabled: true,
     },
 );
-
-
-
 
 
 export default DrawerNavigatorRoutes;

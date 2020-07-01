@@ -1,7 +1,7 @@
 import React from 'react';
 
 //Import all required component
-import { View, StyleSheet, Text, Alert } from 'react-native';
+import { View, StyleSheet, Text, Alert, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AsyncStorage from '@react-native-community/async-storage';
 
@@ -69,9 +69,7 @@ const CustomSidebarMenu = props => {
         <View style={stylesSidebar.sideMenuContainer}>
             <View style={stylesSidebar.profileHeader}>
                 <View style={stylesSidebar.profileHeaderPicCircle}>
-                    <Text style={{ fontSize: 25, color: '#307ecc' }}>
-                        {'Food App'.charAt(0)}
-                    </Text>
+                    <Image source={require('./../images/p.jpeg')} style={stylesSidebar.profileHeaderPicCircle} />
                 </View>
                 <Text style={stylesSidebar.profileHeaderText}>Food App</Text>
             </View>
@@ -122,7 +120,6 @@ const stylesSidebar = StyleSheet.create({
         height: 60,
         borderRadius: 60 / 2,
         color: 'white',
-        backgroundColor: '#ffffff',
         textAlign: 'center',
         justifyContent: 'center',
         alignItems: 'center',
@@ -140,5 +137,6 @@ const stylesSidebar = StyleSheet.create({
         marginTop: 15,
         marginBottom: 10,
     },
+
 });
 export default CustomSidebarMenu;

@@ -29,7 +29,7 @@ const App = createSwitchNavigator({
         screen: DrawerNavigationRoutes,
         navigationOptions: {
             /* Hiding header for Navigation Drawer as we will use our custom header */
-            headerShown: false,
+            headerShown: true,
         },
     },
 
