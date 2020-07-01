@@ -44,7 +44,7 @@ const DeliveryAndZipcodes = (props) => {
     // End Here
 
     const handleEdit = (props) => {
-        console.warn("handleEdit", props)
+       // console.warn("handleEdit", props)
     }
 
     useEffect(() => {
@@ -54,7 +54,7 @@ const DeliveryAndZipcodes = (props) => {
         //console.log("useEffect ", navigation)
 
         const unsubscribe = props.navigation.addListener('didFocus', () => {
-            console.log("navigation detect")
+            //console.log("navigation detect")
             getZipcodeAndKitchenList(data);
         });
 
@@ -68,7 +68,7 @@ const DeliveryAndZipcodes = (props) => {
 
     const getZipcodeAndKitchenList = async (data) => {
 
-        console.log("getZipcodeAndKitchenList", data)
+        //console.log("getZipcodeAndKitchenList", data)
         setSpinner(true)
         try {
 
@@ -81,7 +81,7 @@ const DeliveryAndZipcodes = (props) => {
                         "Authorization": `${Api.BEARER}`
                     }
                 }).then(res => {
-                    console.log("===========", res.data.success)
+                    //console.log("===========", res.data.success)
                     setSuccess(res.data.success)
                     setSpinner(false)
 

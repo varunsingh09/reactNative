@@ -10,6 +10,7 @@ import { capitalize } from "./../Common/Utils"
 import { createAppContainer } from 'react-navigation';
 import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
 import DeliveryAndZipcodes from './DeliveryAndZipcodes';
+import KitchenList from './KitchenList';
 
 const itemsPerPage = 2;
 const page = 0
@@ -108,6 +109,12 @@ const TabNavigator = createMaterialTopTabNavigator({
         screen: DeliveryAndZipcodes,
         navigationOptions: {
             tabBarLabel: 'Delivery And Zipcodes',
+        },
+    },
+    KitchenList: {
+        screen: KitchenList,
+        navigationOptions: {
+            tabBarLabel: 'Kitchen List',
         },
     },
 },
