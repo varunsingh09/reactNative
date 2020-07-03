@@ -23,13 +23,14 @@ const KitchenList = () => {
     }
 
     const onMomentumScrollEnd = (event) => {
-        setIsLoading(true)
-        getKitchenList();
-        setOffset(offset + 1)
 
-        console.log(totalPage, "onMomentumScrollEnd reach", offset)
+        if (offset <= totalPage) {
+            getKitchenList();
+            console.log(totalPage, "onMomentumScrollEnd reach", offset)
+            setScrollEnabled(false)
+            setOffset(offset + 1)
 
-
+        }
 
     }
 
@@ -42,9 +43,11 @@ const KitchenList = () => {
     }, [])
 
     const getKitchenList = async () => {
+        setIsLoading(true)
+
         //console.log("coming", 1);
         try {
-            console.log(offset);
+            console.log("<<====>>>>", offset);
 
             const productList = await axios.get(
                 Api.KITCHEN_LIST_API, {
@@ -60,9 +63,7 @@ const KitchenList = () => {
                     //console.log("---->>>>>>>>>>>>>", JSON.stringify(res.data))
 
                     let totalResult = res.data.kitchen_count !== undefined && res.data.kitchen_count
-
                     let totalPage = Math.ceil(totalResult / perPage)
-
 
                     let results = res.data.result !== undefined && res.data.result.map((kitchen, index) => {
                         return [capitalize(kitchen.kitchen_name), capitalize(kitchen.city), kitchen.email, kitchen.status]
@@ -71,6 +72,7 @@ const KitchenList = () => {
                     setIsLoading(false)
                     setTableData(results)
                     setTotalPage(totalPage)
+
                 }
                 );
 
@@ -102,13 +104,16 @@ const KitchenList = () => {
                     justifyContent: 'center',
                 }}
             />}
-            <ScrollView horizontal={true}>
+            <ScrollView horizontal={true}  style={{marginTop:17}}>
                 <View>
+
                     <Table borderStyle={{ borderWidth: 1, borderColor: '#C1C0B9' }}>
                         <Row data={tableHead} widthArr={widthArr}
                             style={styles.header} textStyle={styles.text} />
                     </Table>
-                    <ScrollView style={styles.dataWrapper} onMomentumScrollEnd={(event) => onMomentumScrollEnd(event)}>
+
+                    <ScrollView style={styles.dataWrapper} automaticallyAdjustContentInsets={scrollEnabled}
+                        onMomentumScrollEnd={(event) => onMomentumScrollEnd(event)}>
                         <Table borderStyle={{ borderWidth: 1, borderColor: '#C1C0B9' }}>
                             {
                                 tableData.map((rowData, index) => (
@@ -139,7 +144,7 @@ const KitchenList = () => {
 }
 
 const styles = StyleSheet.create({
-    container: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#fff' },
+    container: { flex: 1, padding: 16, backgroundColor: '#fff' },
     header: { height: 50, backgroundColor: '#537791' },
     text: { textAlign: 'center', fontWeight: '100' },
     dataWrapper: { marginTop: -1 },
