@@ -14,15 +14,19 @@ export const KITCHEN_REGISTRATION_API = `${SERVER_PATH}/Kitchen/KitchenSignup`
 
 export const STATE_CITY_FETCH_API = `${SERVER_PATH}/StateCities/AllStateCity`
 
-export const KITCHEN_LOGIN_API = `${SERVER_PATH}/kitchen/KitchenLogin`
+export const KITCHEN_LOGIN_API = `${SERVER_PATH}/Kitchen/KitchenLogin`
 
-export const KITCHEN_LOGIN_VERIFY_API = `${SERVER_PATH}/kitchen/KitchenSendEmail`
+export const KITCHEN_LOGIN_VERIFY_API = `${SERVER_PATH}/Kitchen/KitchenSendEmail`
 
-export const KITCHEN_LOGOUT_API = `${SERVER_PATH}/kitchen/KitchenSignInLogout`
+export const KITCHEN_LOGOUT_API = `${SERVER_PATH}/Kitchen/KitchenSignInLogout`
 
 export const KITCHEN_PRODUCT_LIST_API = `${SERVER_PATH}/products/AllProducts`
 
 export const KITCHEN_AND_ZIPCODE_API = `${SERVER_PATH}/ZipcodesKitchens/ZipcodeKitchensList`
+
+export const KITCHEN_LIST_API = `${SERVER_PATH}/Kitchen/AllKitchen_fromCache`
+
+
 
 
 
