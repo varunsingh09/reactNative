@@ -44,7 +44,7 @@ const DeliveryAndZipcodes = (props) => {
     // End Here
 
     const handleEdit = (props) => {
-       // console.warn("handleEdit", props)
+        // console.warn("handleEdit", props)
     }
 
     useEffect(() => {
@@ -68,14 +68,13 @@ const DeliveryAndZipcodes = (props) => {
 
     const getZipcodeAndKitchenList = async (data) => {
 
-        //console.log("getZipcodeAndKitchenList", data)
+        console.log("getZipcodeAndKitchenList", data)
         setSpinner(true)
         try {
 
-            const productList = await axios.post(
+            const productList = await axios.get(
 
-                Api.KITCHEN_AND_ZIPCODE_API,
-                data,
+                Api.KITCHEN_AND_ZIPCODE_API, { params: data },
                 {
                     headers: {
                         "Authorization": `${Api.BEARER}`
@@ -150,12 +149,6 @@ const DeliveryAndZipcodes = (props) => {
 
                     })}
 
-                    {/* <DataTable.Pagination
-                    page={page}
-                    numberOfPages={Math.floor(this.state.stateArr.length > 0 && this.state.stateArr / itemsPerPage)}
-                    onPageChange={page => this.setState(page)}
-                    label={`${this.state.from + 1}-${this.state.to} of ${this.state.stateArr.length > 0 && this.state.stateArr.length}`}
-                /> */}
                 </DataTable>
             </ScrollView >
         </Fragment >

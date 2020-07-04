@@ -5,7 +5,7 @@ import axios from "axios";
 import * as Api from "./../../../../config/config"
 import { capitalize } from "./../Common/Utils"
 
-const perPage = 20;
+const itemsPerPage = 20;
 const KitchenList = () => {
 
     let [tableHead, setTableHead] = useState(['Kitchen Name', 'City', 'Email', 'Status']);
@@ -36,11 +36,9 @@ const KitchenList = () => {
 
     useEffect(async () => {
 
-        setIsLoading(true)
         getKitchenList();
 
-        return unsubscribe
-    }, [])
+    },[])
 
     const getKitchenList = async () => {
         setIsLoading(true)
@@ -63,7 +61,7 @@ const KitchenList = () => {
                     //console.log("---->>>>>>>>>>>>>", JSON.stringify(res.data))
 
                     let totalResult = res.data.kitchen_count !== undefined && res.data.kitchen_count
-                    let totalPage = Math.ceil(totalResult / perPage)
+                    let totalPage = Math.ceil(totalResult / itemsPerPage)
 
                     let results = res.data.result !== undefined && res.data.result.map((kitchen, index) => {
                         return [capitalize(kitchen.kitchen_name), capitalize(kitchen.city), kitchen.email, kitchen.status]

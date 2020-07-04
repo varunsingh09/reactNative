@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Text, ScrollView, ActivityIndicator } from 'react-native'
 import axios from "axios";
 
@@ -12,31 +12,29 @@ import { createMaterialTopTabNavigator } from 'react-navigation-tabs';
 import DeliveryAndZipcodes from './DeliveryAndZipcodes';
 import KitchenList from './KitchenList';
 
-const itemsPerPage = 2;
+const itemsPerPage = 20;
 const page = 0
 
 
-class Product extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            stateArr: [],
-            spinner: false,
-            message: null,
-            from: page * itemsPerPage,
-            to: (page + 1) * itemsPerPage,
-            animating: true
-        }
-    }
-    componentDidMount = () => {
-        this.stateCityList()
-    }
+const Product = () => {
 
-    stateCityList = async (city) => {
+    let [loading, setIsLoading] = useState(false);
+    let [offset, setOffset] = useState(0)
+    let [totalPage, setTotalPage] = useState([])
+    let [stateArr, setStateArr] = useState([])
+    let [message, setMessage] = useState([])
+    let [animating, setAnimating] = useState([])
+
+    useEffect(async () => {
+
+        stateCityList();
+
+    }, [])
+
+
+    const stateCityList = async (city) => {
         console.warn(city)
-        this.setState({ spinner: true })
-        //console.log('come')
-
+        setIsLoading(true)
         try {
 
             const productList = await axios.get(
@@ -47,59 +45,52 @@ class Product extends Component {
                     }
                 }).then(res => {
                     //console.log("---->>>>>>>>>>>>>", JSON.stringify(res.data.result))
-                    this.setState({ stateArr: res.data.results !== undefined && res.data.results, spinner: false })
+                    //this.setState({ stateArr: res.data.results !== undefined && res.data.results, loading: false })
+                    setStateArr(res.data.results !== undefined && res.data.results)
+                    setIsLoading(false)
                 }
                 );
 
         } catch (err) {
             if (err.response === undefined) {
-                this.setState({ "message": 'Remote Server Not Working', spinner: false })
+                //this.setState({ "message": 'Remote Server Not Working', loading: false })
+                setMessage('Remote Server Not Working')
+                setIsLoading(false)
             }
-            //this.setState({ "errors": err.response.data.errors, spinner: false })
         }
 
     }
-    render() {
-        //console.log("-------", this.state.stateArr, "====")
 
-        //return this.state.message !== null && <Error />
+    return (
 
-        return (
+        <ScrollView vertical={true} >
+            <ActivityIndicator
+                animating={loading}
+                color="#252051"
+                size="large"
+                style={{
+                    flex: 1,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                }}
+            />
+            <DataTable>
+                <DataTable.Header style={styles.HeadStyle}>
+                    <DataTable.Title><Text style={styles.HeadText}>Kitchen Name</Text></DataTable.Title>
+                    <DataTable.Title><Text style={styles.HeadText}>Item Name</Text></DataTable.Title>
+                    <DataTable.Title><Text style={styles.HeadText}>Item Type</Text></DataTable.Title>
+                </DataTable.Header>
+                {stateArr.length > 0 && stateArr.map((list, index) =>
+                    <DataTable.Row key={index}>
+                        <DataTable.Cell style={styles.HeadRow}  >{capitalize(list.kitchen_name)}</DataTable.Cell>
+                        <DataTable.Cell style={styles.HeadRow}  >{capitalize(list.item_name)}</DataTable.Cell>
+                        <DataTable.Cell style={styles.HeadRow}  >{capitalize(list.item_type)}</DataTable.Cell>
+                    </DataTable.Row>
+                )}
+            </DataTable>
+        </ScrollView >
+    )
 
-            <ScrollView vertical={true} >
-                <ActivityIndicator
-                    animating={this.state.spinner}
-                    color="#252051"
-                    size="large"
-                    style={{
-                        flex: 1,
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                    }}
-                />
-                <DataTable>
-                    <DataTable.Header style={styles.HeadStyle}>
-                        <DataTable.Title><Text style={styles.HeadText}>Kitchen Name</Text></DataTable.Title>
-                        <DataTable.Title><Text style={styles.HeadText}>Item Name</Text></DataTable.Title>
-                        <DataTable.Title><Text style={styles.HeadText}>Item Type</Text></DataTable.Title>
-                    </DataTable.Header>
-                    {this.state.stateArr.length > 0 && this.state.stateArr.map((list, index) =>
-                        <DataTable.Row key={index}>
-                            <DataTable.Cell style={styles.HeadRow}  >{capitalize(list.kitchen_name)}</DataTable.Cell>
-                            <DataTable.Cell style={styles.HeadRow}  >{capitalize(list.item_name)}</DataTable.Cell>
-                            <DataTable.Cell style={styles.HeadRow}  >{capitalize(list.item_type)}</DataTable.Cell>
-                        </DataTable.Row>
-                    )}
-                    <DataTable.Pagination
-                        page={page}
-                        numberOfPages={Math.floor(this.state.stateArr.length > 0 && this.state.stateArr / itemsPerPage)}
-                        onPageChange={page => this.setState(page)}
-                        label={`${this.state.from + 1}-${this.state.to} of ${this.state.stateArr.length > 0 && this.state.stateArr.length}`}
-                    />
-                </DataTable>
-            </ScrollView >
-        )
-    }
 }
 
 
