@@ -34,7 +34,7 @@ const KitchenList = () => {
 
     }
 
-    useEffect(async () => {
+    useEffect( () => {
 
         getKitchenList();
 

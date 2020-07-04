@@ -25,7 +25,7 @@ const Product = () => {
     let [message, setMessage] = useState([])
     let [animating, setAnimating] = useState([])
 
-    useEffect(async () => {
+    useEffect(() => {
 
         stateCityList();
 
