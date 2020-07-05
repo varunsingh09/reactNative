@@ -34,11 +34,11 @@ const KitchenList = () => {
 
     }
 
-    useEffect( () => {
+    useEffect(() => {
 
         getKitchenList();
 
-    },[])
+    }, [])
 
     const getKitchenList = async () => {
         setIsLoading(true)
@@ -68,7 +68,7 @@ const KitchenList = () => {
 
                     })
                     setIsLoading(false)
-                    setTableData(results)
+                    setTableData([...tableData,...results])
                     setTotalPage(totalPage)
 
                 }
@@ -89,7 +89,7 @@ const KitchenList = () => {
         </TouchableOpacity>
     );
 
-
+    //console.log("final result " , tableData)
     return (
         <View style={styles.container}>
             {loading === true && <ActivityIndicator
@@ -102,7 +102,7 @@ const KitchenList = () => {
                     justifyContent: 'center',
                 }}
             />}
-            <ScrollView horizontal={true}  style={{marginTop:17}}>
+            <ScrollView horizontal={true} style={{ marginTop: 17 }}>
                 <View>
 
                     <Table borderStyle={{ borderWidth: 1, borderColor: '#C1C0B9' }}>
