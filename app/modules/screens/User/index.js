@@ -6,6 +6,7 @@ import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import AsyncStorage from '@react-native-community/async-storage';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import ContactList from "./ContactList/"
 
 const Logout = (props) => {
     console.warn("====", props.navigation)
@@ -53,6 +54,14 @@ const TabNavigator = createBottomTabNavigator({
             tabBarLabel: 'Profile',
             tabBarIcon: ({ tintColor }) => (
                 <Icon name="user-secret" color={tintColor} size={20} />
+            )
+        },
+    }, ContactList: {
+        screen: ContactList,
+        navigationOptions: {
+            tabBarLabel: 'Contact List',
+            tabBarIcon: ({ tintColor }) => (
+                <Icon name="address-book" color={tintColor} size={20} />
             )
         },
     }, Logout: {
