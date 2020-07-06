@@ -2,6 +2,7 @@ import React from 'react';
 
 //Import all required component
 import { View, Text } from 'react-native';
+import FBLogin from './FBLogin';
 
 const SettingsScreen = () => {
   return (
@@ -11,6 +12,7 @@ const SettingsScreen = () => {
         Setting Screen Example
       </Text>
       <Text style={{ fontSize: 18, marginTop: 10 }}></Text>
+      <FBLogin />
     </View>
   );
 };
