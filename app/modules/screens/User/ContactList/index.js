@@ -24,7 +24,7 @@ const index = () => {
 
     const loadContacts = () => {
         Contacts.getAll((err, contacts) => {
-            contacts.sort((a, b) => a.givenName.toLowerCase() > b.givenName.toLowerCase());
+            contacts.sort((a, b) => a.givenName > b.givenName);
             console.log('contacts -> ', contacts);
             if (err === "denied") {
                 alert("Permission to access contacts was denied");
@@ -43,13 +43,13 @@ const index = () => {
             loadContacts();
         } else if (phoneNumberRegex.test(text)) {
             Contacts.getContactsByPhoneNumber(text, (err, contacts) => {
-                contacts.sort((a, b) => a.givenName.toLowerCase() > b.givenName.toLowerCase());
+                contacts.sort((a, b) => a.givenName > b.givenName);
                 setContacts(contacts);
                 console.log('contacts', contacts);
             });
         } else {
             Contacts.getContactsMatchingString(text, (err, contacts) => {
-                contacts.sort((a, b) => a.givenName.toLowerCase() > b.givenName.toLowerCase());
+                contacts.sort((a, b) => a.givenName > b.givenName);
                 setContacts(contacts);
                 console.log('contacts', contacts);
             });

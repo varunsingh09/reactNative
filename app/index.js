@@ -6,6 +6,7 @@ import styles from './../app/modules/styles/index';
 
 
 const App = () => {
+    console.disableYellowBox = true;
     useEffect(() => {
         SplashScreen.hide();
     }, []);
