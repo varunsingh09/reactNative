@@ -1,30 +1,20 @@
-import React, { useEffect, Fragment } from 'react';
-import { StatusBar, SafeAreaView, ScrollView } from 'react-native'
-import SplashScreen from 'react-native-splash-screen';
-import Navigator from './modules/setup/routes';
-import styles from './../app/modules/styles/index';
+import React, { Component } from 'react';
 
+import { Provider } from 'react-redux';
 
-const App = () => {
-    console.disableYellowBox = true;
-    useEffect(() => {
-        SplashScreen.hide();
-    }, []);
+import store from './../app/redux/store';
 
-    return (
-        <Fragment>
-            {Platform.OS === 'android' && <StatusBar barStyle="dark-content" />}
-            <Navigator />
-            <SafeAreaView>
-                <ScrollView
-                    contentInsetAdjustmentBehavior="automatic"
-                    style={styles.scrollView}>
-                </ScrollView>
-            </SafeAreaView>
-        </Fragment>
-    )
+import Route from './../app/routes';
+
+export default class App extends Component {
+    render() {
+        console.disableYellowBox = true;
+        return (
+            <Provider store={store}>
+
+                <Route />
+
+            </Provider>
+        );
+    }
 }
-
-//export default NetworkDetector(App)
-
-export default App
