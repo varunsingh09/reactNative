@@ -9,7 +9,9 @@ import { connect } from 'react-redux';
 import Product from '../components/Product.component';
 import { addToCart } from '../redux/actions/cartActions';
 import { fetchProducts } from '../redux/actions/productAction';
+
 import Logo from '../components/Logo.component';
+
 import Cart from '../components/Cart.component';
 
 class Products extends Component {

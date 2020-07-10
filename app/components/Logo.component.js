@@ -11,7 +11,7 @@ const logoImage = require('./../assets/images/eco-logo.png');
 class Logo extends Component {
 
     goHome = () => {
-        this.props.navigation.navigate('Products');
+        this.props.navigation.navigate('Cart');
     }
     render() {
         return (

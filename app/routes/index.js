@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
-
-import Icon from 'react-native-vector-icons/Ionicons';
 import {
     StyleSheet,
 } from 'react-native';
@@ -11,10 +9,12 @@ import {
 import AppDrawerNavigator from "./StackNavigator"
 
 const AppSwitchNavigator = createSwitchNavigator({
-    Dashboard: { screen: AppDrawerNavigator },
+    Dashboard: { screen: AppDrawerNavigator ,},
+    
+
     //  Welcome: { screen: WelcomeScreen },  
 
-});
+},);
 
 const AppContainer = createAppContainer(AppSwitchNavigator);
 
