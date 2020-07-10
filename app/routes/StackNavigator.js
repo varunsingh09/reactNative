@@ -10,9 +10,8 @@ import { StyleSheet, View, Dimensions } from 'react-native';
 import DashboardScreen from "./../pages/Dashboard"
 import HomeScreen from "./../pages/Home"
 import ProductScreen from "./../pages/Products"
+import CheckoutScreen from "./../pages/Checkout"
 import SideNavigation from "./SideNavigation"
-import TopBar from "./HeaderActionBar"
-
 
 
 const DashboardStackNavigator = createStackNavigator(
@@ -76,6 +75,28 @@ const ProductStackNavigator = createStackNavigator(
     }
 );
 
+
+const CheckoutStackNavigator = createStackNavigator(
+    {
+        CheckoutNavigator: CheckoutScreen
+    },
+    {
+        defaultNavigationOptions: ({ navigation }) => {
+            return {
+                headerLeft: (
+                    <Icon
+                        style={{ paddingLeft: 10 }}
+                        onPress={() => navigation.openDrawer()}
+                        name="md-menu"
+                        size={30}
+                    />
+                )
+            };
+        }
+    }
+);
+
+
 const NavigationDrawerStructure = () => {
     //Top Navigation Header with Donute Button
     toggleDrawer = () => {
@@ -106,6 +127,9 @@ const AppDrawerNavigator = createDrawerNavigator({
     },
     Products: {
         screen: ProductStackNavigator
+    },
+    Checkout: {
+        screen: CheckoutStackNavigator
     },
 }, {
     //For the Custom sidebar menu we have to provide our CustomSidebarMenu

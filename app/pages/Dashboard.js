@@ -19,7 +19,7 @@
         render() {
             return (
                 <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                    <ProductScreen />
+                    <ProductScreen navigation={this.props.navigation}/>
                 </View>
             );
         }

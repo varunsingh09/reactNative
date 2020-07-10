@@ -22,6 +22,11 @@ export default class SideNavigation extends Component {
                 navOptionName: 'Products',
                 screenToNavigate: 'Products',
             },
+            {
+                navOptionThumb: 'build',
+                navOptionName: 'Checkout',
+                screenToNavigate: 'Checkout',
+            },
         ];
     }
     render() {

@@ -50,11 +50,10 @@ class Products extends Component {
         const { products, navigation } = this.props
         let { searchQuery } = this.state
         let productsFinal = searchQuery.length > 0 ? products.filter((item) => item.title.toLowerCase().includes(searchQuery.toLowerCase())) : products
-        console.log(productsFinal)
 
         return (
             <View style={styles.container}>
-                <TopBar navigation={this.props.navigation}
+                <TopBar navigation={navigation}
                     searchQuery={this.state.searchQuery}
                     onChangeSearch={this.onChangeSearch} />
                 <View style={styles.body}>

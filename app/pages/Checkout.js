@@ -10,8 +10,8 @@ export class Checkout extends Component {
     static navigationOptions = ({ navigation }) => {
         return {
             headerTitle: 'Checkout',
-            headerLeft: <Logo navigation={navigation} />,
-            headerRight: <Cart navigation={navigation} />
+            //headerLeft: <Logo navigation={navigation} />,
+            //headerRight: <Cart navigation={navigation} />
         }
     }
     render() {
