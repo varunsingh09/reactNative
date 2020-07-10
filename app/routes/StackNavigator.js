@@ -30,7 +30,7 @@ const DashboardStackNavigator = createStackNavigator(
                         size={30}
                     />
                 ),
-                header: <TopBar navigation={navigation} />
+                //header: <TopBar navigation={navigation} />
             };
         }
     }

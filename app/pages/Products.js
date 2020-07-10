@@ -9,8 +9,7 @@ import { connect } from 'react-redux';
 import Product from '../components/Product.component';
 import { addToCart } from '../redux/actions/cartActions';
 import { fetchProducts } from '../redux/actions/productAction';
-
-import Logo from '../components/Logo.component';
+import TopBar from "./../routes/HeaderActionBar"
 
 import Cart from '../components/Cart.component';
 
@@ -24,6 +23,9 @@ class Products extends Component {
     }
     constructor(props) {
         super(props);
+        this.state = {
+            searchQuery: ''
+        }
     }
 
     componentWillMount = () => {
@@ -34,14 +36,30 @@ class Products extends Component {
         this.props.addToCart(product);
     }
 
+    onChangeSearch = (value) => {
+
+        console.log('Shown search', value);
+        this.setState({ searchQuery: value })
+
+
+    }
+
+
     render() {
+
         const { products, navigation } = this.props
+        let { searchQuery } = this.state
+        let productsFinal = searchQuery.length > 0 ? products.filter((item) => item.title.includes(searchQuery)) : products
+        //console.log(productsFinal)
+
         return (
             <View style={styles.container}>
-
+                <TopBar navigation={this.props.navigation}
+                    searchQuery={this.state.searchQuery}
+                    onChangeSearch={this.onChangeSearch} />
                 <View style={styles.body}>
                     <FlatList
-                        data={products}
+                        data={productsFinal}
                         renderItem={({ item }) => <Product item={item} addItemsToCart={this.addItemsToCart} product={item} />}
                         keyExtractor={(item) => item.id}
                         ItemSeparatorComponent={() => <View style={{ height: 0.5, backgroundColor: '#34495e90' }} />} />
