@@ -1,29 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
-import Products from './../pages/Products';
-import Checkout from './../pages/Checkout';
-import Receipt from './../pages/Receipt';
 
-import themes from './../styles/theme.style';
+import Icon from 'react-native-vector-icons/Ionicons';
+import {
+    StyleSheet,
+} from 'react-native';
 
-const Route = createStackNavigator(
-    {
-        Products: { screen: Products },
-        Checkout: { screen: Checkout },
-        Receipt: { screen: Receipt }
-    },
-    {
-        navigationOptions: {
-            headerStyle: {
-                backgroundColor: themes.BACKGROUND_COLOR,
-                paddingHorizontal: 10,
-            },
-            headerTintColor: '#fff'
-        }
+import AppDrawerNavigator from "./StackNavigator"
+
+const AppSwitchNavigator = createSwitchNavigator({
+    Dashboard: { screen: AppDrawerNavigator },
+    //  Welcome: { screen: WelcomeScreen },  
+
+});
+
+const AppContainer = createAppContainer(AppSwitchNavigator);
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
     }
-);
+});
 
-export default createAppContainer(Route);
+export default AppContainer

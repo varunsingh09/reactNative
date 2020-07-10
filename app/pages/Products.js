@@ -16,7 +16,7 @@ class Products extends Component {
     static navigationOptions = ({ navigation }) => {
         return {
             headerTitle: 'Products',
-            headerLeft: <Logo navigation={navigation} />,
+            //headerLeft: <Logo navigation={navigation} />,
             headerRight: <Cart navigation={navigation} />
         }
     }

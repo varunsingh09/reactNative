@@ -11,6 +11,7 @@ import themes from '../styles/theme.style';
 
 class Product extends Component {
     addToCart = () => {
+        console.log('click',this.props.item)
         this.props.addItemsToCart(this.props.item)
     }
     render() {
