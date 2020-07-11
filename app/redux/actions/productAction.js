@@ -1,5 +1,5 @@
 import { FETCH_PRODUCTS } from './types';
-import { getProducts } from '../../data';
+import { getProducts } from './../../config/data';
 
 export const fetchProducts = () => dispatch => {
     const books = getProducts();

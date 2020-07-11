@@ -7,8 +7,6 @@ import {
     Animated
 } from 'react-native';
 import { connect } from 'react-redux';
-
-
 export class Cart extends Component {
     constructor(props) {
         super(props);
@@ -17,13 +15,11 @@ export class Cart extends Component {
             opacity: new Animated.Value(1)
         };
     }
-
     componentWillReceiveProps(nextProps) {
         if (nextProps.cartItems !== this.props.cartItems) {
             this.startAnimation();
         }
     }
-
     startAnimation() {
         Animated.timing(this.state.opacity,
             {
@@ -35,7 +31,6 @@ export class Cart extends Component {
                 }, 100);
             })
     }
-
     endAnimation() {
         Animated.timing(this.state.opacity,
             {
@@ -43,7 +38,6 @@ export class Cart extends Component {
                 duration: 500
             }).start()
     }
-
     onPress = () => {
         this.props.navigation.navigate('Checkout');
     }
@@ -59,11 +53,9 @@ export class Cart extends Component {
         );
     }
 }
-
 const mapStateToProps = (state) => ({
     cartItems: state.cart.cart
 });
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -75,7 +67,6 @@ const styles = StyleSheet.create({
         fontSize: 14
     }
 })
-
 export default connect(
     mapStateToProps
 )(Cart);

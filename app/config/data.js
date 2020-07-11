@@ -6,7 +6,7 @@ const books = [
         authorbio: "About DiMarzio",
         publicationdate: "2017 by John Wiley & Sons",
         introduction: "This book is written to help start beginning Android developers ",
-        picture: require("./assets/images/books/android.png"),
+        picture: require("./../assets/images/books/android.png"),
         cost: 25
     },
     {
@@ -16,7 +16,7 @@ const books = [
         authorbio: "Kyle Simpson is a thorough pragmatist.",
         publicationdate: "2015-5-5",
         introduction: "This book is about shaking up your sense of understanding by exposing you ",
-        picture: require("./assets/images/books/es6.png"),
+        picture: require("./../assets/images/books/es6.png"),
         cost: 35.99
     },
     {
@@ -26,7 +26,7 @@ const books = [
         authorbio: "Full stack web developer and trainer.",
         publicationdate: "2016-5-10",
         introduction: "A complete refernce book on angular 2. ",
-        picture: require("./assets/images/books/ngbook21.png"),
+        picture: require("./../assets/images/books/ngbook21.png"),
         cost: 25.99
     },
     {
@@ -36,7 +36,7 @@ const books = [
         authorbio: "Full stack web developer and trainer.",
         publicationdate: "2016-5-10",
         introduction: "Welcome to the second edition of Pro Git.  ",
-        picture: require("./assets/images/books/progit.png"),
+        picture: require("./../assets/images/books/progit.png"),
         cost: 45.99
     },
     {
@@ -46,7 +46,7 @@ const books = [
         authorbio: "Sven A. Robbestad is a developer with a keen interest in the Web .",
         publicationdate: "2016-7-10",
         introduction: "ReactJS was developed as a tool to solve a problem with the application state. ",
-        picture: require("./assets/images/books/reactjsblue.png"),
+        picture: require("./../assets/images/books/reactjsblue.png"),
         cost: 20.99
     },
     {
@@ -56,7 +56,7 @@ const books = [
         authorbio: "Tony Robbins is one of the great influences of this generation.",
         publicationdate: "2013-5-10",
         introduction: "I’m sending you this gift of a condensed version of my 544-page original book in the hope",
-        picture: require("./assets/images/books/awaken.png"),
+        picture: require("./../assets/images/books/awaken.png"),
         cost: 22
     },
     {
@@ -66,7 +66,7 @@ const books = [
         authorbio: "Full stack web developer and trainer.",
         publicationdate: "2016-5-10",
         introduction: "Front-end development moves forward fast.  ",
-        picture: require("./assets/images/books/survivejs.png"),
+        picture: require("./../assets/images/books/survivejs.png"),
         cost: 25.99
     },
     {
@@ -77,7 +77,7 @@ const books = [
         publicationdate: "March 2016",
         introduction: "It is the modern framework you need to build performant and robust web applications.",
 
-        picture: require("./assets/images/books/switchingto.png"),
+        picture: require("./../assets/images/books/switchingto.png"),
         cost: 21
     },
     {
@@ -87,7 +87,7 @@ const books = [
         authorbio: "A world class motivational and sales consultant.",
         publicationdate: "2013-2-10",
         introduction: "A complete refernce book on todays selling. ",
-        picture: require("./assets/images/books/selling.png"),
+        picture: require("./../assets/images/books/selling.png"),
         cost: 25.99
     },
     {
@@ -97,7 +97,7 @@ const books = [
         authorbio: "A senior software engineer at PoP Art.",
         publicationdate: "2014-6-27",
         introduction: "Learn to build modern web applications with node and expressjs ",
-        picture: require("./assets/images/books/node.png"),
+        picture: require("./../assets/images/books/node.png"),
         cost: 19.99
     },
     {
@@ -107,7 +107,7 @@ const books = [
         authorbio: "About DiMarzio",
         publicationdate: "2017 by John Wiley & Sons",
         introduction: "This book is written to help start beginning Android developers ",
-        picture: require("./assets/images/books/android.png"),
+        picture: require("./../assets/images/books/android.png"),
         cost: 25
     },
     {
@@ -117,7 +117,7 @@ const books = [
         authorbio: "Kyle Simpson is a thorough pragmatist.",
         publicationdate: "2015-5-5",
         introduction: "This book is about shaking up your sense of understanding by exposing you ",
-        picture: require("./assets/images/books/es6.png"),
+        picture: require("./../assets/images/books/es6.png"),
         cost: 35.99
     },
     {
@@ -127,7 +127,7 @@ const books = [
         authorbio: "Full stack web developer and trainer.",
         publicationdate: "2016-5-10",
         introduction: "A complete refernce book on angular 2. ",
-        picture: require("./assets/images/books/ngbook21.png"),
+        picture: require("./../assets/images/books/ngbook21.png"),
         cost: 25.99
     },
     {
@@ -137,7 +137,7 @@ const books = [
         authorbio: "Full stack web developer and trainer.",
         publicationdate: "2016-5-10",
         introduction: "Welcome to the second edition of Pro Git.  ",
-        picture: require("./assets/images/books/progit.png"),
+        picture: require("./../assets/images/books/progit.png"),
         cost: 45.99
     },
     {
@@ -147,7 +147,7 @@ const books = [
         authorbio: "Sven A. Robbestad is a developer with a keen interest in the Web .",
         publicationdate: "2016-7-10",
         introduction: "ReactJS was developed as a tool to solve a problem with the application state. ",
-        picture: require("./assets/images/books/reactjsblue.png"),
+        picture: require("./../assets/images/books/reactjsblue.png"),
         cost: 20.99
     },
     {
@@ -157,7 +157,7 @@ const books = [
         authorbio: "Tony Robbins is one of the great influences of this generation.",
         publicationdate: "2013-5-10",
         introduction: "I’m sending you this gift of a condensed version of my 544-page original book in the hope",
-        picture: require("./assets/images/books/awaken.png"),
+        picture: require("./../assets/images/books/awaken.png"),
         cost: 22
     },
     {
@@ -167,7 +167,7 @@ const books = [
         authorbio: "Full stack web developer and trainer.",
         publicationdate: "2016-5-10",
         introduction: "Front-end development moves forward fast.  ",
-        picture: require("./assets/images/books/survivejs.png"),
+        picture: require("./../assets/images/books/survivejs.png"),
         cost: 25.99
     },
     {
@@ -178,7 +178,7 @@ const books = [
         publicationdate: "March 2016",
         introduction: "It is the modern framework you need to build performant and robust web applications.",
 
-        picture: require("./assets/images/books/switchingto.png"),
+        picture: require("./../assets/images/books/switchingto.png"),
         cost: 21
     },
     {
@@ -188,7 +188,7 @@ const books = [
         authorbio: "A world class motivational and sales consultant.",
         publicationdate: "2013-2-10",
         introduction: "A complete refernce book on todays selling. ",
-        picture: require("./assets/images/books/selling.png"),
+        picture: require("./../assets/images/books/selling.png"),
         cost: 25.99
     },
     {
@@ -198,7 +198,7 @@ const books = [
         authorbio: "A senior software engineer at PoP Art.",
         publicationdate: "2014-6-27",
         introduction: "Learn to build modern web applications with node and expressjs ",
-        picture: require("./assets/images/books/node.png"),
+        picture: require("./../assets/images/books/node.png"),
         cost: 19.99
     },
     {
@@ -208,7 +208,7 @@ const books = [
         authorbio: "About DiMarzio",
         publicationdate: "2017 by John Wiley & Sons",
         introduction: "This book is written to help start beginning Android developers ",
-        picture: require("./assets/images/books/android.png"),
+        picture: require("./../assets/images/books/android.png"),
         cost: 25
     },
     {
@@ -218,7 +218,7 @@ const books = [
         authorbio: "Kyle Simpson is a thorough pragmatist.",
         publicationdate: "2015-5-5",
         introduction: "This book is about shaking up your sense of understanding by exposing you ",
-        picture: require("./assets/images/books/es6.png"),
+        picture: require("./../assets/images/books/es6.png"),
         cost: 35.99
     },
     {
@@ -228,7 +228,7 @@ const books = [
         authorbio: "Full stack web developer and trainer.",
         publicationdate: "2016-5-10",
         introduction: "A complete refernce book on angular 2. ",
-        picture: require("./assets/images/books/ngbook21.png"),
+        picture: require("./../assets/images/books/ngbook21.png"),
         cost: 25.99
     },
     {
@@ -238,7 +238,7 @@ const books = [
         authorbio: "Full stack web developer and trainer.",
         publicationdate: "2016-5-10",
         introduction: "Welcome to the second edition of Pro Git.  ",
-        picture: require("./assets/images/books/progit.png"),
+        picture: require("./../assets/images/books/progit.png"),
         cost: 45.99
     },
     {
@@ -248,7 +248,7 @@ const books = [
         authorbio: "Sven A. Robbestad is a developer with a keen interest in the Web .",
         publicationdate: "2016-7-10",
         introduction: "ReactJS was developed as a tool to solve a problem with the application state. ",
-        picture: require("./assets/images/books/reactjsblue.png"),
+        picture: require("./../assets/images/books/reactjsblue.png"),
         cost: 20.99
     },
     {
@@ -258,7 +258,7 @@ const books = [
         authorbio: "Tony Robbins is one of the great influences of this generation.",
         publicationdate: "2013-5-10",
         introduction: "I’m sending you this gift of a condensed version of my 544-page original book in the hope",
-        picture: require("./assets/images/books/awaken.png"),
+        picture: require("./../assets/images/books/awaken.png"),
         cost: 22
     },
     {
@@ -268,7 +268,7 @@ const books = [
         authorbio: "Full stack web developer and trainer.",
         publicationdate: "2016-5-10",
         introduction: "Front-end development moves forward fast.  ",
-        picture: require("./assets/images/books/survivejs.png"),
+        picture: require("./../assets/images/books/survivejs.png"),
         cost: 25.99
     },
     {
@@ -279,7 +279,7 @@ const books = [
         publicationdate: "March 2016",
         introduction: "It is the modern framework you need to build performant and robust web applications.",
 
-        picture: require("./assets/images/books/switchingto.png"),
+        picture: require("./../assets/images/books/switchingto.png"),
         cost: 21
     },
     {
@@ -289,7 +289,7 @@ const books = [
         authorbio: "A world class motivational and sales consultant.",
         publicationdate: "2013-2-10",
         introduction: "A complete refernce book on todays selling. ",
-        picture: require("./assets/images/books/selling.png"),
+        picture: require("./../assets/images/books/selling.png"),
         cost: 25.99
     },
     {
@@ -299,7 +299,7 @@ const books = [
         authorbio: "A senior software engineer at PoP Art.",
         publicationdate: "2014-6-27",
         introduction: "Learn to build modern web applications with node and expressjs ",
-        picture: require("./assets/images/books/node.png"),
+        picture: require("./../assets/images/books/node.png"),
         cost: 19.99
     },
     {
@@ -309,7 +309,7 @@ const books = [
         authorbio: "About DiMarzio",
         publicationdate: "2017 by John Wiley & Sons",
         introduction: "This book is written to help start beginning Android developers ",
-        picture: require("./assets/images/books/android.png"),
+        picture: require("./../assets/images/books/android.png"),
         cost: 25
     },
     {
@@ -319,7 +319,7 @@ const books = [
         authorbio: "Kyle Simpson is a thorough pragmatist.",
         publicationdate: "2015-5-5",
         introduction: "This book is about shaking up your sense of understanding by exposing you ",
-        picture: require("./assets/images/books/es6.png"),
+        picture: require("./../assets/images/books/es6.png"),
         cost: 35.99
     },
     {
@@ -329,7 +329,7 @@ const books = [
         authorbio: "Full stack web developer and trainer.",
         publicationdate: "2016-5-10",
         introduction: "A complete refernce book on angular 2. ",
-        picture: require("./assets/images/books/ngbook21.png"),
+        picture: require("./../assets/images/books/ngbook21.png"),
         cost: 25.99
     },
     {
@@ -339,7 +339,7 @@ const books = [
         authorbio: "Full stack web developer and trainer.",
         publicationdate: "2016-5-10",
         introduction: "Welcome to the second edition of Pro Git.  ",
-        picture: require("./assets/images/books/progit.png"),
+        picture: require("./../assets/images/books/progit.png"),
         cost: 45.99
     },
     {
@@ -349,7 +349,7 @@ const books = [
         authorbio: "Sven A. Robbestad is a developer with a keen interest in the Web .",
         publicationdate: "2016-7-10",
         introduction: "ReactJS was developed as a tool to solve a problem with the application state. ",
-        picture: require("./assets/images/books/reactjsblue.png"),
+        picture: require("./../assets/images/books/reactjsblue.png"),
         cost: 20.99
     },
     {
@@ -359,7 +359,7 @@ const books = [
         authorbio: "Tony Robbins is one of the great influences of this generation.",
         publicationdate: "2013-5-10",
         introduction: "I’m sending you this gift of a condensed version of my 544-page original book in the hope",
-        picture: require("./assets/images/books/awaken.png"),
+        picture: require("./../assets/images/books/awaken.png"),
         cost: 22
     },
     {
@@ -369,7 +369,7 @@ const books = [
         authorbio: "Full stack web developer and trainer.",
         publicationdate: "2016-5-10",
         introduction: "Front-end development moves forward fast.  ",
-        picture: require("./assets/images/books/survivejs.png"),
+        picture: require("./../assets/images/books/survivejs.png"),
         cost: 25.99
     },
     {
@@ -380,7 +380,7 @@ const books = [
         publicationdate: "March 2016",
         introduction: "It is the modern framework you need to build performant and robust web applications.",
 
-        picture: require("./assets/images/books/switchingto.png"),
+        picture: require("./../assets/images/books/switchingto.png"),
         cost: 21
     },
     {
@@ -390,7 +390,7 @@ const books = [
         authorbio: "A world class motivational and sales consultant.",
         publicationdate: "2013-2-10",
         introduction: "A complete refernce book on todays selling. ",
-        picture: require("./assets/images/books/selling.png"),
+        picture: require("./../assets/images/books/selling.png"),
         cost: 25.99
     },
     {
@@ -400,7 +400,7 @@ const books = [
         authorbio: "A senior software engineer at PoP Art.",
         publicationdate: "2014-6-27",
         introduction: "Learn to build modern web applications with node and expressjs ",
-        picture: require("./assets/images/books/node.png"),
+        picture: require("./../assets/images/books/node.png"),
         cost: 19.99
     }
 ];

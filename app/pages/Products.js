@@ -11,13 +11,14 @@ import { addToCart } from '../redux/actions/cartActions';
 import { fetchProducts } from '../redux/actions/productAction';
 import SearchBar from './SearchBar';
 import Cart from '../components/Cart.component';
+import Logo from "../components/Logo.component"
 
 class Products extends Component {
     static navigationOptions = ({ navigation }) => {
         return {
             headerTitle: 'Products',
             //headerLeft: <Logo navigation={navigation} />,
-            headerRight: <Cart navigation={navigation} />
+            //headerRight: <Cart navigation={navigation} />
         }
     }
     constructor(props) {
@@ -60,6 +61,7 @@ class Products extends Component {
                         data={productsFinal}
                         renderItem={({ item }) => <Product item={item} addItemsToCart={this.addItemsToCart} product={item} />}
                         keyExtractor={(item) => item.id}
+                        numColumns={2}
                         ItemSeparatorComponent={() => <View style={{ height: 0.5, backgroundColor: '#34495e90', width: '94%', marginLeft: 10 }} />} />
                 </View>
             </View>

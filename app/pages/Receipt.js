@@ -19,8 +19,8 @@ class Receipt extends Component {
     static navigationOptions = ({ navigation }) => {
         return {
             headerTitle: 'Receipt',
-            headerLeft: <Logo navigation={navigation} />,
-            headerRight: <Cart navigation={navigation} />
+           // headerLeft: <Logo navigation={navigation} />,
+           // headerRight: <Cart navigation={navigation} />
         }
     }
     getTotal() {
