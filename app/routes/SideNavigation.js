@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Image, Text } from 'react-native';
-import { Icon } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class SideNavigation extends Component {
     constructor() {
@@ -8,22 +8,22 @@ export default class SideNavigation extends Component {
         //Setting up the Main Top Large Image of the Custom Sidebar
         this.items = [
             {
-                navOptionThumb: 'camera',
+                navOptionThumb: 'dashboard',
                 navOptionName: 'Dashboard',
                 screenToNavigate: 'Dashboard',
             },
             {
-                navOptionThumb: 'image',
+                navOptionThumb: 'home',
                 navOptionName: 'Home',
                 screenToNavigate: 'Home',
             },
             {
-                navOptionThumb: 'build',
+                navOptionThumb: 'product-hunt',
                 navOptionName: 'Products',
                 screenToNavigate: 'Products',
             },
             {
-                navOptionThumb: 'build',
+                navOptionThumb: 'shopping-cart',
                 navOptionName: 'Checkout',
                 screenToNavigate: 'Checkout',
             },

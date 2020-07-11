@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, } from 'react';
 import {
     View,
     StyleSheet,
@@ -9,8 +9,7 @@ import { connect } from 'react-redux';
 import Product from '../components/Product.component';
 import { addToCart } from '../redux/actions/cartActions';
 import { fetchProducts } from '../redux/actions/productAction';
-import TopBar from "./../routes/HeaderActionBar"
-
+import SearchBar from './SearchBar';
 import Cart from '../components/Cart.component';
 
 class Products extends Component {
@@ -24,7 +23,7 @@ class Products extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchQuery: ''
+            searchQuery: '',
         }
     }
 
@@ -36,11 +35,10 @@ class Products extends Component {
         this.props.addToCart(product);
     }
 
-    onChangeSearch = (value) => {
+    updateSearch = (search) => {
 
-        console.log('Shown search', value);
-        this.setState({ searchQuery: value })
-
+        console.log('Shown search', search);
+        this.setState({ searchQuery: search })
 
     }
 
@@ -51,17 +49,18 @@ class Products extends Component {
         let { searchQuery } = this.state
         let productsFinal = searchQuery.length > 0 ? products.filter((item) => item.title.toLowerCase().includes(searchQuery.toLowerCase())) : products
 
+        //console.log('results', productsFinal);
         return (
             <View style={styles.container}>
-                <TopBar navigation={navigation}
-                    searchQuery={this.state.searchQuery}
-                    onChangeSearch={this.onChangeSearch} />
+
+                <SearchBar searchQuery={searchQuery} updateSearch={this.updateSearch} />
+
                 <View style={styles.body}>
                     <FlatList
                         data={productsFinal}
                         renderItem={({ item }) => <Product item={item} addItemsToCart={this.addItemsToCart} product={item} />}
                         keyExtractor={(item) => item.id}
-                        ItemSeparatorComponent={() => <View style={{ height: 0.5, backgroundColor: '#34495e90' }} />} />
+                        ItemSeparatorComponent={() => <View style={{ height: 0.5, backgroundColor: '#34495e90', width: '94%', marginLeft: 10 }} />} />
                 </View>
             </View>
 
@@ -71,11 +70,12 @@ class Products extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        width: '100%'
     },
     body: {
         flex: 1,
-        justifyContent: 'center'
+        justifyContent: 'center',
     }
 });
 const mapStateToProps = (state) => ({
