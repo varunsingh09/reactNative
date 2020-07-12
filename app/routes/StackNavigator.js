@@ -5,6 +5,9 @@ import { createDrawerNavigator } from 'react-navigation-drawer';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import { StyleSheet, View, Dimensions } from 'react-native';
+import AuthNavigation from "./AuthNavigation"
+import NavigationDrawerHeader from './NavigationDrawerHeader';
+import SideNavigation from "./SideNavigation"
 
 
 import DashboardScreen from "./../pages/Dashboard"
@@ -13,9 +16,8 @@ import ProductScreen from "./../pages/Products"
 import ProductDetailScreen from "./../pages/ProductDetail"
 import CheckoutScreen from "./../pages/Checkout"
 import ReceiptScreen from "./../pages/Receipt"
-import SideNavigation from "./SideNavigation"
 import ProfileScreen from "./../pages/users/"
-import AuthNavigation from "./AuthNavigation"
+
 
 
 const DashboardStackNavigator = createStackNavigator(
@@ -46,14 +48,7 @@ const HomeStackNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({ navigation }) => {
             return {
-                headerLeft: (
-                    <Icon
-                        style={{ paddingLeft: 10 }}
-                        onPress={() => navigation.navigate('Dashboard')}
-                        name="md-arrow-back"
-                        size={30}
-                    />
-                )
+                headerLeft: <NavigationDrawerHeader navigation={navigation} />
             };
         }
     }
@@ -66,14 +61,7 @@ const ProductStackNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({ navigation }) => {
             return {
-                headerLeft: (
-                    <Icon
-                        style={{ paddingLeft: 10 }}
-                        onPress={() => navigation.navigate('Dashboard')}
-                        name="md-arrow-back"
-                        size={30}
-                    />
-                )
+                headerLeft: <NavigationDrawerHeader navigation={navigation} />
             };
         }
     }
@@ -87,14 +75,7 @@ const CheckoutStackNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({ navigation }) => {
             return {
-                headerLeft: (
-                    <Icon
-                        style={{ paddingLeft: 10 }}
-                        onPress={() => navigation.navigate('Dashboard')}
-                        name="md-arrow-back"
-                        size={30}
-                    />
-                )
+                headerLeft: <NavigationDrawerHeader navigation={navigation} />
             };
         }
     }
@@ -107,14 +88,7 @@ const ReceiptStackNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({ navigation }) => {
             return {
-                headerLeft: (
-                    <Icon
-                        style={{ paddingLeft: 10 }}
-                        onPress={() => navigation.navigate('Dashboard')}
-                        name="md-arrow-back"
-                        size={30}
-                    />
-                )
+                headerLeft: <NavigationDrawerHeader navigation={navigation} />
             };
         }
     }
@@ -127,14 +101,7 @@ const ProfileStackNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({ navigation }) => {
             return {
-                headerLeft: (
-                    <Icon
-                        style={{ paddingLeft: 10 }}
-                        onPress={() => navigation.navigate('Dashboard')}
-                        name="md-arrow-back"
-                        size={30}
-                    />
-                ),
+                headerLeft: <NavigationDrawerHeader navigation={navigation} />,
                 title: 'Profile Screen',
             };
         }
@@ -148,14 +115,7 @@ const ProductDetailStackNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({ navigation }) => {
             return {
-                headerLeft: (
-                    <Icon
-                        style={{ paddingLeft: 10 }}
-                        onPress={() => navigation.navigate('Dashboard')}
-                        name="md-arrow-back"
-                        size={30}
-                    />
-                ),
+                headerLeft: <NavigationDrawerHeader navigation={navigation} />,
                 title: 'Product Detail',
             };
         }
