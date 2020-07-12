@@ -2,7 +2,7 @@ import React from 'react';
 
 import { createStackNavigator } from 'react-navigation-stack';
 import { createDrawerNavigator } from 'react-navigation-drawer';
-import Icon from 'react-native-vector-icons/Ionicons';
+//import Icon from 'react-native-vector-icons/Ionicons';
 
 import { StyleSheet, View, Dimensions } from 'react-native';
 import AuthNavigation from "./AuthNavigation"
@@ -27,14 +27,15 @@ const DashboardStackNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({ navigation }) => {
             return {
-                headerLeft: (
-                    <Icon
-                        style={{ paddingLeft: 10 }}
-                        onPress={() => navigation.openDrawer()}
-                        name="md-menu"
-                        size={30}
-                    />
-                ),
+                headerLeft: <NavigationDrawerHeader navigation={navigation} name="md-menu" screen={null} />
+                // headerLeft: (
+                //     <Icon
+                //         style={{ paddingLeft: 10 }}
+                //         onPress={() => navigation.openDrawer()}
+                //         name="md-menu"
+                //         size={30}
+                //     />
+                // ),
                 //header: <TopBar navigation={navigation} />
             };
         }
@@ -48,7 +49,7 @@ const HomeStackNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({ navigation }) => {
             return {
-                headerLeft: <NavigationDrawerHeader navigation={navigation} />
+                headerLeft: <NavigationDrawerHeader navigation={navigation} name="md-arrow-back" screen="Dashboard" />
             };
         }
     }
@@ -61,7 +62,7 @@ const ProductStackNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({ navigation }) => {
             return {
-                headerLeft: <NavigationDrawerHeader navigation={navigation} />
+                headerLeft: <NavigationDrawerHeader navigation={navigation} name="md-arrow-back" screen="Dashboard" />
             };
         }
     }
@@ -75,7 +76,7 @@ const CheckoutStackNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({ navigation }) => {
             return {
-                headerLeft: <NavigationDrawerHeader navigation={navigation} />
+                headerLeft: <NavigationDrawerHeader navigation={navigation} name="md-arrow-back" screen="Dashboard" />
             };
         }
     }
@@ -88,7 +89,7 @@ const ReceiptStackNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({ navigation }) => {
             return {
-                headerLeft: <NavigationDrawerHeader navigation={navigation} />
+                headerLeft: <NavigationDrawerHeader navigation={navigation} name="md-arrow-back" screen="Dashboard" />
             };
         }
     }
@@ -101,7 +102,7 @@ const ProfileStackNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({ navigation }) => {
             return {
-                headerLeft: <NavigationDrawerHeader navigation={navigation} />,
+                headerLeft: <NavigationDrawerHeader navigation={navigation} name="md-arrow-back" screen="Dashboard" />,
                 title: 'Profile Screen',
             };
         }
@@ -115,7 +116,7 @@ const ProductDetailStackNavigator = createStackNavigator(
     {
         defaultNavigationOptions: ({ navigation }) => {
             return {
-                headerLeft: <NavigationDrawerHeader navigation={navigation} />,
+                headerLeft: <NavigationDrawerHeader navigation={navigation} name="md-arrow-back" screen="Dashboard" />,
                 title: 'Product Detail',
             };
         }
