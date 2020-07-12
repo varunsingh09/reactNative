@@ -11,14 +11,17 @@ import themes from '../styles/theme.style';
 
 class Product extends Component {
     addToCart = () => {
-        console.log('click',this.props.item)
+        console.log('click', this.props.item)
         this.props.addItemsToCart(this.props.item)
     }
     render() {
-        const { product } = this.props;
+        const { product, navigation } = this.props;
+
         return (
             <View style={styles.container}>
-                <Image source={product.picture} style={{ width: 150, height: 150 }} />
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('ProductDetailScreen')}>
+                    <Image source={product.picture} style={{ width: 150, height: 150 }} />
+                </TouchableOpacity>
                 <View style={styles.productDes}>
                     <Text>{product.title}</Text>
                     <Text>${(product.cost).toFixed(2)}</Text>

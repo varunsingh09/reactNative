@@ -59,7 +59,7 @@ const LoginScreen = props => {
         if (responseJson.status == 1) {
           AsyncStorage.setItem('user_id', responseJson.data[0].user_id);
           console.log(responseJson.data[0].user_id);
-          props.navigation.navigate('DrawerNavigationRoutes');
+          props.navigation.navigate('Dashboard');
         } else {
           setErrortext('Please check your email id or password');
           console.log('Please check your email id or password');

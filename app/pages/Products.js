@@ -59,7 +59,7 @@ class Products extends Component {
                 <View style={styles.body}>
                     <FlatList
                         data={productsFinal}
-                        renderItem={({ item }) => <Product item={item} addItemsToCart={this.addItemsToCart} product={item} />}
+                        renderItem={({ item }) => <Product item={item} addItemsToCart={this.addItemsToCart} product={item} navigation={this.props.navigation} />}
                         keyExtractor={(item) => item.id}
                         numColumns={2}
                         ItemSeparatorComponent={() => <View style={{ height: 0.5, backgroundColor: '#34495e90', width: '94%', marginLeft: 10 }} />} />

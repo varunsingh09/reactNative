@@ -10,6 +10,7 @@ import { StyleSheet, View, Dimensions } from 'react-native';
 import DashboardScreen from "./../pages/Dashboard"
 import HomeScreen from "./../pages/Home"
 import ProductScreen from "./../pages/Products"
+import ProductDetailScreen from "./../pages/ProductDetail"
 import CheckoutScreen from "./../pages/Checkout"
 import ReceiptScreen from "./../pages/Receipt"
 import SideNavigation from "./SideNavigation"
@@ -48,8 +49,8 @@ const HomeStackNavigator = createStackNavigator(
                 headerLeft: (
                     <Icon
                         style={{ paddingLeft: 10 }}
-                        onPress={() => navigation.openDrawer()}
-                        name="md-menu"
+                        onPress={() => navigation.navigate('Dashboard')}
+                        name="md-arrow-back"
                         size={30}
                     />
                 )
@@ -68,8 +69,8 @@ const ProductStackNavigator = createStackNavigator(
                 headerLeft: (
                     <Icon
                         style={{ paddingLeft: 10 }}
-                        onPress={() => navigation.openDrawer()}
-                        name="md-menu"
+                        onPress={() => navigation.navigate('Dashboard')}
+                        name="md-arrow-back"
                         size={30}
                     />
                 )
@@ -89,8 +90,8 @@ const CheckoutStackNavigator = createStackNavigator(
                 headerLeft: (
                     <Icon
                         style={{ paddingLeft: 10 }}
-                        onPress={() => navigation.openDrawer()}
-                        name="md-menu"
+                        onPress={() => navigation.navigate('Dashboard')}
+                        name="md-arrow-back"
                         size={30}
                     />
                 )
@@ -109,8 +110,8 @@ const ReceiptStackNavigator = createStackNavigator(
                 headerLeft: (
                     <Icon
                         style={{ paddingLeft: 10 }}
-                        onPress={() => navigation.openDrawer()}
-                        name="md-menu"
+                        onPress={() => navigation.navigate('Dashboard')}
+                        name="md-arrow-back"
                         size={30}
                     />
                 )
@@ -129,8 +130,8 @@ const ProfileStackNavigator = createStackNavigator(
                 headerLeft: (
                     <Icon
                         style={{ paddingLeft: 10 }}
-                        onPress={() => navigation.openDrawer()}
-                        name="md-menu"
+                        onPress={() => navigation.navigate('Dashboard')}
+                        name="md-arrow-back"
                         size={30}
                     />
                 ),
@@ -140,6 +141,26 @@ const ProfileStackNavigator = createStackNavigator(
     }
 );
 
+const ProductDetailStackNavigator = createStackNavigator(
+    {
+        ProductDetailNavigator: ProductDetailScreen
+    },
+    {
+        defaultNavigationOptions: ({ navigation }) => {
+            return {
+                headerLeft: (
+                    <Icon
+                        style={{ paddingLeft: 10 }}
+                        onPress={() => navigation.navigate('Dashboard')}
+                        name="md-arrow-back"
+                        size={30}
+                    />
+                ),
+                title: 'Product Detail',
+            };
+        }
+    }
+);
 
 
 
@@ -183,6 +204,9 @@ let drawerNavigation = {
     },
     ProfileScreen: {
         screen: ProfileStackNavigator
+    },
+    ProductDetailScreen: {
+        screen: ProductDetailStackNavigator
     },
     Auth: {
         /* Auth Navigator which include Login Signup will come once */
