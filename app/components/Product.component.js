@@ -14,12 +14,13 @@ class Product extends Component {
         console.log('click', this.props.item)
         this.props.addItemsToCart(this.props.item)
     }
+
+
     render() {
         const { product, navigation } = this.props;
-
         return (
             <View style={styles.container}>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('ProductDetailScreen')}>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate("ProductDetailScreen", { text: "First" })}>
                     <Image source={product.picture} style={{ width: 150, height: 150 }} />
                 </TouchableOpacity>
                 <View style={styles.productDes}>

@@ -6,8 +6,21 @@ const books = [
         authorbio: "About DiMarzio",
         publicationdate: "2017 by John Wiley & Sons",
         introduction: "This book is written to help start beginning Android developers ",
-        picture: require("./../assets/images/books/android.png"),
-        cost: 25
+        picture: 'https://bootdey.com/img/Content/avatar/avatar3.png',
+        cost: 25,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "2",
@@ -17,7 +30,20 @@ const books = [
         publicationdate: "2015-5-5",
         introduction: "This book is about shaking up your sense of understanding by exposing you ",
         picture: require("./../assets/images/books/es6.png"),
-        cost: 35.99
+        cost: 35.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "3",
@@ -27,7 +53,20 @@ const books = [
         publicationdate: "2016-5-10",
         introduction: "A complete refernce book on angular 2. ",
         picture: require("./../assets/images/books/ngbook21.png"),
-        cost: 25.99
+        cost: 25.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "4",
@@ -37,7 +76,20 @@ const books = [
         publicationdate: "2016-5-10",
         introduction: "Welcome to the second edition of Pro Git.  ",
         picture: require("./../assets/images/books/progit.png"),
-        cost: 45.99
+        cost: 45.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "5",
@@ -47,7 +99,20 @@ const books = [
         publicationdate: "2016-7-10",
         introduction: "ReactJS was developed as a tool to solve a problem with the application state. ",
         picture: require("./../assets/images/books/reactjsblue.png"),
-        cost: 20.99
+        cost: 20.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "6",
@@ -57,7 +122,20 @@ const books = [
         publicationdate: "2013-5-10",
         introduction: "I’m sending you this gift of a condensed version of my 544-page original book in the hope",
         picture: require("./../assets/images/books/awaken.png"),
-        cost: 22
+        cost: 22,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "7",
@@ -67,7 +145,20 @@ const books = [
         publicationdate: "2016-5-10",
         introduction: "Front-end development moves forward fast.  ",
         picture: require("./../assets/images/books/survivejs.png"),
-        cost: 25.99
+        cost: 25.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "8",
@@ -78,7 +169,20 @@ const books = [
         introduction: "It is the modern framework you need to build performant and robust web applications.",
 
         picture: require("./../assets/images/books/switchingto.png"),
-        cost: 21
+        cost: 21,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "9",
@@ -88,7 +192,20 @@ const books = [
         publicationdate: "2013-2-10",
         introduction: "A complete refernce book on todays selling. ",
         picture: require("./../assets/images/books/selling.png"),
-        cost: 25.99
+        cost: 25.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "10",
@@ -98,7 +215,20 @@ const books = [
         publicationdate: "2014-6-27",
         introduction: "Learn to build modern web applications with node and expressjs ",
         picture: require("./../assets/images/books/node.png"),
-        cost: 19.99
+        cost: 19.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "11",
@@ -108,7 +238,20 @@ const books = [
         publicationdate: "2017 by John Wiley & Sons",
         introduction: "This book is written to help start beginning Android developers ",
         picture: require("./../assets/images/books/android.png"),
-        cost: 25
+        cost: 25,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "12",
@@ -118,7 +261,20 @@ const books = [
         publicationdate: "2015-5-5",
         introduction: "This book is about shaking up your sense of understanding by exposing you ",
         picture: require("./../assets/images/books/es6.png"),
-        cost: 35.99
+        cost: 35.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "13",
@@ -128,7 +284,20 @@ const books = [
         publicationdate: "2016-5-10",
         introduction: "A complete refernce book on angular 2. ",
         picture: require("./../assets/images/books/ngbook21.png"),
-        cost: 25.99
+        cost: 25.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "14",
@@ -138,7 +307,20 @@ const books = [
         publicationdate: "2016-5-10",
         introduction: "Welcome to the second edition of Pro Git.  ",
         picture: require("./../assets/images/books/progit.png"),
-        cost: 45.99
+        cost: 45.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "15",
@@ -148,7 +330,20 @@ const books = [
         publicationdate: "2016-7-10",
         introduction: "ReactJS was developed as a tool to solve a problem with the application state. ",
         picture: require("./../assets/images/books/reactjsblue.png"),
-        cost: 20.99
+        cost: 20.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "16",
@@ -158,7 +353,20 @@ const books = [
         publicationdate: "2013-5-10",
         introduction: "I’m sending you this gift of a condensed version of my 544-page original book in the hope",
         picture: require("./../assets/images/books/awaken.png"),
-        cost: 22
+        cost: 22,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "17",
@@ -168,7 +376,20 @@ const books = [
         publicationdate: "2016-5-10",
         introduction: "Front-end development moves forward fast.  ",
         picture: require("./../assets/images/books/survivejs.png"),
-        cost: 25.99
+        cost: 25.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "18",
@@ -179,7 +400,20 @@ const books = [
         introduction: "It is the modern framework you need to build performant and robust web applications.",
 
         picture: require("./../assets/images/books/switchingto.png"),
-        cost: 21
+        cost: 21,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "19",
@@ -189,7 +423,20 @@ const books = [
         publicationdate: "2013-2-10",
         introduction: "A complete refernce book on todays selling. ",
         picture: require("./../assets/images/books/selling.png"),
-        cost: 25.99
+        cost: 25.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "20",
@@ -199,7 +446,20 @@ const books = [
         publicationdate: "2014-6-27",
         introduction: "Learn to build modern web applications with node and expressjs ",
         picture: require("./../assets/images/books/node.png"),
-        cost: 19.99
+        cost: 19.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "21",
@@ -209,7 +469,20 @@ const books = [
         publicationdate: "2017 by John Wiley & Sons",
         introduction: "This book is written to help start beginning Android developers ",
         picture: require("./../assets/images/books/android.png"),
-        cost: 25
+        cost: 25,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "22",
@@ -219,7 +492,20 @@ const books = [
         publicationdate: "2015-5-5",
         introduction: "This book is about shaking up your sense of understanding by exposing you ",
         picture: require("./../assets/images/books/es6.png"),
-        cost: 35.99
+        cost: 35.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "23",
@@ -229,7 +515,20 @@ const books = [
         publicationdate: "2016-5-10",
         introduction: "A complete refernce book on angular 2. ",
         picture: require("./../assets/images/books/ngbook21.png"),
-        cost: 25.99
+        cost: 25.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "24",
@@ -239,7 +538,20 @@ const books = [
         publicationdate: "2016-5-10",
         introduction: "Welcome to the second edition of Pro Git.  ",
         picture: require("./../assets/images/books/progit.png"),
-        cost: 45.99
+        cost: 45.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "25",
@@ -249,7 +561,20 @@ const books = [
         publicationdate: "2016-7-10",
         introduction: "ReactJS was developed as a tool to solve a problem with the application state. ",
         picture: require("./../assets/images/books/reactjsblue.png"),
-        cost: 20.99
+        cost: 20.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "26",
@@ -259,7 +584,20 @@ const books = [
         publicationdate: "2013-5-10",
         introduction: "I’m sending you this gift of a condensed version of my 544-page original book in the hope",
         picture: require("./../assets/images/books/awaken.png"),
-        cost: 22
+        cost: 22,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "27",
@@ -269,7 +607,20 @@ const books = [
         publicationdate: "2016-5-10",
         introduction: "Front-end development moves forward fast.  ",
         picture: require("./../assets/images/books/survivejs.png"),
-        cost: 25.99
+        cost: 25.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "28",
@@ -280,7 +631,20 @@ const books = [
         introduction: "It is the modern framework you need to build performant and robust web applications.",
 
         picture: require("./../assets/images/books/switchingto.png"),
-        cost: 21
+        cost: 21,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "29",
@@ -290,7 +654,20 @@ const books = [
         publicationdate: "2013-2-10",
         introduction: "A complete refernce book on todays selling. ",
         picture: require("./../assets/images/books/selling.png"),
-        cost: 25.99
+        cost: 25.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "30",
@@ -300,7 +677,20 @@ const books = [
         publicationdate: "2014-6-27",
         introduction: "Learn to build modern web applications with node and expressjs ",
         picture: require("./../assets/images/books/node.png"),
-        cost: 19.99
+        cost: 19.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "31",
@@ -310,7 +700,20 @@ const books = [
         publicationdate: "2017 by John Wiley & Sons",
         introduction: "This book is written to help start beginning Android developers ",
         picture: require("./../assets/images/books/android.png"),
-        cost: 25
+        cost: 25,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "32",
@@ -320,7 +723,20 @@ const books = [
         publicationdate: "2015-5-5",
         introduction: "This book is about shaking up your sense of understanding by exposing you ",
         picture: require("./../assets/images/books/es6.png"),
-        cost: 35.99
+        cost: 35.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "33",
@@ -330,7 +746,20 @@ const books = [
         publicationdate: "2016-5-10",
         introduction: "A complete refernce book on angular 2. ",
         picture: require("./../assets/images/books/ngbook21.png"),
-        cost: 25.99
+        cost: 25.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "34",
@@ -340,7 +769,20 @@ const books = [
         publicationdate: "2016-5-10",
         introduction: "Welcome to the second edition of Pro Git.  ",
         picture: require("./../assets/images/books/progit.png"),
-        cost: 45.99
+        cost: 45.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "35",
@@ -350,7 +792,20 @@ const books = [
         publicationdate: "2016-7-10",
         introduction: "ReactJS was developed as a tool to solve a problem with the application state. ",
         picture: require("./../assets/images/books/reactjsblue.png"),
-        cost: 20.99
+        cost: 20.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "36",
@@ -360,7 +815,20 @@ const books = [
         publicationdate: "2013-5-10",
         introduction: "I’m sending you this gift of a condensed version of my 544-page original book in the hope",
         picture: require("./../assets/images/books/awaken.png"),
-        cost: 22
+        cost: 22,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "37",
@@ -370,7 +838,20 @@ const books = [
         publicationdate: "2016-5-10",
         introduction: "Front-end development moves forward fast.  ",
         picture: require("./../assets/images/books/survivejs.png"),
-        cost: 25.99
+        cost: 25.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "38",
@@ -381,7 +862,20 @@ const books = [
         introduction: "It is the modern framework you need to build performant and robust web applications.",
 
         picture: require("./../assets/images/books/switchingto.png"),
-        cost: 21
+        cost: 21,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "39",
@@ -391,7 +885,20 @@ const books = [
         publicationdate: "2013-2-10",
         introduction: "A complete refernce book on todays selling. ",
         picture: require("./../assets/images/books/selling.png"),
-        cost: 25.99
+        cost: 25.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "40",
@@ -401,7 +908,20 @@ const books = [
         publicationdate: "2014-6-27",
         introduction: "Learn to build modern web applications with node and expressjs ",
         picture: require("./../assets/images/books/node.png"),
-        cost: 19.99
+        cost: 19.99,
+        images: [
+            "https://bootdey.com/img/Content/avatar/avatar6.png",
+            "https://bootdey.com/img/Content/avatar/avatar2.png",
+            "https://bootdey.com/img/Content/avatar/avatar3.png",
+        ],
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     }
 ];
 
