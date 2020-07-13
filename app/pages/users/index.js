@@ -6,6 +6,7 @@ import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import AsyncStorage from '@react-native-community/async-storage';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import Profile from "./Profile"
 
 
 const Logout = (props) => {
@@ -39,13 +40,6 @@ const Logout = (props) => {
     return true
 };
 
-const Profile = () => {
-    
-    return <Text style={{ fontSize: 25, color: '#307ecc' }}>
-        <Text>Profile</Text>
-    </Text>
-
-}
 
 const TabNavigator = createBottomTabNavigator({
     Profile: {
