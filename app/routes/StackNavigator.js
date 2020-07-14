@@ -18,6 +18,7 @@ import CheckoutScreen from "./../pages/Checkout"
 import ReceiptScreen from "./../pages/Receipt"
 import ProfileScreen from "./../pages/users/"
 import AddressListScreen from "./../pages/users/AddressList"
+import CategoryScreen from "./../pages/Category"
 
 
 
@@ -138,8 +139,19 @@ const AddressListStackNavigator = createStackNavigator(
     }
 );
 
-
-
+const CategoryStackNavigator = createStackNavigator(
+    {
+        CategoryNavigator: CategoryScreen
+    },
+    {
+        defaultNavigationOptions: ({ navigation }) => {
+            return {
+                headerLeft: <NavigationDrawerHeader navigation={navigation} name="md-arrow-back" screen="Dashboard" />,
+                title: 'Category',
+            };
+        }
+    }
+);
 
 const NavigationDrawerStructure = () => {
     //Top Navigation Header with Donute Button
@@ -186,6 +198,9 @@ let drawerNavigation = {
     },
     AddressListScreen: {
         screen: AddressListStackNavigator
+    },
+    Category: {
+        screen: CategoryStackNavigator
     },
     Auth: {
         /* Auth Navigator which include Login Signup will come once */

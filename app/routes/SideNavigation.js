@@ -18,6 +18,11 @@ const SideNavigation = props => {
             icon: <Icon name="home" size={18} />
         },
         {
+            navOptionName: 'Category',
+            screenToNavigate: 'Category',
+            icon: <Icon name="list-alt" size={18} />
+        },
+        {
             navOptionName: 'Products',
             screenToNavigate: 'Products',
             icon: <Icon name="product-hunt" size={18} />

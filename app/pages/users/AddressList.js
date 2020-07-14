@@ -4,12 +4,8 @@ import {
     StyleSheet,
     Text,
     View,
-    TextInput,
-    Button,
     TouchableHighlight,
-    Alert,
     Image,
-    TouchableOpacity
 } from 'react-native';
 import ListView from "deprecated-react-native-listview";
 
