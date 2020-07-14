@@ -17,6 +17,7 @@ import ProductDetailScreen from "./../pages/ProductDetail"
 import CheckoutScreen from "./../pages/Checkout"
 import ReceiptScreen from "./../pages/Receipt"
 import ProfileScreen from "./../pages/users/"
+import AddressListScreen from "./../pages/users/AddressList"
 
 
 
@@ -123,6 +124,20 @@ const ProductDetailStackNavigator = createStackNavigator(
     }
 );
 
+const AddressListStackNavigator = createStackNavigator(
+    {
+        AddressListNavigator: AddressListScreen
+    },
+    {
+        defaultNavigationOptions: ({ navigation }) => {
+            return {
+                headerLeft: <NavigationDrawerHeader navigation={navigation} name="md-arrow-back" screen="Dashboard" />,
+                title: 'Address List',
+            };
+        }
+    }
+);
+
 
 
 
@@ -168,6 +183,9 @@ let drawerNavigation = {
     },
     ProductDetailScreen: {
         screen: ProductDetailStackNavigator
+    },
+    AddressListScreen: {
+        screen: AddressListStackNavigator
     },
     Auth: {
         /* Auth Navigator which include Login Signup will come once */

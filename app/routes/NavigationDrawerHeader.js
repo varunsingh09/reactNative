@@ -8,6 +8,7 @@ const NavigationDrawerHeader = props => {
     props.navigation.toggleDrawer();
   };
 
+  console.log(props.screen, "====", props.screen === null)
   return (
     <View style={{ flexDirection: 'row' }}>
       <TouchableOpacity onPress={toggleDrawer}>

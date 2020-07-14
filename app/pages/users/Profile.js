@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import ListView from "deprecated-react-native-listview";
+
 export default class UserProfileView extends Component {
 
     constructor(props) {
@@ -18,20 +19,31 @@ export default class UserProfileView extends Component {
         const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
         this.state = {
             dataSource: ds.cloneWithRows([
-                { image: "https://png.icons8.com/shopping-cart/color/40", title: "Order" },
-                { image: "https://png.icons8.com/heart-outline/color/40", title: "Like" },
-                { image: "https://png.icons8.com/voice-recognition/color/40", title: "Comment" },
-                { image: "https://png.icons8.com/downloads/office/40", title: "Download" },
-                {
-                    image: "https://png.icons8.com/edit-file/color/40", title: "Logout"
-                },
+                { image: "https://png.icons8.com/shopping-cart/color/40", label: "Order", title: "order" },
+                { image: "https://png.icons8.com/heart-outline/color/40", label: "Address List", title: "address_list" },
+                { image: "https://png.icons8.com/voice-recognition/color/40", label: "Comment", title: "comment" },
+                { image: "https://png.icons8.com/downloads/office/40", label: "Download", title: "download" },
+                { image: "https://png.icons8.com/edit-file/color/40", label: "Logout", title: "logout" },
 
             ]),
         };
     }
 
-    onClickLogout = () => {
-        console.log('logout');
+    onClickHandle = (users) => {
+
+
+        if (users.title === "Logout") {
+            this.handleLogout();
+        } else if (users.title === "address_list") {
+            console.log("address_list",users.title);
+            this.props.navigation.navigate('AddressListScreen');
+        }
+
+
+    }
+
+
+    handleLogout = () => {
 
         Alert.alert(
             'Logout',
@@ -55,7 +67,6 @@ export default class UserProfileView extends Component {
             { cancelable: false }
         );
 
-
     }
 
     render() {
@@ -64,7 +75,7 @@ export default class UserProfileView extends Component {
                 <ScrollView style={styles.content}>
                     <View style={styles.header}>
                         <View style={styles.headerContent}>
-                            <Image style={styles.avatar} source={{ uri: 'https://bootdey.com/img/Content/avatar/avatar3.png' }} />
+                            <Image style={styles.avatar} source={require('./../../assets/images/p.jpeg')} />
                             <Text style={styles.name}>Varun Sisodia</Text>
                         </View>
                     </View>
@@ -74,10 +85,10 @@ export default class UserProfileView extends Component {
                             dataSource={this.state.dataSource}
                             renderRow={(user, index) => {
                                 return (
-                                    <TouchableOpacity onPress={() => user.title === "Logout" ? this.onClickLogout() : console.log(user.title)}>
+                                    <TouchableOpacity onPress={() => this.onClickHandle(user)}>
                                         <View style={styles.box} >
                                             <Image style={styles.icon} source={{ uri: user.image }} />
-                                            <Text style={styles.title}>{user.title}</Text>
+                                            <Text style={styles.title}>{user.label}</Text>
                                             <Image style={styles.btn} source={{ uri: "https://png.icons8.com/customer/office/40" }} />
                                         </View>
                                     </TouchableOpacity>
