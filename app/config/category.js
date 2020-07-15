@@ -1,44 +1,80 @@
-const category = [
+export const categoryData = [
     {
-        name: 'Clothing',
+        isExpanded: true,
+        category_name: 'Fashion',
         id: 1,
-        children: [
-            {
-                name: 'Children',
-                id: 2
-            },
-            {
-                name: 'Men',
-                id: 3
-            },
-            {
-                name: 'Women',
-                id: 4
-            },
-
-        ]
+        subcategory: [
+            { id: 2, val: 'Men' },
+            { id: 3, val: 'Women' },
+            { id: 4, val: 'Children' }
+        ],
     },
     {
-        name: 'Books',
+        isExpanded: true,
+        category_name: 'Mobile',
         id: 5,
-        children: [
-            {
-                name: 'Computer',
-                id: 6
-            },
-            {
-                name: 'Medical',
-                id: 7
-            },
-            {
-                name: 'Engineering',
-                id: 8
-            }
-        ]
-    }
+        subcategory: [
+            { id: 6, val: 'Samsung' },
+            { id: 7, val: 'Apple' },
+            { id: 8, val: 'Motorola' }
+        ],
+    },
+    {
+        isExpanded: true,
+        category_name: 'Books',
+        id: 9,
+        subcategory: [
+            { id: 10, val: 'Computer' },
+            { id: 11, val: 'Medical' }
+        ],
+    },
+    {
+        isExpanded: true,
+        category_name: 'Electronics',
+        id: 12,
+        subcategory: [
+            { id: 13, val: 'TV' },
+            { id: 14, val: 'Laptop' },
+            { id: 15, val: 'Home Appliances' }
+        ],
+    },
+    {
+        isExpanded: true,
+        category_name: 'Grocery',
+        id: 16,
+        subcategory: [
+            { id: 17, val: 'Fragrance' },
+            { id: 18, val: 'Pulses' }
+        ],
+    },
+    {
+        isExpanded: true,
+        category_name: 'Toys',
+        id: 19,
+        subcategory: [
+            { id: 20, val: 'Game' },
+            { id: 21, val: 'Baby Care' }
+        ],
+    },
+    {
+        isExpanded: false,
+        category_name: 'Furniture',
+        id: 22,
+    },
+    {
+        isExpanded: true,
+        category_name: 'Auto Mobile',
+        id: 23,
+        subcategory: [
+            { id: 24, val: 'Car' },
+            { id: 25, val: 'Bike' }
+        ],
+    },
+
 ];
+
 export const getCategory = () => {
-    return categories;
+    return categoryData;
 
 }
 

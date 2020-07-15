@@ -1,6 +1,7 @@
 const books = [
     {
         id: "1",
+        catId:4,
         title: "Beginning Android Programming",
         author: "J.F DiMarzio",
         authorbio: "About DiMarzio",
@@ -24,6 +25,7 @@ const books = [
     },
     {
         id: "2",
+        catId:3,
         title: "ES6 & Beyound",
         author: "Kyle Simpson",
         authorbio: "Kyle Simpson is a thorough pragmatist.",
@@ -47,6 +49,7 @@ const books = [
     },
     {
         id: "3",
+        catId:4,
         title: "ng-book 2",
         author: "Ari Lerner",
         authorbio: "Full stack web developer and trainer.",
@@ -70,6 +73,7 @@ const books = [
     },
     {
         id: "4",
+        catId:6,
         title: "Pro Git",
         author: "Scott Chacon and Ben Straub",
         authorbio: "Full stack web developer and trainer.",
@@ -93,6 +97,7 @@ const books = [
     },
     {
         id: "5",
+        catId:7,
         title: "Reactjs Blueprints",
         author: "Sven A. Robbestad",
         authorbio: "Sven A. Robbestad is a developer with a keen interest in the Web .",
@@ -116,6 +121,7 @@ const books = [
     },
     {
         id: "6",
+        catId:8,
         title: "ReAwaken The Giant Within",
         author: "Tony Robins",
         authorbio: "Tony Robbins is one of the great influences of this generation.",
@@ -139,6 +145,7 @@ const books = [
     },
     {
         id: "7",
+        catId:10,
         title: "SurviveJS",
         author: "Juho Vapsalainen",
         authorbio: "Full stack web developer and trainer.",
@@ -162,6 +169,7 @@ const books = [
     },
     {
         id: "8",
+        catId:11,
         title: "Switching To Angular2",
         author: "Minko Gechev",
         authorbio: "Minko Gechev is a software engineer who strongly believes in open source software. ",
@@ -186,6 +194,7 @@ const books = [
     },
     {
         id: "9",
+        catId:13,
         title: "Unlimited Sales Success",
         author: "Brian Tracy",
         authorbio: "A world class motivational and sales consultant.",
@@ -209,6 +218,7 @@ const books = [
     },
     {
         id: "10",
+        catId:14,
         title: "Web Development with Node and ExpressJS",
         author: "Ethan Brown",
         authorbio: "A senior software engineer at PoP Art.",
@@ -232,6 +242,7 @@ const books = [
     },
     {
         id: "11",
+        catId:15,
         title: "Beginning Android Programming",
         author: "J.F DiMarzio",
         authorbio: "About DiMarzio",
@@ -255,6 +266,7 @@ const books = [
     },
     {
         id: "12",
+        catId:17,
         title: "ES6 & Beyound",
         author: "Kyle Simpson",
         authorbio: "Kyle Simpson is a thorough pragmatist.",
@@ -278,6 +290,7 @@ const books = [
     },
     {
         id: "13",
+        catId:18,
         title: "ng-book 2",
         author: "Ari Lerner",
         authorbio: "Full stack web developer and trainer.",
@@ -301,6 +314,7 @@ const books = [
     },
     {
         id: "14",
+        catId:20,
         title: "Pro Git",
         author: "Scott Chacon and Ben Straub",
         authorbio: "Full stack web developer and trainer.",
@@ -324,6 +338,7 @@ const books = [
     },
     {
         id: "15",
+        catId:21,
         title: "Reactjs Blueprints",
         author: "Sven A. Robbestad",
         authorbio: "Sven A. Robbestad is a developer with a keen interest in the Web .",
@@ -347,6 +362,7 @@ const books = [
     },
     {
         id: "16",
+        catId:22,
         title: "ReAwaken The Giant Within",
         author: "Tony Robins",
         authorbio: "Tony Robbins is one of the great influences of this generation.",
@@ -370,6 +386,7 @@ const books = [
     },
     {
         id: "17",
+        catId:24,
         title: "SurviveJS",
         author: "Juho Vapsalainen",
         authorbio: "Full stack web developer and trainer.",
@@ -393,6 +410,7 @@ const books = [
     },
     {
         id: "18",
+        catId:25,
         title: "Switching To Angular2",
         author: "Minko Gechev",
         authorbio: "Minko Gechev is a software engineer who strongly believes in open source software. ",
@@ -417,6 +435,7 @@ const books = [
     },
     {
         id: "19",
+        catId:2,
         title: "Unlimited Sales Success",
         author: "Brian Tracy",
         authorbio: "A world class motivational and sales consultant.",
@@ -440,6 +459,7 @@ const books = [
     },
     {
         id: "20",
+        catId:3,
         title: "Web Development with Node and ExpressJS",
         author: "Ethan Brown",
         authorbio: "A senior software engineer at PoP Art.",
@@ -463,6 +483,7 @@ const books = [
     },
     {
         id: "21",
+        catId:4,
         title: "Beginning Android Programming",
         author: "J.F DiMarzio",
         authorbio: "About DiMarzio",
@@ -486,6 +507,7 @@ const books = [
     },
     {
         id: "22",
+        catId:6,
         title: "ES6 & Beyound",
         author: "Kyle Simpson",
         authorbio: "Kyle Simpson is a thorough pragmatist.",
@@ -509,6 +531,7 @@ const books = [
     },
     {
         id: "23",
+        catId:7,
         title: "ng-book 2",
         author: "Ari Lerner",
         authorbio: "Full stack web developer and trainer.",
@@ -532,6 +555,7 @@ const books = [
     },
     {
         id: "24",
+        catId:8,
         title: "Pro Git",
         author: "Scott Chacon and Ben Straub",
         authorbio: "Full stack web developer and trainer.",
@@ -555,6 +579,7 @@ const books = [
     },
     {
         id: "25",
+        catId:10,
         title: "Reactjs Blueprints",
         author: "Sven A. Robbestad",
         authorbio: "Sven A. Robbestad is a developer with a keen interest in the Web .",
@@ -578,6 +603,7 @@ const books = [
     },
     {
         id: "26",
+        catId:11,
         title: "ReAwaken The Giant Within",
         author: "Tony Robins",
         authorbio: "Tony Robbins is one of the great influences of this generation.",
@@ -601,6 +627,7 @@ const books = [
     },
     {
         id: "27",
+        catId:12,
         title: "SurviveJS",
         author: "Juho Vapsalainen",
         authorbio: "Full stack web developer and trainer.",
@@ -624,6 +651,7 @@ const books = [
     },
     {
         id: "28",
+        catId:13,
         title: "Switching To Angular2",
         author: "Minko Gechev",
         authorbio: "Minko Gechev is a software engineer who strongly believes in open source software. ",
@@ -648,6 +676,7 @@ const books = [
     },
     {
         id: "29",
+        catId:14,
         title: "Unlimited Sales Success",
         author: "Brian Tracy",
         authorbio: "A world class motivational and sales consultant.",
@@ -671,6 +700,7 @@ const books = [
     },
     {
         id: "30",
+        catId:17,
         title: "Web Development with Node and ExpressJS",
         author: "Ethan Brown",
         authorbio: "A senior software engineer at PoP Art.",
@@ -694,6 +724,7 @@ const books = [
     },
     {
         id: "31",
+        catId:18,
         title: "Beginning Android Programming",
         author: "J.F DiMarzio",
         authorbio: "About DiMarzio",
@@ -717,6 +748,7 @@ const books = [
     },
     {
         id: "32",
+        catId:20,
         title: "ES6 & Beyound",
         author: "Kyle Simpson",
         authorbio: "Kyle Simpson is a thorough pragmatist.",
@@ -740,6 +772,7 @@ const books = [
     },
     {
         id: "33",
+        catId:21,
         title: "ng-book 2",
         author: "Ari Lerner",
         authorbio: "Full stack web developer and trainer.",
@@ -763,6 +796,7 @@ const books = [
     },
     {
         id: "34",
+        catId:22,
         title: "Pro Git",
         author: "Scott Chacon and Ben Straub",
         authorbio: "Full stack web developer and trainer.",
@@ -786,6 +820,7 @@ const books = [
     },
     {
         id: "35",
+        catId:23,
         title: "Reactjs Blueprints",
         author: "Sven A. Robbestad",
         authorbio: "Sven A. Robbestad is a developer with a keen interest in the Web .",
@@ -809,6 +844,7 @@ const books = [
     },
     {
         id: "36",
+        catId:24,
         title: "ReAwaken The Giant Within",
         author: "Tony Robins",
         authorbio: "Tony Robbins is one of the great influences of this generation.",
@@ -832,6 +868,7 @@ const books = [
     },
     {
         id: "37",
+        catId:25,
         title: "SurviveJS",
         author: "Juho Vapsalainen",
         authorbio: "Full stack web developer and trainer.",
@@ -855,6 +892,7 @@ const books = [
     },
     {
         id: "38",
+        catId:2,
         title: "Switching To Angular2",
         author: "Minko Gechev",
         authorbio: "Minko Gechev is a software engineer who strongly believes in open source software. ",
@@ -879,6 +917,7 @@ const books = [
     },
     {
         id: "39",
+        catId:3,
         title: "Unlimited Sales Success",
         author: "Brian Tracy",
         authorbio: "A world class motivational and sales consultant.",
@@ -902,6 +941,7 @@ const books = [
     },
     {
         id: "40",
+        catId:4,
         title: "Web Development with Node and ExpressJS",
         author: "Ethan Brown",
         authorbio: "A senior software engineer at PoP Art.",

@@ -9,12 +9,15 @@ import {
 } from 'react-native';
 //import basic react native components
 
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 class CategoryList extends Component {
     //Custom Component for the Expandable List
     constructor() {
         super();
         this.state = {
             layoutHeight: 0,
+            name: 'angle-down'
         };
     }
     componentWillReceiveProps(nextProps) {
@@ -40,6 +43,7 @@ class CategoryList extends Component {
     }
 
     render() {
+        console.log("--------------", this.props.item)
         return (
             <View>
                 {/*Header of the Expandable List Item*/}
@@ -47,7 +51,13 @@ class CategoryList extends Component {
                     activeOpacity={0.8}
                     onPress={this.props.onClickFunction}
                     style={styles.header}>
-                    <Text style={styles.headerText}>{this.props.item.category_name}</Text>
+                    <Text style={styles.headerText} onPress={this.props.onClickCategoryDetail(this.props.item.id)}>
+                        {this.props.item.category_name}
+                        {this.props.item.subcategory !== undefined &&
+                            <Icon name={this.props.item.isExpanded === true
+                                ? 'angle-down' : 'angle-up'} size={18} style={{ marginLeft: 10 }} />}
+                    </Text>
+
                 </TouchableOpacity>
                 <View
                     style={{
@@ -55,17 +65,18 @@ class CategoryList extends Component {
                         overflow: 'hidden',
                     }}>
                     {/*Content under the header of the Expandable List Item*/}
-                    {this.props.item.subcategory.map((item, key) => (
-                        <TouchableOpacity
-                            key={key}
-                            style={styles.content}
-                            onPress={() => console.log('Id: ' + item.id + ' val: ' + item.val)}>
-                            <Text style={styles.text}>
-                                {key}. {item.val}
-                            </Text>
-                            <View style={styles.separator} />
-                        </TouchableOpacity>
-                    ))}
+                    {this.props.item.subcategory !== undefined
+                        && this.props.item.subcategory.map((item, key) => (
+                            <TouchableOpacity
+                                key={key}
+                                style={styles.content}
+                                onPress={() => this.props.onClickCategoryDetail(item.id)}>
+                                <Text style={styles.text} >
+                                    {item.val}
+                                </Text>
+                                <View style={styles.separator} />
+                            </TouchableOpacity>
+                        ))}
                 </View>
             </View>
         );

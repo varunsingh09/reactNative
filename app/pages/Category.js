@@ -1,6 +1,7 @@
 /*Example of Expandable ListView in React Native*/
 import React, { Component } from 'react';
 import CategoryList from "./../components/Categorylist.component"
+import { categoryData } from "./../config/category"
 //import react in our project
 import {
     LayoutAnimation,
@@ -14,14 +15,14 @@ import {
 //import basic react native components
 
 class Category extends Component {
-    //Main View defined under this Class
+
 
     constructor() {
         super();
         if (Platform.OS === 'android') {
             UIManager.setLayoutAnimationEnabledExperimental(true);
         }
-        this.state = { listDataSource: CONTENT };
+        this.state = { listDataSource: categoryData };
     }
 
     updateLayout = index => {
@@ -37,7 +38,12 @@ class Category extends Component {
                 listDataSource: array,
             };
         });
+
+
     };
+    onCategoryDetail = (catId) => {
+        console.log("category id ", catId)
+    }
 
     render() {
         return (
@@ -47,6 +53,7 @@ class Category extends Component {
                         <CategoryList
                             key={item.category_name}
                             onClickFunction={this.updateLayout.bind(this, key)}
+                            onClickCategoryDetail={this.onCategoryDetail}
                             item={item}
                         />
                     ))}
@@ -68,62 +75,5 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
 });
-
-//Dummy content to show
-//You can also use dynamic data by calling webservice
-const CONTENT = [
-    {
-        isExpanded: false,
-        category_name: 'Fashion',
-        subcategory: [
-            { id: 1, val: 'Men' },
-            { id: 3, val: 'Women' },
-            { id: 4, val: 'Children' }
-        ],
-    },
-    {
-        isExpanded: true,
-        category_name: 'Mobile',
-        subcategory: [
-            { id: 5, val: 'Samsung' },
-            { id: 6, val: 'Apple' },
-            { id: 7, val: 'Motorola' }
-        ],
-    },
-    {
-        isExpanded: false,
-        category_name: 'Books',
-        subcategory: [
-            { id: 8, val: 'Computer' },
-            { id: 9, val: 'Medical' }
-        ],
-    },
-    {
-        isExpanded: false,
-        category_name: 'Electronics',
-        subcategory: [
-            { id: 10, val: 'TV' },
-            { id: 11, val: 'Laptop' },
-            { id: 12, val: 'Home Appliances' }
-        ],
-    },
-    {
-        isExpanded: true,
-        category_name: 'Grocery',
-        subcategory: [
-            { id: 13, val: 'Fragnence' },
-            { id: 14, val: 'Pulses' }
-        ],
-    },
-    {
-        isExpanded: true,
-        category_name: 'Toys',
-        subcategory: [
-            { id: 17, val: 'Game' },
-            { id: 18, val: 'Baby Care' }
-        ],
-    },
-    
-];
 
 export default Category
