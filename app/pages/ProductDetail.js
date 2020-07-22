@@ -38,7 +38,7 @@ class ProductDetail extends Component {
                 {images.map((url, key) => {
                     return (
                         <TouchableOpacity key={key} onPress={() => { this.setImageSelected(url) }}>
-                            <Image style={styles.smallImage} source={url}  />
+                            <Image style={styles.smallImage} source={url} />
                         </TouchableOpacity>
                     );
                 })}
@@ -84,15 +84,16 @@ class ProductDetail extends Component {
                             </View>
                         </View>
                     </View>
-
-                    <View style={styles.card}>
-                        <View style={styles.cardHeader}>
-                            <Text style={styles.cardTitle}>Colors</Text>
+                    {colors !== null &&
+                        <View style={styles.card}>
+                            <View style={styles.cardHeader}>
+                                <Text style={styles.cardTitle}>Colors</Text>
+                            </View>
+                            <View style={styles.cardContent}>
+                                {this.renderColors(colors)}
+                            </View>
                         </View>
-                        <View style={styles.cardContent}>
-                            {this.renderColors(colors)}
-                        </View>
-                    </View>
+                    }
                     <View style={styles.card}>
                         <View style={styles.cardHeader}>
                             <Text style={styles.cardTitle}>Price</Text>

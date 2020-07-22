@@ -14,14 +14,7 @@ const books = [
             require("./../assets/images/books/an2.jpg"),
             require("./../assets/images/books/an3.jpeg"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "2",
@@ -62,14 +55,7 @@ const books = [
             require("./../assets/images/books/ng2.jpg"),
             require("./../assets/images/books/ng3.jpg"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "4",
@@ -86,14 +72,7 @@ const books = [
             require("./../assets/images/books/pg2.jpeg"),
             require("./../assets/images/books/pg3.png"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors:null
     },
     {
         id: "5",
@@ -110,14 +89,7 @@ const books = [
             require("./../assets/images/books/rb2.jpg"),
             require("./../assets/images/books/rb3.jpeg"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "6",
@@ -134,14 +106,7 @@ const books = [
             require("./../assets/images/books/aw2.jpg"),
             require("./../assets/images/books/aw3.png"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "7",
@@ -158,14 +123,7 @@ const books = [
             require("./../assets/images/books/sj2.jpeg"),
             require("./../assets/images/books/sj3.png"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "8",
@@ -183,14 +141,7 @@ const books = [
             require("./../assets/images/books/sa2.jpeg"),
             require("./../assets/images/books/sa3.jpeg"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "9",
@@ -207,14 +158,7 @@ const books = [
             require("./../assets/images/books/s2.jpeg"),
             require("./../assets/images/books/s3.jpeg"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "10",
@@ -231,14 +175,7 @@ const books = [
             require("./../assets/images/books/n2.jpeg"),
             require("./../assets/images/books/n3.jpeg"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "11",
@@ -255,14 +192,7 @@ const books = [
             require("./../assets/images/books/an2.jpg"),
             require("./../assets/images/books/an3.jpeg"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "12",
@@ -279,14 +209,7 @@ const books = [
             require("./../assets/images/books/es2.jpg"),
             require("./../assets/images/books/es3.png"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "13",
@@ -303,14 +226,7 @@ const books = [
             require("./../assets/images/books/ng2.jpg"),
             require("./../assets/images/books/ng3.jpg"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "14",
@@ -327,14 +243,7 @@ const books = [
             require("./../assets/images/books/pg2.jpeg"),
             require("./../assets/images/books/pg3.png"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "15",
@@ -351,14 +260,7 @@ const books = [
             require("./../assets/images/books/rb2.jpg"),
             require("./../assets/images/books/rb3.jpeg"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "16",
@@ -375,14 +277,7 @@ const books = [
             require("./../assets/images/books/aw2.jpg"),
             require("./../assets/images/books/aw3.png"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "17",
@@ -399,14 +294,7 @@ const books = [
             require("./../assets/images/books/sj2.jpeg"),
             require("./../assets/images/books/sj3.png"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "18",
@@ -424,14 +312,7 @@ const books = [
             require("./../assets/images/books/sa2.jpeg"),
             require("./../assets/images/books/sa3.jpeg"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "19",
@@ -448,14 +329,7 @@ const books = [
             require("./../assets/images/books/s2.jpeg"),
             require("./../assets/images/books/s3.jpeg"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "20",
@@ -472,14 +346,7 @@ const books = [
             require("./../assets/images/books/n2.jpeg"),
             require("./../assets/images/books/n3.jpeg"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "21",
@@ -496,14 +363,7 @@ const books = [
             require("./../assets/images/books/an2.jpg"),
             require("./../assets/images/books/an3.jpeg"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "22",
@@ -520,14 +380,7 @@ const books = [
             require("./../assets/images/books/es2.jpg"),
             require("./../assets/images/books/es3.png"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "23",
@@ -544,14 +397,7 @@ const books = [
             require("./../assets/images/books/ng2.jpg"),
             require("./../assets/images/books/ng3.jpg"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "24",
@@ -568,14 +414,7 @@ const books = [
             require("./../assets/images/books/pg2.jpeg"),
             require("./../assets/images/books/pg3.png"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "25",
@@ -592,14 +431,7 @@ const books = [
             require("./../assets/images/books/rb2.jpg"),
             require("./../assets/images/books/rb3.jpeg"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "26",
@@ -616,14 +448,7 @@ const books = [
             require("./../assets/images/books/aw2.jpg"),
             require("./../assets/images/books/aw3.png"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "27",
@@ -640,14 +465,7 @@ const books = [
             require("./../assets/images/books/sj2.jpeg"),
             require("./../assets/images/books/sj3.png"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "28",
@@ -665,14 +483,7 @@ const books = [
             require("./../assets/images/books/sa2.jpeg"),
             require("./../assets/images/books/sa3.jpeg"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "29",
@@ -689,14 +500,7 @@ const books = [
             require("./../assets/images/books/s2.jpeg"),
             require("./../assets/images/books/s3.jpeg"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "30",
@@ -713,14 +517,7 @@ const books = [
             require("./../assets/images/books/n2.jpeg"),
             require("./../assets/images/books/n3.jpeg"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "31",
@@ -737,14 +534,7 @@ const books = [
             require("./../assets/images/books/an2.jpg"),
             require("./../assets/images/books/an3.jpeg"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "32",
@@ -761,14 +551,7 @@ const books = [
             require("./../assets/images/books/es2.jpg"),
             require("./../assets/images/books/es3.png"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "33",
@@ -785,14 +568,7 @@ const books = [
             require("./../assets/images/books/ng2.jpg"),
             require("./../assets/images/books/ng3.jpg"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "34",
@@ -809,14 +585,7 @@ const books = [
             require("./../assets/images/books/pg2.jpeg"),
             require("./../assets/images/books/pg3.png"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "35",
@@ -833,14 +602,7 @@ const books = [
             require("./../assets/images/books/rb2.jpg"),
             require("./../assets/images/books/rb3.jpeg"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "36",
@@ -857,14 +619,7 @@ const books = [
             require("./../assets/images/books/aw2.jpg"),
             require("./../assets/images/books/aw3.png"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "37",
@@ -881,14 +636,7 @@ const books = [
             require("./../assets/images/books/sj2.jpeg"),
             require("./../assets/images/books/sj3.png"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "38",
@@ -905,14 +653,7 @@ const books = [
             require("./../assets/images/books/sa2.jpeg"),
             require("./../assets/images/books/sa3.jpeg"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "39",
@@ -929,14 +670,7 @@ const books = [
             require("./../assets/images/books/s2.jpeg"),
             require("./../assets/images/books/s3.jpeg"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     },
     {
         id: "40",
@@ -953,14 +687,7 @@ const books = [
             require("./../assets/images/books/n2.jpeg"),
             require("./../assets/images/books/n3.jpeg"),
         ],
-        colors: [
-            "#00BFFF",
-            "#FF1493",
-            "#00CED1",
-            "#228B22",
-            "#20B2AA",
-            "#FF4500",
-        ]
+        colors: null
     }
 ];
 
