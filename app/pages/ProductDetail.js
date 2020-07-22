@@ -137,8 +137,8 @@ const styles = StyleSheet.create({
         backgroundColor: "#ebf0f7",
     },
     content: {
-        marginLeft: 5,
-        marginRight: 5,
+        marginLeft: 2,
+        marginRight: 2,
         marginTop: 2,
     },
     header: {
@@ -146,18 +146,18 @@ const styles = StyleSheet.create({
     },
     mainImage: {
         width: 230,
-        height: 190,
+        height: 250,
         marginTop: 5,
 
     },
     smallImagesContainer: {
         flexDirection: 'column',
-        marginLeft: 5,
+        marginLeft: 0,
         flex: 1
     },
     smallImage: {
-        width: 60,
-        height: 60,
+        width: 70,
+        height: 80,
         marginTop: 5,
         flexDirection: 'column-reverse',
     },
