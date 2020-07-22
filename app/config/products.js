@@ -14,7 +14,14 @@ const books = [
             require("./../assets/images/books/an2.jpg"),
             require("./../assets/images/books/an3.jpeg"),
         ],
-        colors: null
+        colors: [
+            "#00BFFF",
+            "#FF1493",
+            "#00CED1",
+            "#228B22",
+            "#20B2AA",
+            "#FF4500",
+        ]
     },
     {
         id: "2",
