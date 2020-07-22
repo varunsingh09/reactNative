@@ -43,6 +43,7 @@ class Category extends Component {
     };
     onCategoryDetail = (catId) => {
         console.log("category id ", catId)
+        this.props.navigation.navigate("Products", { text: "First" })
     }
 
     render() {

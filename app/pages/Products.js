@@ -16,7 +16,7 @@ import Logo from "../components/Logo.component"
 class Products extends Component {
     static navigationOptions = ({ navigation }) => {
         return {
-            headerTitle: 'Products',
+            headerTitle: 'Category product Listing',
             //headerLeft: <Logo navigation={navigation} />,
             //headerRight: <Cart navigation={navigation} />
         }
