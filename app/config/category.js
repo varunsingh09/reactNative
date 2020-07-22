@@ -25,7 +25,8 @@ export const categoryData = [
         id: 9,
         subcategory: [
             { id: 10, val: 'Computer' },
-            { id: 11, val: 'Medical' }
+            { id: 11, val: 'Medical' },
+            { id: 26, val: 'Sales' }
         ],
     },
     {

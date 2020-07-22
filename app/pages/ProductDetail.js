@@ -5,9 +5,6 @@ import {
     View,
     Image,
     TouchableOpacity,
-    FlatList,
-    Dimensions,
-    Alert,
     ScrollView
 } from 'react-native';
 import { connect } from 'react-redux';

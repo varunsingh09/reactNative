@@ -152,7 +152,7 @@ const books = [
     },
     {
         id: "9",
-        catId: 13,
+        catId: 26,
         title: "Unlimited Sales Success",
         author: "Brian Tracy",
         authorbio: "A world class motivational and sales consultant.",
@@ -323,7 +323,7 @@ const books = [
     },
     {
         id: "19",
-        catId: 2,
+        catId: 26,
         title: "Unlimited Sales Success",
         author: "Brian Tracy",
         authorbio: "A world class motivational and sales consultant.",
@@ -494,7 +494,7 @@ const books = [
     },
     {
         id: "29",
-        catId: 14,
+        catId: 26,
         title: "Unlimited Sales Success",
         author: "Brian Tracy",
         authorbio: "A world class motivational and sales consultant.",
